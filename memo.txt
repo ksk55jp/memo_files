@@ -1533,3 +1533,27 @@ DIVE09:Assoc:HOWTO: edit app/views/blog/index.html.erb      <<<< display user na
 DIVE09:Assoc:HOWTO: ...                         <<<< display user name in list of blog
 DIVE09:Assoc:HOWTO: <p><%= blog.content %>          <<<< display user name in list of blog
 DIVE09:Assoc:HOWTO: <p> by : <%= blog.user.name %>  <<<< display user name in list of blog
+DIVE10:MacEnv:TODO: Understand drawback of c9
+DIVE10:MacEnv:TODO: unserstand the toll we use for local env setup
+DIVE10:MacEnv:TODO: understand Homebrew
+DIVE10:MacEnv:TODO: Xcode installation
+DIVE10:MacEnv:TODO: Homebrew installation
+DIVE10:MacEnv:TODO: Uninstall Ruby that is installed by MacPorts
+DIVE10:MacEnv:TODO: Remove RVM
+DIVE10:MacEnv:TODO: update Homebrew
+DIVE10:MacEnv:TODO: install rbenv, ruby-build
+DIVE10:MacEnv:TODO: configure rbenv
+DIVE10:MacEnv:TODO: install Ruby
+DIVE10:MacEnv:TODO: install Builder
+DIVE10:MacEnv:TODO: install PostgreSQL
+DIVE10:MacEnv:TODO: install Git
+DIVE10:MacEnv:TODO: setup achieve locally (*)
+DIVE10:MacEnv:TODO: generate ssh key pair
+DIVE10:MacEnv:TODO: register public key to Github
+DIVE10:MacEnv:TODO: clone achieve from Github 
+DIVE10:MacEnv:TODO: prepare running application
+DIVE10:MacEnv:TODO: run web server   
+DIVE10:MacEnv:TODO: use the application from browser
+DIVE10:MacEnv:TODO: install heroku 
+DIVE10:MacEnv:TODO: setup remote config for heroku
+DIVE10:MacEnv:TODO: install text editor 
