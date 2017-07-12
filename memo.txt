@@ -1534,26 +1534,123 @@ DIVE09:Assoc:HOWTO: ...                         <<<< display user name in list o
 DIVE09:Assoc:HOWTO: <p><%= blog.content %>          <<<< display user name in list of blog
 DIVE09:Assoc:HOWTO: <p> by : <%= blog.user.name %>  <<<< display user name in list of blog
 DIVE10:MacEnv:TODO: Understand drawback of c9
-DIVE10:MacEnv:TODO: unserstand the toll we use for local env setup
-DIVE10:MacEnv:TODO: understand Homebrew
+DIVE10:MacEnv:HOWTO: 1. working experience is easily affected by network and server load <<<< Understand drawback of c9
+DIVE10:MacEnv:HOWTO: 2. using charge free plan, we cannot completely block external access <<<< Understand drawback of c9
+DIVE10:MacEnv:TODO: understand the tool we use for local env setup
+DIVE10:MacEnv:HOWTO: Homebrew is the tool that we use for setting up in Mac env. <<<< understand the tool we use for local env setup
+DIVE10:MacEnv:HOWTO: Homebrew is one of package manager tool.                    <<<< understand the tool we use for local env setup
+DIVE10:MacEnv:HOWTO: Package manager memorizes what software has been installed  <<<< understand the tool we use for local env setup
+DIVE10:MacEnv:HOWTO: and eases after-operations like update, or uninstall        <<<< understand the tool we use for local env setup
+DIVE10:MacEnv:HOWTO: for example, if we want to install git, command will be     <<<< understand the tool we use for local env setup
+DIVE10:MacEnv:HOWTO: brew install git                                            <<<< understand the tool we use for local env setup
 DIVE10:MacEnv:TODO: Xcode installation
+DIVE10:MacEnv:HOWTO: Open App Store and search Xcode            <<<< Xcode installation
+DIVE10:MacEnv:HOWTO: click 入手-> then Appをインストール        <<<< Xcode installation
+DIVE10:MacEnv:HOWTO: Open Finder then Application -> Utility    <<<< Xcode installation
+DIVE10:MacEnv:HOWTO: Open terminal and personalize as you wish  <<<< Xcode installation
+DIVE10:MacEnv:HOWTO: execute below command                      <<<< Xcode installation
+DIVE10:MacEnv:HOWTO: xcode-select --install                     <<<< Xcode installation
+DIVE10:MacEnv:HOWTO: proceed on install when install GUI came up<<<< Xcode installation
 DIVE10:MacEnv:TODO: Homebrew installation
+DIVE10:MacEnv:HOWTO: if Sierra OS                                                                                       <<<< Homebrew installation
+DIVE10:MacEnv:HOWTO: execute below command                                                                              <<<< Homebrew installation
+DIVE10:MacEnv:HOWTO: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" <<<< Homebrew installation
+DIVE10:MacEnv:HOWTO: if not Sierra OS                                                                                   <<<< Homebrew installation
+DIVE10:MacEnv:HOWTO: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"          <<<< Homebrew installation
+DIVE10:MacEnv:HOWTO: password will be required. input as it is required to change system                                <<<< Homebrew installation
 DIVE10:MacEnv:TODO: Uninstall Ruby that is installed by MacPorts
+DIVE10:MacEnv:HOWTO: Ruby is pre installed in MacOSX        <<<< Uninstall Ruby that is installed by MacPorts
+DIVE10:MacEnv:HOWTO: usually it is obsolete version         <<<< Uninstall Ruby that is installed by MacPorts
+DIVE10:MacEnv:HOWTO: we uninstall this pre installed ruby   <<<< Uninstall Ruby that is installed by MacPorts
+DIVE10:MacEnv:HOWTO: check if ruby is already installed or not <<<< Uninstall Ruby that is installed by MacPorts
+DIVE10:MacEnv:HOWTO: by which ruby commmand. if path is displayed <<<< Uninstall Ruby that is installed by MacPorts
+DIVE10:MacEnv:HOWTO: it means ruby is already installed.    <<<< Uninstall Ruby that is installed by MacPorts
+DIVE10:MacEnv:HOWTO: if path was not displayed, proceed on <<<< Uninstall Ruby that is installed by MacPorts
+DIVE10:MacEnv:HOWTO: next topic Remove RVM                  <<<< Uninstall Ruby that is installed by MacPorts
+DIVE10:MacEnv:HOWTO: sudo port uninstall ruby              <<<< Uninstall Ruby that is installed by MacPorts
 DIVE10:MacEnv:TODO: Remove RVM
+DIVE10:MacEnv:HOWTO: RVM is equivalent of rbenv.           <<<< Remove RVM
+DIVE10:MacEnv:HOWTO: to avoid interfereance, uninstall     <<<< Remove RVM
+DIVE10:MacEnv:HOWTO: rvm implode                           <<<< Remove RVM
+DIVE10:MacEnv:HOWTO: if rvm was not installed in the first place, error message will be displayed  <<<< Remove RVM
 DIVE10:MacEnv:TODO: update Homebrew
+DIVE10:MacEnv:HOWTO: brew upgrade <<<< update Homebrew
 DIVE10:MacEnv:TODO: install rbenv, ruby-build
+DIVE10:MacEnv:HOWTO: brew install rbend ruby-build  <<<< install rbenv, ruby-build
 DIVE10:MacEnv:TODO: configure rbenv
+DIVE10:MacEnv:HOWTO: echo 'eval "$(rbenv init -)"' >> ~/.bash_profile    <<<< configure rbenv
+DIVE10:MacEnv:HOWTO: source ~/.bash_profile                              <<<< configure rbenv
 DIVE10:MacEnv:TODO: install Ruby
-DIVE10:MacEnv:TODO: install Builder
+DIVE10:MacEnv:HOWTO: rbenv install 2.3.0 <<<< install Ruby
+DIVE10:MacEnv:HOWTO: rbenv global 2.3.0  <<<< install Ruby
+DIVE10:MacEnv:HOWTO: verify ruby version by <<<< install Ruby
+DIVE10:MacEnv:HOWTO: ruby -v                <<<< install Ruby
+DIVE10:MacEnv:TODO: install Bundler
+DIVE10:MacEnv:HOWTO: Bundler is a gem manager. use below command for installing <<<< install Bundler
+DIVE10:MacEnv:HOWTO: gem install bundler                                        <<<< install Bundler
 DIVE10:MacEnv:TODO: install PostgreSQL
+DIVE10:MacEnv:HOWTO: brew install postgresql                       <<<< install PostgreSQL
+DIVE10:MacEnv:HOWTO: start searvice of postgresql by below command <<<< install PostgreSQL
+DIVE10:MacEnv:HOWTO: brew services start postgresql                <<<< install PostgreSQL
 DIVE10:MacEnv:TODO: install Git
+DIVE10:MacEnv:HOWTO: brew install git                                      <<<< install Git
+DIVE10:MacEnv:HOWTO: Bash completion has been installed to:                <<<< install Git
+DIVE10:MacEnv:HOWTO: /usr/local/etc/bash_completion.d                      <<<< install Git
+DIVE10:MacEnv:HOWTO: zsh completions and functions have been installed to: <<<< install Git
+DIVE10:MacEnv:HOWTO: /usr/local/share/zsh/site-functions                   <<<< install Git
+DIVE10:MacEnv:HOWTO: Emacs Lisp files have been installed to:              <<<< install Git
+DIVE10:MacEnv:HOWTO: /usr/local/share/emacs/site-lisp/git                  <<<< install Git
 DIVE10:MacEnv:TODO: setup achieve locally (*)
 DIVE10:MacEnv:TODO: generate ssh key pair
+DIVE10:MacEnv:HOWTO: cd ~/.ssh     <<<< generate ssh key pair
+DIVE10:MacEnv:HOWTO: ssh-keygen -t rsa -C "GitHubにユーザ登録したemail"   <<<< generate ssh key pair
+DIVE10:MacEnv:HOWTO: press enter to specify blank passphrase              <<<< generate ssh key pair
+DIVE10:MacEnv:HOWTO: verify key pair generated                            <<<< generate ssh key pair
+DIVE10:MacEnv:HOWTO: ls -la                                               <<<< generate ssh key pair
 DIVE10:MacEnv:TODO: register public key to Github
+DIVE10:MacEnv:HOWTO: cat ~/.ssh/id_rsa.pub                                            <<<< register public key to Github
+DIVE10:MacEnv:HOWTO: open GitHub by browser and go to profile -> setting              <<<< register public key to Github
+DIVE10:MacEnv:HOWTO: SSH and GPG keys press New Key                                   <<<< register public key to Github
+DIVE10:MacEnv:HOWTO: paste the key content into text area and press add SSH key button <<<< register public key to Github
 DIVE10:MacEnv:TODO: clone achieve from Github 
+DIVE10:MacEnv:HOWTO: open GitHub by browser and copy the ssh URL into clipboard   <<<< clone achieve from Github 
+DIVE10:MacEnv:HOWTO: cd ~              <<<< clone achieve from Github 
+DIVE10:MacEnv:HOWTO: mkdir workspace   <<<< clone achieve from Github 
+DIVE10:MacEnv:HOWTO: cd workspace      <<<< clone achieve from Github 
+DIVE10:MacEnv:HOWTO: git clone "paste" <<<< clone achieve from Github 
 DIVE10:MacEnv:TODO: prepare running application
+DIVE10:MacEnv:HOWTO: cd achieve                                            <<<< prepare running application
+DIVE10:MacEnv:HOWTO: bundle install                                        <<<< prepare running application
+DIVE10:MacEnv:HOWTO: (*) need to adjust env variable by .env (?)           <<<< prepare running application
+DIVE10:MacEnv:HOWTO:Important: You may need to add a javascript runtime to <<<< prepare running application
+DIVE10:MacEnv:HOWTO:           your Gemfile in order for bootstrap's LESS  <<<< prepare running application
+DIVE10:MacEnv:HOWTO:           files to compile to CSS.                    <<<< prepare running application
+DIVE10:MacEnv:HOWTO:**********************************************         <<<< prepare running application
+DIVE10:MacEnv:HOWTO:ExecJS supports these runtimes:                        <<<< prepare running application
+DIVE10:MacEnv:HOWTO:therubyracer - Google V8 embedded within Ruby          <<<< prepare running application
+DIVE10:MacEnv:HOWTO:therubyrhino - Mozilla Rhino embedded within JRuby     <<<< prepare running application
+DIVE10:MacEnv:HOWTO:Node.js                                                <<<< prepare running application
+DIVE10:MacEnv:HOWTO:Apple JavaScriptCore - Included with Mac OS X          <<<< prepare running application
+DIVE10:MacEnv:HOWTO:Microsoft Windows Script Host (JScript)                <<<< prepare running application
+DIVE10:MacEnv:HOWTO:**********************************************         <<<< prepare running application
+DIVE10:MacEnv:HOWTO: rake db:create db:migrate <<<< prepare running application
 DIVE10:MacEnv:TODO: run web server   
+DIVE10:MacEnv:HOWTO: sudo gem install rails  <<<< run web server   
+DIVE10:MacEnv:HOWTO: rails s <<<< run web server   
 DIVE10:MacEnv:TODO: use the application from browser
+DIVE10:MacEnv:HOWTO: open below url by browser  <<<< use the application from browser
+DIVE10:MacEnv:HOWTO: http://localhost:3000/     <<<< use the application from browser
 DIVE10:MacEnv:TODO: install heroku 
+DIVE10:MacEnv:HOWTO: brew install heroku  <<<< install heroku 
+DIVE10:MacEnv:HOWTO: heroku login         <<<< install heroku 
+DIVE10:MacEnv:HOWTO: verify remote config from Heroku web site <<<< install heroku 
+DIVE10:MacEnv:HOWTO: https://dashboard.heroku.com/apps         <<<< install heroku 
+DIVE10:MacEnv:HOWTO: choose the application in dashboard       <<<< install heroku 
+DIVE10:MacEnv:HOWTO: Click settings in the menu                <<<< install heroku 
+DIVE10:MacEnv:HOWTO: Copy value from Git URL field             <<<< install heroku 
+DIVE10:MacEnv:HOWTO: execute below command to let git memorize <<<< install heroku 
+DIVE10:MacEnv:HOWTO: heroku url                                <<<< install heroku 
+DIVE10:MacEnv:HOWTO: git remote add heroku <paste>             <<<< install heroku 
 DIVE10:MacEnv:TODO: setup remote config for heroku
 DIVE10:MacEnv:TODO: install text editor 
+DIVE10:MacEnv:HOWTO: install atom    <<<< install text editor 
