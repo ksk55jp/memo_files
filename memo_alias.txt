@@ -1,0 +1,4 @@
+alias MEMO="vim ~/memo.txt"
+alias MEMORE="more ~/memo.txt"
+alias MEMOCAT="cat  ~/memo.txt"
+alias MEMOTAIL="tail ~/memo.txt"

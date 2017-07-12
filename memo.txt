@@ -1,0 +1,1535 @@
+VIMSETUP:TODO:Prepare for enabling plugins
+VIMSETUP:HOWTO: mkdir ~/.vim/bundle                                <<<< Prepare for enabling plugins
+VIMSETUP:HOWTO: mkdir ~/.vim/doc                                   <<<< Prepare for enabling plugins
+VIMSETUP:HOWTO: $ curl --create-dirs -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim <<<< Prepare for enabling plugins
+VIMSETUP:HOWTO: $ echo 'execute pathogen#infect()' >> ~/.vimrc     <<<< Prepare for enabling plugins
+VIMSETUP:TODO:Understand how to install plugins from git
+VIMSETUP:HOWTO: cd ~/.vim/bundle                                              <<<< Understand how to install plugins from git
+VIMSETUP:HOWTO: go to github an foind plugin page                             <<<< Understand how to install plugins from git
+VIMSETUP:HOWTO: expand download buttone and click small button next to url    <<<< Understand how to install plugins from git
+VIMSETUP:HOWTO: then clipboard has it                     <<<< Understand how to install plugins from git
+VIMSETUP:HOWTO: git clone cmd-v                           <<<< Understand how to install plugins from git
+VIMSETUP:HOWTO: folder download will start                <<<< Understand how to install plugins from git
+VIMSETUP:HOWTO: plugin-help is not setup as it is.        <<<< Understand how to install plugins from git
+VIMSETUP:HOWTO: cd ..                                     <<<< Understand how to install plugins from git
+VIMSETUP:HOWTO: cp <plugindir>/doc/*.txt ../doc           <<<< Understand how to install plugins from git
+VIMSETUP:HOWTO: open vim and :helptags ~/.vim/doc         <<<< Understand how to install plugins from git
+VIMSETUP:TODO: Setup usefule plugins for ruby dev
+VIMSETUP:HOWTO: snipmante.vim by msanders  <<<< Setup usefule plugins for ruby dev
+VIMSETUP:HOWTO: vim-endwise                 <<<< Setup usefule plugins for ruby dev
+VIMSETUP:HOWTO: vim-fugitive                <<<< Setup usefule plugins for ruby dev
+VIMSETUP:HOWTO: vim-ragtag                  <<<< Setup usefule plugins for ruby dev
+VIMSETUP:HOWTO: vim-rails                   <<<< Setup usefule plugins for ruby dev
+DIVE01=Rails1:TODO:build applicaiton foundation
+DIVE01=Rails1:HOWTO:gem install rails -v 4.2.3              <<<build applicaiton foundation
+DIVE01=Rails1:HOWTO:cd ~/workspace                          <<<build applicaiton foundation
+DIVE01=Rails1:HOWTO:rails _4.2.3_ new achieve -d postgresql <<<build applicaiton foundation
+DIVE01=Rails1:HOWTO:cd achieve                              <<<build applicaiton foundation
+DIVE01=Rails1:HOWTO:bundle install                          <<<build applicaiton foundation
+DIVE01=Rails1:HOWTO:bundle show                             <<<build applicaiton foundation
+DIVE01=Rails1:TODO:configure router
+DIVE01=Rails1:HOWTO:cd config                         <<<<<configure router
+DIVE01=Rails1:HOWTO:vim routes.rb                     <<<<<configure router
+DIVE01=Rails1:HOWTO:1. remove comment lines and make it looking like below <<<<<configure router
+DIVE01=Rails1:HOWTO:Rails.application.routes.draw do  <<<<<configure router
+DIVE01=Rails1:HOWTO:  get 'blogs' => 'blogs#index'    <<<<<configure router
+DIVE01=Rails1:HOWTO:end                               <<<<<configure router
+DIVE01=Rails1:TODO:Generate controler (blogs controller with index action)
+DIVE01=Rails1:HOWTO:rails g controller blogs index    <<<<<<Generate controler (blogs controller with index action)
+DIVE01=Rails1:TODO: Verify generated controller by rails g controller command 
+DIVE01=Rails1:HOWTO:vim controllers/blogs_controller.rb <<<<<<< Verify generated controller by rails g controller command 
+DIVE01=Rails1:TODO:Correct router config, to delete line by rails g controller command
+DIVE01=Rails1:HOWTO:vim config/routes.rb  <<<<Correct router config, to delete line by rails g controller command
+DIVE01=Rails1:HOWTO:delete line below     <<<<Correct router config, to delete line by rails g controller command
+DIVE01=Rails1:HOWTO:*****************     <<<<Correct router config, to delete line by rails g controller command
+DIVE01=Rails1:HOWTO:get 'blogs/index'     <<<<Correct router config, to delete line by rails g controller command
+DIVE01=Rails1:HOWTO:*****************     <<<<Correct router config, to delete line by rails g controller command
+DIVE01=Rails1:TODO: Startup database
+DIVE01=Rails1:HOWTO: sudo service postgresql start <<<<<<<Startup database
+DIVE01=Rails1:TODO: Create application user in database 
+DIVE01=Rails1:HOWTO: sudo sudo -u postgres psql <<<<<< Create application user in database 
+DIVE01=Rails1:HOWTO: CREATE USER ubuntu SUPERUSER; <<<<<< Create application user in database 
+DIVE01=Rails1:HOWTO: get out of psql by \q <<<<<< Create application user in database 
+DIVE01=Rails1:TODO: Configure database encoding(c9 specific)
+DIVE01=Rails1:HOWTO: vim config/database.yml      <<<<<<<< Configure database encoding(c9 specific)
+DIVE01=Rails1:HOWTO: add below line after pool:5  <<<<<<<< Configure database encoding(c9 specific)
+DIVE01=Rails1:HOWTO: ********************         <<<<<<<< Configure database encoding(c9 specific)
+DIVE01=Rails1:HOWTO: template: template0          <<<<<<<< Configure database encoding(c9 specific)
+DIVE01=Rails1:HOWTO: ********************         <<<<<<<< Configure database encoding(c9 specific)
+DIVE01=Rails1:TODO: Generate model
+DIVE01=Rails1:HOWTO: rails g model blog            <<<< Generate model
+DIVE01=Rails1:HOWTO: verify generated model file   <<<< Generate model
+DIVE01=Rails1:HOWTO: vim app/models/blog.rb        <<<< Generate model
+DIVE01=Rails1:TODO: edit migration file and add required table columns 
+DIVE01=Rails1:HOWTO: vim db/migrate/xxxxxxxxxx_create_blogs.rb <<<<<< edit migration file and add required table columns 
+DIVE01=Rails1:HOWTO: insert lines after create_table :blogs do |t| <<<<<< edit migration file and add required table columns 
+DIVE01=Rails1:HOWTO: t.string :title <<<<<< edit migration file and add required table columns 
+DIVE01=Rails1:HOWTO: t.text :content <<<<<< edit migration file and add required table columns 
+DIVE01=Rails1:TODO: create database for application 
+DIVE01=Rails1:HOWTO: rake db:create     <<<<<create database for application 
+DIVE01=Rails1:TODO: Execute pending migraiton 
+DIVE01=Rails1:HOWTO: rake db:migrate <<<<<<Execute pending migraiton 
+DIVE01=Rails1:TODO: verify migration result
+DIVE01=Rails1:HOWTO: edit vim db/schema.rb <<<<<verify migration result
+DIVE01=Rails1:TODO: open rails database terminal console 
+DIVE01=Rails1:HOWTO: rails db <<<< open rails database terminal console 
+DIVE01=Rails1:HOWTO: \d to display list of relations (objects like table / sequence)<<<< open rails database terminal console 
+DIVE01=Rails1:HOWTO: \g to execute query <<<< open rails database terminal console 
+DIVE01=Rails1:HOWTO: \q to quit the interface <<<< open rails database terminal console 
+DIVE01=Rails1:TODO: verify view file
+DIVE01=Rails1:HOWTO: vim app/views/blogs/index.html.erb                                  <<<<<< verify view file
+DIVE01=Rails1:HOWTO: this file was created as a result of rails g controller blogs index <<<<<< verify view file
+DIVE01=Rails1:TODO: start web server
+DIVE01=Rails1:HOWTO: rails s -b $IP -p $PORT                              <<<<<< start web server
+DIVE01=Rails1:HOWTO: click the popup and add /blogs at the end of url     <<<<<< start web server
+DIVE01=Rails1:TODO: Configure router adding index, new, and create action
+DIVE01=Rails1:HOWTO: vim config/routes.rb                              <<<<<< Configure router adding index, new, and create action
+DIVE01=Rails1:HOWTO: edit the file like below lines                    <<<<<< Configure router adding index, new, and create action
+DIVE01=Rails1:HOWTO: **************                                    <<<<<< Configure router adding index, new, and create action
+DIVE01=Rails1:HOWTO: Rails.application.routes.draw do                  <<<<<< Configure router adding index, new, and create action
+DIVE01=Rails1:HOWTO:   resources :blogs, only: [:index, :new, :create] <<<<<< Configure router adding index, new, and create action
+DIVE01=Rails1:HOWTO: end                                               <<<<<< Configure router adding index, new, and create action
+DIVE01=Rails1:HOWTO: **************                                    <<<<<< Configure router adding index, new, and create action
+DIVE01=Rails1:TODO: Verify routes by rake command 
+DIVE01=Rails1:HOWTO: rake routes <<<<<< Verify routes by rake command 
+DIVE01=Rails1:TODO: Add index action on controller
+DIVE01=Rails1:HOWTO: vim app/controllers/blogs_controller.rb        <<<< Add index action on controller
+DIVE01=Rails1:HOWTO: def index                                      <<<< Add index action on controller
+DIVE01=Rails1:HOWTO: end                                            <<<< Add index action on controller
+DIVE01=Rails1:TODO: Add new action on controller
+DIVE01=Rails1:HOWTO: same as index action above <<<<<< Add new action on controller
+DIVE01=Rails1:TODO: Add create action on controller 
+DIVE01=Rails1:HOWTO: same as index action above <<<<<<<< Add create action on controller 
+DIVE01=Rails1:TODO: Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO: 1. vim app/views/blogs/new.html.erb    <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO: 2. content as below <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO: ********************************* <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO: <%= form_for(@blog) do |f|  %>    <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO:   <%= f.label :title %>           <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO:   <%= f.text_field  :title %>     <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO:   <br>                            <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO:   <%= f.label :content %>         <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO:   <%= f.text_field  :content %>   <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO:   <br>                            <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO:   <%= f.submit %>                 <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO: <% end %>                         <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:HOWTO: ********************************* <<<< Create form for new action using form_for syntax
+DIVE01=Rails1:TODO: Setup varable in controller's new action to view
+DIVE01=Rails1:HOWTO: vim app/controlller/blogs_controller.rb <<<<<<< Setup varable in controller's new action to view
+DIVE01=Rails1:HOWTO: *****************                       <<<<<<< Setup varable in controller's new action to view
+DIVE01=Rails1:HOWTO: def new                                  <<<<<<< Setup varable in controller's new action to view
+DIVE01=Rails1:HOWTO:   @blog  =  Blog.new                    <<<<<<< Setup varable in controller's new action to view
+DIVE01=Rails1:HOWTO: end                                    <<<<<<< Setup varable in controller's new action to view
+DIVE01=Rails1:HOWTO: *****************                         <<<<<<< Setup varable in controller's new action to view
+DIVE01=Rails1:TODO: Complete create action using strong parameter
+DIVE01=Rails1:HOWTO: edit app/controllers/blogs_controller.rb   <<<<<<  Complete create action using strong parameter
+DIVE01=Rails1:HOWTO: def create                                 <<<<<<  Complete create action using strong parameter
+DIVE01=Rails1:HOWTO:   Blog.create(blogs_params)                <<<<<<  Complete create action using strong parameter
+DIVE01=Rails1:HOWTO: end                                        <<<<<<  Complete create action using strong parameter
+DIVE01=Rails1:HOWTO: private                                            <<<<<<  Complete create action using strong parameter
+DIVE01=Rails1:HOWTO:   def blogs_params                                 <<<<<<  Complete create action using strong parameter
+DIVE01=Rails1:HOWTO:     params.require(:blog).permit(:title, :content) <<<<<<  Complete create action using strong parameter
+DIVE01=Rails1:HOWTO:   end                                              <<<<<<  Complete create action using strong parameter
+DIVE01=Rails1:HOWTO: end                                                <<<<<<  Complete create action using strong parameter
+DIVE01=Rails1:TODO: Define aciton next after creation by redirect_to. List blogs after creation
+DIVE01=Rails1:HOWTO: insert below line after Blog.Create(blogs..... <<<<< Define aciton next after creation by redirect_to. List blogs after creation
+DIVE01=Rails1:HOWTO: redirect_to blogs_path                         <<<<< Define aciton next after creation by redirect_to. List blogs after creation
+DIVE01=Rails1:TODO: Verify all the created blogs by rails console
+DIVE01=Rails1:HOWTO: rails c       <<<<< Verify all the created blogs by rails console
+DIVE01=Rails1:HOWTO: Blog.all      <<<<< Verify all the created blogs by rails console
+DIVE01=Rails1:TODO: Display list on index action
+DIVE01=Rails1:HOWTO: vim app/controllers/blogs_controller.rb <<<< Display list on index action
+DIVE01=Rails1:HOWTO: def index           <<<< Display list on index action
+DIVE01=Rails1:HOWTO:   @blogs = Blog.all <<<< Display list on index action
+DIVE01=Rails1:HOWTO: end                 <<<< Display list on index action
+DIVE01=Rails1:TODO: Define view file for list 
+DIVE01=Rails1:HOWTO: vim app/views/blogs/index.html.erb     <<< Define view file for list 
+DIVE01=Rails1:HOWTO: <h1>ブログ一覧</h1>                      <<< Define view file for list 
+DIVE01=Rails1:HOWTO: <% @blogs.each do |blog| %>            <<< Define view file for list 
+DIVE01=Rails1:HOWTO:   <p>タイトル：<%= blog.title %> </p>      <<< Define view file for list 
+DIVE01=Rails1:HOWTO:   <p>本文：<%= blog.content %> </p>      <<< Define view file for list 
+DIVE01=Rails1:HOWTO: <% end %>                              <<< Define view file for list 
+DIVE01=Rails1:TODO: Create link in index screen to guide user to create blog
+DIVE01=Rails1:HOWTO: vim app/views/blogs/index.html.erb           <<<<< Create link in index screen to guide user to create blog
+DIVE01=Rails1:HOWTO: insert below line                            <<<<< Create link in index screen to guide user to create blog
+DIVE01=Rails1:HOWTO: <%= link_to "ブログを作成する", new_blog_path %> <<<<< Create link in index screen to guide user to create blog
+DIVE01=Rails1:TODO: Create link in new screen to guide user to list screen
+DIVE01=Rails1:HOWTO: vim app/views/blogs/new.html.erb              <<<<< Create link in new screen to guide user to list screen
+DIVE01=Rails1:HOWTO: insert below line                             <<<<< Create link in new screen to guide user to list screen
+DIVE01=Rails1:HOWTO: <%= link_to "ブログ一覧画面に戻る", blogs_path %> <<<<< Create link in new screen to guide user to list screen
+DIVE01=Rails1:TODO: Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:HOWTO: rails g model contact                                        <<< Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:HOWTO: edit migration file to add columns below                     <<< Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:HOWTO: t.string :name                                               <<< Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:HOWTO: t.string :email                                              <<< Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:HOWTO: t.text :content                                              <<< Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:HOWTO: rake db:migrate                                              <<< Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:HOWTO: rails g controller contacts new                              <<< Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:HOWTO: edit controller file to add create and new action like below <<< Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:HOWTO: def create                                                   <<< Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:HOWTO: end                                                          <<< Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:HOWTO: def new                                                      <<< Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:HOWTO: end                                                          <<< Generate model and controller for contacts with new, and create action
+DIVE01=Rails1:TODO: define route using only option
+DIVE01=Rails1:HOWTO: edit app/config/routes.rb and add line below <<< define route using only option
+DIVE01=Rails1:HOWTO: resources :controllers only: [:new, :create] <<< define route using only option
+DIVE01=Rails1:TODO: complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO: edit contacts_controllers.rb                                 <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO: def create                                                   <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO:   Contact.create(contacts_params)                            <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO:   redirect_to contacts_path                                  <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO: end                                                          <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO: def new                                                      <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO:   @contact = Contact.new                                     <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO: end                                                          <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO: private                                                      <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO:   def contacts_params                                        <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO:     params.require(:contact).permit(:name, :email, :content) <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO:   end                                                        <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:HOWTO: end                                                          <<<<< complete new and create action, redirect to new action after saving record.
+DIVE01=Rails1:TODO: create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO: edit views/contacts/new.html.erb  <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO: <%= form_for(@contact) do |f| %>  <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO:   <%= f.label :name %>            <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO:   <%= f.text_field :name %>       <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO:   <br>                            <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO:   <%= f.label :email %>           <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO:   <%= f.text_field :email %>      <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO:   <br>                            <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO:   <%= f.label :content %>         <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO:   <%= f.text_field :content %>    <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO:   <br>                            <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO:   <%= f.submit %>                 <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:HOWTO: <% end %>                         <<<<< create form using form_for, for new action of contact
+DIVE01=Rails1:TODO:==========================================================
+DIVE02=Rails2:TODO: add edit & update action
+DIVE02=Rails2:HOWTO: edit routes.rb and add actions               <<< add edit & update action
+DIVE02=Rails2:HOWTO: vim config/routes.rb                         <<< add edit & update action
+DIVE02=Rails2:HOWTO: resources :blogs only: [..., :edit, :update] <<< add edit & update action
+DIVE02=Rails2:HOWTO: verify by rake routes command                <<< add edit & update action
+DIVE02=Rails2:TODO: define edit method on blogs controller
+DIVE02=Rails2:HOWTO: edit app/controllers/blogs_controller.rb <<<< define edit method on blogs controller
+DIVE02=Rails2:HOWTO: def edit <<<< define edit method on blogs controller
+DIVE02=Rails2:HOWTO: end <<<< define edit method on blogs controller
+DIVE02=Rails2:TODO: create edit form for blogs
+DIVE02=Rails2:HOWTO: create edit.html.erb under app/views/blogs/ <<< create edit form for blogs
+DIVE02=Rails2:HOWTO: put the same code as new.html.erb           <<< create edit form for blogs
+DIVE02=Rails2:TODO: Create variable to be passed to edit view
+DIVE02=Rails2:HOWTO: edit controller                                        <<< Create variable to be passed to edit view
+DIVE02=Rails2:HOWTO: pass data from db into varaible before passing to form <<< Create variable to be passed to edit view
+DIVE02=Rails2:HOWTO: def edit                                               <<< Create variable to be passed to edit view
+DIVE02=Rails2:HOWTO:   @blog = Blog.find(params[:id])                       <<< Create variable to be passed to edit view
+DIVE02=Rails2:HOWTO: end                                                    <<< Create variable to be passed to edit view
+DIVE02=Rails2:TODO: Enable move between edit and index screen
+DIVE02=Rails2:HOWTO: 1. move from index to edit                                <<<< Enable move between edit and index screen
+DIVE02=Rails2:HOWTO: 2. verify route is like below                             <<<< Enable move between edit and index screen
+DIVE02=Rails2:HOWTO:   edit_blog  GET  /blogs/:id/edit(.:format) blogs#edit    <<<< Enable move between edit and index screen
+DIVE02=Rails2:HOWTO:   it means that need to give id after edit_blog_path      <<<< Enable move between edit and index screen
+DIVE02=Rails2:HOWTO: edit index.html.erb to add below line                     <<<< Enable move between edit and index screen
+DIVE02=Rails2:HOWTO: <%= link_to "ブログを編集する", edit_blog_path(blog.id) %>    <<<< Enable move between edit and index screen
+DIVE02=Rails2:HOWTO: 3. implement link from edit to index                      <<<< Enable move between edit and index screen
+DIVE02=Rails2:HOWTO: edit edit.html.erb to add below linke                     <<<< Enable move between edit and index screen
+DIVE02=Rails2:HOWTO: <%= link_to "ブログ一覧画面に戻る", blogs_path %>             <<<< Enable move between edit and index screen
+DIVE02=Rails2:TODO: complete update action
+DIVE02=Rails2:HOWTO: edit controller                  <<< complete update action
+DIVE02=Rails2:HOWTO: def update                       <<< complete update action
+DIVE02=Rails2:HOWTO:   @blog = Blog.find(params[:id]) <<< complete update action
+DIVE02=Rails2:HOWTO:   @blog.update(blogs_params)     <<< complete update action
+DIVE02=Rails2:HOWTO:   redirect_to blogs_path         <<< complete update action
+DIVE02=Rails2:HOWTO: end                              <<< complete update action
+DIVE02=Rails2:TODO: Implement deletion function 
+DIVE02=Rails2:HOWTO: 1. add destroy action in routes.rb                                         <<<<< Implement deletion function 
+DIVE02=Rails2:HOWTO: 2. verify by rake routes                                                   <<<<< Implement deletion function 
+DIVE02=Rails2:HOWTO: 3. add destroy action in controller with blank content                     <<<<< Implement deletion function 
+DIVE02=Rails2:HOWTO: 4. edit action to get content and call destroy method of model             <<<<< Implement deletion function 
+DIVE02=Rails2:HOWTO: 4. def destroy                                                             <<<<< Implement deletion function 
+DIVE02=Rails2:HOWTO: 4.   @blog=Blog.find(params[:id])                                          <<<<< Implement deletion function 
+DIVE02=Rails2:HOWTO: 4.   @blog.destroy                                                         <<<<< Implement deletion function 
+DIVE02=Rails2:HOWTO: 4. end                                                                     <<<<< Implement deletion function 
+DIVE02=Rails2:HOWTO: 5. redirect to index action                                                <<<<< Implement deletion function 
+DIVE02=Rails2:HOWTO: 6. put link_to in view to route to destroy action                          <<<<< Implement deletion function 
+DIVE02=Rails2:HOWTO: 6. <%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete %>      <<<<< Implement deletion function 
+DIVE02=Rails2:TODO: display confirmation dialog when updating 
+DIVE02=Rails2:HOWTO: add parameter in link_to like below line  <<<< display confirmation dialog when updating 
+DIVE02=Rails2:HOWTO: data: {confirm: '本当に編集していいですか' }   <<<< display confirmation dialog when updating 
+DIVE02=Rails2:TODO: display confirmation dialog when deleting 
+DIVE02=Rails2:HOWTO: add parameter in link_to like below line  <<<< display confirmation dialog when deleting 
+DIVE02=Rails2:HOWTO: data: {confirm: '本当に削除していいですか' }   <<<< display confirmation dialog when deleting 
+DIVE02=Rails2:TODO: Add feedback message on post edit/delete
+DIVE02=Rails2:HOWTO: 1. pass message by notice option                                           <<<< Add feedback message on post edit/delete
+DIVE02=Rails2:HOWTO: 1. add notice option like below to redirect_to statement of create action  <<<< Add feedback message on post edit/delete
+DIVE02=Rails2:HOWTO: 1. notice: "ブログを作成しました！"                                              <<<< Add feedback message on post edit/delete
+DIVE02=Rails2:HOWTO: 2. add placeholder in view                                                 <<<< Add feedback message on post edit/delete
+DIVE02=Rails2:TODO: Add feedback message on blog update/delete 
+DIVE02=Rails2:HOWTO: 1. add notice option in redirect_to of completion           <<<<< Add feedback message on blog update/delete 
+DIVE02=Rails2:HOWTO: 2. make sure there is notice placeholder of next screen     <<<<< Add feedback message on blog update/delete 
+DIVE02=Rails2:TODO: Add validateion Blog.title not null
+DIVE02=Rails2:HOWTO: 1. open models/blog.rb <<<< Add validateion Blog.title not null
+DIVE02=Rails2:HOWTO: 2. add below line in class definition    <<<< Add validateion Blog.title not null
+DIVE02=Rails2:HOWTO: 2. validates :title, precence: true      <<<< Add validateion Blog.title not null
+DIVE02=Rails2:TODO: Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 1. validation logic runs when save method is executed. Take this bool result <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 1. if true,  redirect_to ....                            <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 1. if false, render 'new'                                <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 1. def create                                            <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 1.   @blog=Blog.new(blogs_params)                        <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 1.   if @blog.save                                       <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 1.     redirect_to blogs_path, notice: 'ブログを作成しました！'<<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 1.   else                                                <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 1.     render 'new                                       <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 1.   end                                                 <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 1. end                                                   <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2. display error message <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2. edit new.html.erb to put the placeholder of error messages.          <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2. if block with @blog.errors.any?                                      <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2. display count of error with h2 using @blog.errors.count              <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2. start div with id="error_explanation"                                <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2. put ul frame                                                         <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2. repeat li as per count of errors. Iterate @blog.errors.full_messages <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2. block like below will be added below form_for line ..                <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2. <$ if @blog.errors.any? %>                                           <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2.  <div id="error_explanation">                                        <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2.   <h2><%= @blog.errors.count %> 件のエラーがあります。</h2>              <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2.   <ul>                                                               <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2.      <% @blog.errors.full_messages.each do |msg| %>                  <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2.        <li><%= msg %> </li>                                          <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2.      <% end %>                                                       <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2.   </ul>                                                              <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2.  </div>                                                              <<<< Add logic display result based on validation result
+DIVE02=Rails2:HOWTO: 2. <% end %>                                                            <<<< Add logic display result based on validation result
+DIVE02=Rails2:TODO: Verify validation by rails console
+DIVE02=Rails2:HOWTO: rails c                    <<< Verify validation by rails console
+DIVE02=Rails2:HOWTO: @blog=Blog.new             <<< Verify validation by rails console
+DIVE02=Rails2:HOWTO: @blog.save                 <<< Verify validation by rails console
+DIVE02=Rails2:HOWTO: @blog.errors               <<< Verify validation by rails console
+DIVE02=Rails2:HOWTO: @blog.errors.count         <<< Verify validation by rails console
+DIVE02=Rails2:HOWTO: @blog.errors.full_messages <<< Verify validation by rails console
+DIVE02=Rails2:TODO: Implement error display in update 
+DIVE02=Rails2:HOWTO: edit controler to add if clause like create action <<<< Implement error display in update 
+DIVE02=Rails2:HOWTO: edit view edit.html.erb to add error display block <<<< Implement error display in update 
+DIVE02=Rails2:HOWTO: <% @blog.errors.any?%>                               <<<< Implement error display in update 
+DIVE02=Rails2:HOWTO:   <h2><%= @blog.errors.count %>件のエラーがあります。</h2> <<<< Implement error display in update 
+DIVE02=Rails2:HOWTO:      <div id="error_explanation">                    <<<< Implement error display in update 
+DIVE02=Rails2:HOWTO:        <ul>                                          <<<< Implement error display in update 
+DIVE02=Rails2:HOWTO:           <% @blogs.errors.full_message.each do |msg| %>  <<<< Implement error display in update 
+DIVE02=Rails2:HOWTO:             <li><%= msg %> </li>                     <<<< Implement error display in update 
+DIVE02=Rails2:HOWTO:           <% end %>                                  <<<< Implement error display in update 
+DIVE02=Rails2:HOWTO:        </ul>                                         <<<< Implement error display in update 
+DIVE02=Rails2:HOWTO:      </div>                                          <<<< Implement error display in update 
+DIVE02=Rails2:HOWTO: <$ end %>                                            <<<< Implement error display in update 
+DIVE02=Rails2:TODO: Suppress error tag pointing error souce
+DIVE02=Rails2:HOWTO: edit config/application.rb                           <<<< Suppress error tag pointing error souce
+DIVE02=Rails2:HOWTO: insert below line right before inner end             <<<< Suppress error tag pointing error souce
+DIVE02=Rails2:HOWTO: config.action_view.field_error_proc = proc { |html_tag, instance| html_tag } <<<< Suppress error tag pointing error souce
+DIVE02=Rails2:TODO: Refactor repeated statement in controleler
+DIVE02=Rails2:HOWTO: observe edit/update/destroy and notice that                  <<<< Refactor repeated statement in controleler
+DIVE02=Rails2:HOWTO: @blog = Blog.find(params[:id])                               <<<< Refactor repeated statement in controleler
+DIVE02=Rails2:HOWTO: is repeated. approach is to define method                    <<<< Refactor repeated statement in controleler
+DIVE02=Rails2:HOWTO: define below method in private area                          <<<< Refactor repeated statement in controleler
+DIVE02=Rails2:HOWTO: def set_blog                                                 <<<< Refactor repeated statement in controleler
+DIVE02=Rails2:HOWTO:   @blog = Blog.find(params[:id])                             <<<< Refactor repeated statement in controleler
+DIVE02=Rails2:HOWTO: end                                                          <<<< Refactor repeated statement in controleler
+DIVE02=Rails2:HOWTO: To run this method on top of each method,                    <<<< Refactor repeated statement in controleler
+DIVE02=Rails2:HOWTO: describe below code class BlogsController                    <<<< Refactor repeated statement in controleler
+DIVE02=Rails2:HOWTO:   before_action :set_blog, only: [:edit, :update, :destroy ] <<<< Refactor repeated statement in controleler
+DIVE02=Rails2:HOWTO: delete the @blog = .... because it is already redandunt      <<<< Refactor repeated statement in controleler
+DIVE02=Rails2:TODO: Refactor view using partial
+DIVE02=Rails2:HOWTO: naming convention of partial is to start the name from _ <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: create app/views/blogs/_form.html.erb with below contents <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <%= form_for(@blog) do |f| %>                             <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO:   <% if @blog.errors.any? %>                              <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO:     <div id="error_explanation">                          <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO:       <h2><%=@blog.errors.count%>件のエラーがあります</h2>     <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO:       <ul>                                                <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO:         <% @blog.errors.full_messages.each do |msg| %>    <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO:           <li><%=msg%></li>                               <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO:         <% end %>                                         <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO:       </ul>                                               <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO:     </dl>                                                 <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO:   <% end %>                                               <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <% end %>                                                 <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <%=f.label :title  %>                                     <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <%=f.text_field :title  %>                                <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <br>                                                      <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <%=f.label :content  %>                                   <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <%=f.text_field :content  %>                              <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <br>                                                      <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <%= f.submit %>                                           <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <% end %>                                                 <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <%= link_to "ブログ一覧画面に戻る", blogs_path %>             <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: refer partial by changing new.html.erb like below <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <h2>ブログを作成する</h2>                             <<<< Refactor view using partial
+DIVE02=Rails2:HOWTO: <%= render 'form' %>                              <<<< Refactor view using partial
+DIVE02=Rails2:TODO: Refactor edit.html.erb using _form.html.erb partial
+DIVE02=Rails2:HOWTO: edit edit.html.erb to make content like below <<<< Refactor edit.html.erb using _form.html.erb partial
+DIVE02=Rails2:HOWTO: <h2>ブログ編集</h2>                             <<<< Refactor edit.html.erb using _form.html.erb partial
+DIVE02=Rails2:HOWTO: <%= render 'form' %>                          <<<< Refactor edit.html.erb using _form.html.erb partial
+DIVE02=Rails2:TODO: Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO: edit contact model class to add validations <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO: validates :name, presence: true <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO: validates :email, presence: true <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO: validates :content, presence: true <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO: edit controller to differentiate after dependent to result <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO: def create                                                 <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO:   @contact=Contact.new(contacts_params)                    <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO:   if @contact.save                                         <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO:     redirect_to new_contact_path                           <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO:   else                                                     <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO:     render 'new'                                           <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO:   end                                                      <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:HOWTO: end                                                        <<<< Add validations to contact function name/email/content not null
+DIVE02=Rails2:TODO: display thank you message at contact completion
+DIVE02=Rails2:HOWTO: edit controller to add , notice option                                    <<<< display thank you message at contact completion
+DIVE02=Rails2:HOWTO: BEFORE redirect_to contacts_path                                          <<<< display thank you message at contact completion
+DIVE02=Rails2:HOWTO: AFTER  redirect_to contacts_path, notice: "お問い合わせありがとうございました"     <<<< display thank you message at contact completion
+DIVE02=Rails2:HOWTO: placeholder on new.html.erb                                               <<<< display thank you message at contact completion
+DIVE02=Rails2:HOWTO: <%= notice %>                                                             <<<< display thank you message at contact completion
+DIVE02=Rails2:TODO:==========================================================
+DIVE03=Rails3:TODO: Set configure action(custom) in routes.rb
+DIVE03=Rails3:HOWWTO: custom action can be defined using either member or collection <<<< Set configure action(custom) in routes.rb
+DIVE03=Rails3:HOWWTO: this case, we do NOT need ID on confirmation and <<<< Set configure action(custom) in routes.rb
+DIVE03=Rails3:HOWWTO: use colledction syntax. <<<< Set configure action(custom) in routes.rb
+DIVE03=Rails3:HOWWTO: Before: resources :blogs only: [:index, :new, ...:destroy ]      <<<< Set configure action(custom) in routes.rb
+DIVE03=Rails3:HOWWTO: After : resources :blogs only: [:index, :new, ...:destroy ] do   <<<< Set configure action(custom) in routes.rb
+DIVE03=Rails3:HOWWTO:   collection do                                                  <<<< Set configure action(custom) in routes.rb
+DIVE03=Rails3:HOWWTO:     post :confirm                                                <<<< Set configure action(custom) in routes.rb
+DIVE03=Rails3:HOWWTO:   end                                                            <<<< Set configure action(custom) in routes.rb
+DIVE03=Rails3:HOWWTO: end                                                              <<<< Set configure action(custom) in routes.rb
+DIVE03=Rails3:HOWWTO: rake routes                                                      <<<< Set configure action(custom) in routes.rb
+DIVE03=Rails3:TODO: prepare skelton of confirm action on controller
+DIVE03=Rails3:HOWTO: edit app/controllers/blog_controller.rb            <<<< prepare skelton of confirm action on controller
+DIVE03=Rails3:HOWTO: def confirm                                        <<<< prepare skelton of confirm action on controller
+DIVE03=Rails3:HOWTO: end                                                <<<< prepare skelton of confirm action on controller
+DIVE03=Rails3:TODO: prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:HOWTO: _form.html.erb uses text_field.                   <<<< prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:HOWTO: this time we dont want to make it editable.       <<<< prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:HOWTO: f.hidden_field is best for such purpose           <<<< prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:HOWTO: vim app/views/blogs/confirm.html.erb              <<<< prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:HOWTO: <h3>以上の内容で、送信する。</h3>              <<<< prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:HOWTO: <%= form_for(@blog) do |f| %>             <<<< prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:HOWTO:   <%= f.hidden_field :title%>             <<<< prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:HOWTO:   <%= f.hidden_field :content%>           <<<< prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:HOWTO:   <p>タイトル：<%= @blog.title %>             <<<< prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:HOWTO:   <p>本文：<%= @blog.content %>             <<<< prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:HOWTO:   <f.submit "登録する" %>                   <<<< prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:HOWTO: <% end %>                                 <<<< prepare cofirm view, mimicking  _form.html.erb
+DIVE03=Rails3:TODO: set content into var in confirm action
+DIVE03=Rails3:HOWTO: use string parameter with Model.new method <<<< set content into var in confirm action
+DIVE03=Rails3:HOWTO: def confirm                                <<<< set content into var in confirm action
+DIVE03=Rails3:HOWTO:   @blog = Blog.new(blogs_params)           <<<< set content into var in confirm action
+DIVE03=Rails3:HOWTO: end                                        <<<< set content into var in confirm action
+DIVE03=Rails3:TODO: Set sequence of new then confirm
+DIVE03=Rails3:HOWTO: so far we have utilized def.behavior of form_for <<< Set sequence of new then confirm
+DIVE03=Rails3:HOWTO: def.behavior is a) when argument exists in db, submit update  action <<<< Set sequence of new then confirm
+DIVE03=Rails3:HOWTO: def.behavior is b) when argument not exists in db, submit create action <<<< Set sequence of new then confirm
+DIVE03=Rails3:HOWTO: therefore we need to change this behavior by option param on form_for <<<< Set sequence of new then confirm
+DIVE03=Rails3:HOWTO: vim app/views/blogs/_form.html.erb <<<< Set sequence of new then confirm
+DIVE03=Rails3:HOWTO: <%= form_for (@blog, url:confirm_blogs_path)do |f| %> <<<< Set sequence of new then confirm
+DIVE03=Rails3:HOWTO: confirm new action function, and edit function gives error <<<< Set sequence of new then confirm
+DIVE03=Rails3:TODO: update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO: define helper method <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO: predefined var action_name is useful to control by action       <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO: one way to do it is describe it in form_for parameter like       <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO: <%= from_for(@blog, if action_name=='new' url: confirm_blogs_path else blog_path end ) do |f| %> <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO: but code is not easy to read, helper method will help us.  <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO: vim app/helpers/blogs_helper.rb                            <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO: module BlogsHelper                                         <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO:   def choose_new_or_edit                                   <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO:     if action_name == 'new' || action_name == 'confirm'    <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO:       confirm_blogs_path                                   <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO:     elsif action_name == 'edit'                   <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO:       blog_path                                   <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO:     end                                           <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO:   end                                             <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:HOWTO: end                                               <<<< update action need to be routed to blogs_path
+DIVE03=Rails3:TODO: refer helper method
+DIVE03=Rails3:HOWTO: vim app/views/blogs/_form.html.erb  <<<< refer helper method
+DIVE03=Rails3:HOWTO: <%= form_for(@blog url: choose_new_or_edit) do |f| %> <<<< refer helper method
+DIVE03=Rails3:TODO: Put back button on confirm screen
+DIVE03=Rails3:HOWTO: to put a button to get back to prev action,         <<<< Put back button on confirm screen
+DIVE03=Rails3:HOWTO: link_to with :back param can do like below          <<<< Put back button on confirm screen
+DIVE03=Rails3:HOWTO: <%= link_to "戻る", :back %>                         <<<< Put back button on confirm screen
+DIVE03=Rails3:HOWTO: however, it will NOT populate values in text box    <<<< Put back button on confirm screen
+DIVE03=Rails3:HOWTO: (def.HTTP method is get for link_to)                <<<< Put back button on confirm screen
+DIVE03=Rails3:HOWTO: implement form_for for back button on confirm view <<<< Put back button on confirm screen
+DIVE03=Rails3:HOWTO: vim app/views/blogs/confirm.html.erb                           <<<< Put back button on confirm screen
+DIVE03=Rails3:HOWTO: (after first block of form_for)i                               <<<< Put back button on confirm screen
+DIVE03=Rails3:HOWTO: <%= form_for(@blog, url:new_blog_path, methhod:'get') do |f|   <<<< Put back button on confirm screen
+DIVE03=Rails3:HOWTO:   <%= f.hidden_field :title %>                                 <<<< Put back button on confirm screen
+DIVE03=Rails3:HOWTO:   <%= f.hidden_field :content %>                               <<<< Put back button on confirm screen
+DIVE03=Rails3:HOWTO:   <%= f.submit "戻る" %>                               <<<< Put back button on confirm screen
+DIVE03=Rails3:HOWTO: <% end %>                                              <<<< Put back button on confirm screen
+DIVE03=Rails3:TODO: Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO: implement logic, only when new action kicked by back button,     <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO: @blog=Blog.new(blogs_params)                                     <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO: put name on back button on confirm view                          <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO: vim app/views/blogs/confirm.html.erb                             <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO: ..........                                                       <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO:   <$= f.submit "戻る", name: 'back' %>                           <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO: Edit new action and differentiate by existence of :back in params <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO: vim app/controllers/blogs_controller.rb        <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO: def new                                        <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO:   if params[:back]                             <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO:     @blog = Blog.new(blogs_params)             <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO:   else                                         <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO:     @blog = Blog.new                           <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO:   end                                          <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:HOWTO: end                                            <<<< Still new action will initialize parameter. Avoid it 
+DIVE03=Rails3:TODO: Correct validation timing, before confirmation view 
+DIVE03=Rails3:HOWTO: In confirm action, explicitly call validation       <<<< Correct validation timing, before confirmation view 
+DIVE03=Rails3:HOWTO: vim app/controllers/blogs_controller.rb             <<<< Correct validation timing, before confirmation view 
+DIVE03=Rails3:HOWTO: def confirm                                         <<<< Correct validation timing, before confirmation view 
+DIVE03=Rails3:HOWTO:   @blog = Blog.new(blogs_params)                    <<<< Correct validation timing, before confirmation view 
+DIVE03=Rails3:HOWTO:   render :new if @blog.invalid?                     <<<< Correct validation timing, before confirmation view 
+DIVE03=Rails3:HOWTO: end                                                 <<<< Correct validation timing, before confirmation view 
+DIVE03=Rails3:HOWTO: @blog.invalid? is doing validation and return ....  <<<< Correct validation timing, before confirmation view 
+DIVE03=Rails3:HOWTO: true if validation  failed                          <<<< Correct validation timing, before confirmation view 
+DIVE03=Rails3:HOWTO: false if validation success                         <<<< Correct validation timing, before confirmation view 
+DIVE03=Rails3:TODO: HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: Configure route for confirm action             <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: resources :confirms, only: [:edit, :create] do <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:    collection do                               <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:      post :confirm                             <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:    end                                         <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: end                                            <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: create confirm view                            <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: vim app/views/contacts/confirm.html.erb        <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: <h3>以下の内容で送信する。</h3>                    <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: <%=form_for(@contact) do |f| %>                <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:  <%=f.hidden_field :name%>                     <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:  <%=f.hidden_field :email%>                     <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:  <%=f.hidden_field :content%>                     <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:  <p><%= @contact.name %> </p>                    <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:  <p><%= @contact.email %> </p>                   <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:  <p><%= @contact.content %> </p>                 <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:  <%= f.submit "送信する..." %>                     <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: <% end %>                                         <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: set variable content in controller         <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: vim app/controllers/contacts_controller.rb <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: def confirm                                <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:    @contact = Contact.new(contacts_params) <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: end                                        <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: enable transition from new action to confirm action          <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: edit new.html.erb and specify the url in option of form_for  <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: <%= form_for(@contact, urr: confirm_contacts_path) do |f|    <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: ..                                                           <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: implement back button         <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: vim app/viees/contacts/confirm.html.erb   <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: .....                         <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: <%= form_for(@contact, url:new_contact_path, method: 'get') do |f| <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:   <%= f.hidden_field :name %>       <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:   <%= f.hidden_field :email %>      <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:   <%= f.hidden_field :content %>    <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:   <%= f.submit '戻る' %>             <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: <% end %>                           <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: to populate input value in new view, name the back button as back <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: vim new.html.erb                                                  <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: <%= f.submit '戻る', name: 'back' %>                               <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: add logic in new action                    <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: vim contacts_controller.rb                 <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: def new                                    <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:  if params[:back]                          <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:    @contact = Contact.new(contacts_params) <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:  else                                      <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:    @contact = Contact.new                  <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:  end                                       <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: end                                        <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: validate before moving to confim view              <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: vim contacts_controller.rb                         <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: def confirm                                         <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:    @contact = Contact.new(contacts_params)          <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO:    render :new if @contact.invalid?                 <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:HOWTO: end                                                 <<<< HOMEWK.Implement confirm page and back button on contact
+DIVE03=Rails3:TODO:==========================================================
+DIVE04=BootStrap:TODO:Setup bootstrap library, twitter-bootstrap-rails
+DIVE04=BootStrap:HOWTO: 1. write gem name into gemfile             <<<< Setup bootstrap library, twitter-bootstrap-rails
+DIVE04=BootStrap:HOWTO: vim achieve/Gemfile                        <<<< Setup bootstrap library, twitter-bootstrap-rails
+DIVE04=BootStrap:HOWTO: add line like below                        <<<< Setup bootstrap library, twitter-bootstrap-rails
+DIVE04=BootStrap:HOWTO: gem 'twitter-bootstrap-rails'              <<<< Setup bootstrap library, twitter-bootstrap-rails
+DIVE04=BootStrap:HOWTO: 2. execute bundle install                  <<<< Setup bootstrap library, twitter-bootstrap-rails
+DIVE04=BootStrap:HOWTO: bundle install                             <<<< Setup bootstrap library, twitter-bootstrap-rails
+DIVE04=BootStrap:HOWTO: 3. locate required CSS files               <<<< Setup bootstrap library, twitter-bootstrap-rails
+DIVE04=BootStrap:HOWTO: rails generate bootstrap:install static    <<<< Setup bootstrap library, twitter-bootstrap-rails
+DIVE04=BootStrap:TODO: Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO: 1. prepare route for toppage                            <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  add root path to invoke top controller index action    <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  edit routes.rb and add below line                      <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  root 'top#index'                                       <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO: 2. generate top controller with index action            <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  rails g controller Tap index                           <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  remove unnecessary entry in routes.rb                  <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO: 3. copy index.html to proper place with new name        <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  cp index.html achieve/app/views/top/index.html.erb      <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  leave one layer below body to keep only level of header <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  copy styles.css into app/assets/stylesheets/top.scss <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  cp style.css achieve/app/assets/stylesheets/top.scss <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  4. copy normalize.css file into assets/stylesheet        <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  cp normalize.css achieve/app/achieve/assets/stylesheets/ <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  5. move image files as well                              <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  cp images-master/* achieve/app/assets/images/            <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  6. correct path to image                                 <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  edit index.htlm.erb and specify image file path like below <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  vim achieve/app/views/top/index.html.erb                   <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  <img src= "<%= asset_path "filename.png" %>">              <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  edit tops.scss to have correct url for header.jpg          <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  .main-header {                       <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  .....                                <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  background-image: url("header.jpg"); <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  .....                                <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  }                                    <<<< Make index.html as top page of Achieve
+DIVE04=BootStrap:TODO: Utilize bootstrap on toppage function area..
+DIVE04=BootStrap:HOWTO: 1. enclose block with section tag with below class <<<< Utilize bootstrap on toppage function area..
+DIVE04=BootStrap:HOWTO: function container-fluid                           <<<< Utilize bootstrap on toppage function area..
+DIVE04=BootStrap:HOWTO: 2. enclose with div next inner level of section with class row <<<< Utilize bootstrap on toppage function area..
+DIVE04=BootStrap:HOWTO: 3. enclose each function-image with below class <<<< Utilize bootstrap on toppage function area..
+DIVE04=BootStrap:HOWTO: col-md-3 col-sm-6                               <<<< Utilize bootstrap on toppage function area..
+DIVE04=BootStrap:HOWTO: 4. remove unnecessary css                       <<<< Utilize bootstrap on toppage function area..
+DIVE04=BootStrap:HOWTO: .function-images <<<< Utilize bootstrap on toppage function area..
+DIVE04=BootStrap:HOWTO: .function-image <<<< Utilize bootstrap on toppage function area..
+DIVE04=BootStrap:TODO: Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO: edit app/views/layout/application.html.erb   <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO: add below header to above <%= yeild %>       <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO: <header>                                     <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO:   <ul>                                 <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO:     <li><a href="#">Acieve</a></li>   <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO:     <li><a href="#">トップページ</a></li>  <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO:     <li><a href="#">お問合わせ</a></li>  <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO:     <li><a href="#">ブログ</a></li>      <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO:   </ul>                                 <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO: </header>                                            <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO: add below footer to beloe <%= yeild %>               <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO: <footer>                                             <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO:   <p>運営会社DIVE INTO CODE株式会社</p>                 <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO:   <p>©︎2015-2016 Copyrights DIVE INTO CODE Corp.</p>  <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO: </footer>                                             <<<< Implement header and footer into layout file
+DIVE04=BootStrap:HOWTO: remove the same content from top/index.html.erb       <<<< Implement header and footer into layout file
+DIVE04=BootStrap:TODO: Apply Bootstrap to blog screens <NOHOWTO>
+DIVE04=BootStrap:TODO: Make Bootstrap smartphone compliant
+DIVE04=BootStrap:HOWTO: insert below line into head section of application.html.erb         <<<< Make Bootstrap smartphone compliant
+DIVE04=BootStrap:HOWTO: <meta name="viewport" content="width=device-width,initial-scale=1"> <<<< Make Bootstrap smartphone compliant
+DIVE04=BootStrap:TODO: Align blog list to center
+DIVE04=BootStrap:HOWTO: edit index.html.erb                                         <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO: delete content from below line                            <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO: <p><%= notice %> </p>                                     <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO: ... to this line                                           <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO: <%= link_to "ブログを作成する", new_blog_path %>             <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO: instead, insert content like below.                <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO: <div class="container">                            <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"> <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:     <p><%= notice %></p>                            <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:     <h1>ブログ一覧</h1>                               <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:     <%=link_to "ブログを作成する", new_blog_path, class:'btn btn-default' %>    <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:     <% @blogs.each do |blog| %>                      <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:       <div class="row">                              <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:         <h4><strong><%= blog.title%></strong></h4>    <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:         <p><%= blog.content %></p>                   <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:         <%= link_to "編集", edit_blog_path(blog.id), class:'btn btn-default btn-sm btn-success' %>                <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:         <%= link_to "削除", blog_path(blog.id), method: :delete, data: {confirm: '本当に削除してもいいですか？'}, class: 'btn btn-default btn-sm btn-danger' %> <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:       </div>                                        <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:     <% end %>                                     <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO:   </div>                                           <<<< Align blog list to center
+DIVE04=BootStrap:HOWTO: </div>                                             <<<< Align blog list to center
+DIVE04=BootStrap:TODO: enclose edit.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO: change the file to make it like this.           <<<< enclose edit.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO: <div class="container">                         <<<< enclose edit.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:   <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1"> <<<< enclose edit.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:     <h2>ブログを編集する</h2>                       <<<< enclose edit.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:     <$= render 'form' %>                         <<<< enclose edit.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:   </div>                                        <<<< enclose edit.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO: </div>                                          <<<< enclose edit.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:TODO: enclose new.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO: edit new.html.erb file to make it like below. <<<< enclose new.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO: <div class="container">                        <<<< enclose new.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:   <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1"> <<<< enclose new.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:     <h2>ブログを作成する</h2>                     <<<< enclose new.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:     <%= render 'form' %>                      <<<< enclose new.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:   </div>                                      <<<< enclose new.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO: </div>                                        <<<< enclose new.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:TODO: enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO: edit new.html.erb to make it like below <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO: <div class="container">                 <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:   <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1"> <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:     <h3>以下の内容で送信する</h3>           <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:     <%= form_for(@blog) do |f| %>       <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:       <%= f.hidden_field :title %>      <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:       <%= f.hidden_field :content %>    <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:       <p>タイトル：<%= @blog.title %></p>    <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:       <p>本文：<%= @blog.content %></p>   <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:       <%= f.submit "登録", class:'btn btn-primary btn-block' %>             <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:     <% end %>                           <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:     <%= form_for(@blog, url: new_blog_path, method: 'get') do |f| %>   <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:       <%= f.hidden_field :title %>      <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:       <%= f.hidden_field :content %>     <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:       <%= f.submit "戻る", name: 'back', class:'btn btn-default btn-block' %>     <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:     <% end %>                            <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO:   </div>                                 <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:HOWTO: </div>                                   <<<< enclose confirm.html.erb by div with container, and responsive classes
+DIVE04=BootStrap:TODO: decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO: edit _form.html.erb to make it like below <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO: <%= form_for(@blog, url: choose_new_or_edit) do |f| %> <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO: <% if @blog.errors.any? %> <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO:   <div id="error_explanation"> <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO:     <h2><%= @blog.errors.count %>件のエラーがあります。</h2> <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO:                                                        <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO:     <ul>                                               <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO:       <%<"blog.errors.full_messages.each do |msg| %>   <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO:         <li><%= msg %></li>                            <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO:       <% end %>                                        <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO:     </ul>                                              <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO:   </div>                                               <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO: <% end %>                                              <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO: <%= f.label :タイトル%>                                   <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO: <%= f.text_field :title, class: 'form-control' %>       <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO: <br>                                                   <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO: <%= f.label :内容 %>                                    <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO: <%= f.text_field :content, class: 'form-control' %>     <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO: <br>                                                     <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO: <%= f.submit '投稿', class:'btn btn-primary btn-block' %> <<<< decorate form design with form-control class 
+DIVE04=BootStrap:HOWTO: <% end %>                                               <<<< decorate form design with form-control class 
+DIVE04=BootStrap:TODO: decorate confirmation window 
+DIVE04=BootStrap:HOWTO: edit confirm.html.erb                         <<<< decorate confirmation window 
+DIVE04=BootStrap:HOWTO: put below classes to submit button            <<<< decorate confirmation window 
+DIVE04=BootStrap:HOWTO: btn btn-primary btn-block                     <<<< decorate confirmation window 
+DIVE04=BootStrap:HOWTO: put below classes to back button              <<<< decorate confirmation window 
+DIVE04=BootStrap:HOWTO: btn btn-default btn-block                     <<<< decorate confirmation window 
+DIVE04=BootStrap:HOWTO: syntax for both cases are like below          <<<< decorate confirmation window 
+DIVE04=BootStrap:HOWTO: ..., class: 'btn ...' %>                      <<<< decorate confirmation window 
+DIVE04=BootStrap:TODO: Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: edit app/assets/stylesheets/blogs.scss                             <<<< Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: to wrapper class, add below design                                 <<<< Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: put 74px of margin at bottom                                       <<<< Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: add padding like below sequence                                    <<<< Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: 20px 20px 20px 35px                                                <<<< Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: still inside wrapper class add another class .row and define below design <<<< Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: draw solid border line at bottom with 1px , color #ccc             <<<< Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: set padding 20px                                                   <<<< Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: align text to the left                                             <<<< Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: specify word wrap logic to be break-word style                     <<<< Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: specify submit button with class btn-block to be margin like below <<<< Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: put 15px on top and bottom, and 0 px for right and left            <<<< Add CSS to design on blog window
+DIVE04=BootStrap:HOWTO: define container class to have padding at bottom by 85px           <<<< Add CSS to design on blog window
+DIVE04=BootStrap:TODO: Edit header to have link to blog and contact function
+DIVE04=BootStrap:HOWTO: verify routing by rake routes command                    <<<< Edit header to have link to blog and contact function
+DIVE04=BootStrap:HOWTO: edit app/views/layouts/applicaiton.html.erb              <<<< Edit header to have link to blog and contact function
+DIVE04=BootStrap:HOWTO: look for ul block having 4 li elements                   <<<< Edit header to have link to blog and contact function
+DIVE04=BootStrap:HOWTO: for Achive and Top Page                                  <<<< Edit header to have link to blog and contact function
+DIVE04=BootStrap:HOWTO: 1. remove a tag                                          <<<< Edit header to have link to blog and contact function
+DIVE04=BootStrap:HOWTO: 2. replace with <%= link_to "linktext", root_path %>     <<<< Edit header to have link to blog and contact function
+DIVE04=BootStrap:HOWTO: 3. for contact, replace using new_contact_path           <<<< Edit header to have link to blog and contact function
+DIVE04=BootStrap:HOWTO: 4. for blog, replace using blogs_path                    <<<< Edit header to have link to blog and contact function
+DIVE04=BootStrap:TODO:==========================================================
+DIVE04=BootStrap:TODO: Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: use responsive design                                          <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: edit new.html.erb in contact view directory                    <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: <div class="container">                                        <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:   <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">  <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:     <p><%= notice %></p>                                       <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:     <% if @contact.errors.any? %>                              <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <h2><%= @contact.errors.count %>件のエラーがあります</h2>     <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <div id="error_explanation">                             <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:         <ul>                                                <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:           <% @contact.errors.full_messages.each do |msg| %>  <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:             <li><%= msg %></li>                      <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:           <% end %>                                  <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:         </ul>                                        <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       </div> <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:     <% end %>    <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:     <h1>お問合わせフォーム</h1>   <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:     <%= form_for(@contact, url:confirm_contacts_path) do |f| %> <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <%= f.label :お名前 %>                                 <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <%= f.text_field :name, class:'form-control' %>       <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <br>                                                  <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <%= f.label :メールアドレス %>                            <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <%= f.text_field :email, class:'form-control' %>      <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <br>                                                  <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <%= f.label :お問合わせ内容 %>                           <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <%= f.text_field :content, class:'form-control' %>     <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <br>                                                   <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <%= f.submit "送信",class: 'btn btn-primary btn-block' %> <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:     <% end %>                                               <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:   </div>                                                    <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: </div>                                                      <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: edit confirm.html.erb form in view contact directory        <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: <div class="container">                                                <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:   <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">     <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:     <h3>以下の内容で送信します</h3>                                    <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:     <%= form_for(@contact) do |f| %>                                   <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <%= f.hidden_field :name %>                                      <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <%= f.hidden_field :email %>                                     <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <%= f.hidden_field :content %>                                   <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <p>お名前：<%= @contact.name %>                                  <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <p>メールアドレス：<%= @contact.email %>                         <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <p>お問合わせ内容：<%= @contact.content %>                       <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:       <%= f.submit '送信', class: 'btn btn-primary btn-block'%> <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:     <% end %>                                            <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:   </div>                                                 <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: </div>                                                   <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: edit controller for contact to change the destination path for <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: completion of saving content of contact                        <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: def create                                                     <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:   @contact = Contact.new(contacts_params)                      <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:   if @contact.save                                             <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:     redirect_to root_path, notice:"お問合わせありがとうございます。"    <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:   else                                                         <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:     render 'new'                                               <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO:   end                                                          <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: end                                                            <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: add place holder for notice in top page                        <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: edit application.html.erb in vies/laoyouts directory           <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: insert below above <%= yield %>                                <<<< Decorate contact(new input) screen with bootstrap
+DIVE04=BootStrap:HOWTO: <%= notice %>                                                  <<<< Decorate contact(new input) screen with bootstrap
+DIVE05=JavaScript:TODO: ====================================================
+DIVE05=JavaScript:TODO: Understand JavaScript JQuery Coffe Script
+DIVE05=JavaScript:HOWTO: JQuery is JavaScript library                 <<<< Understand JavaScript JQuery Coffe Script
+DIVE05=JavaScript:HOWTO: CoffeeScript is Syntax Sugar for JavaScript  <<<< Understand JavaScript JQuery Coffe Script
+DIVE05=JavaScript:TODO: Obtain DOM element id=HOGE by JavaScript syntax
+DIVE05=JavaScript:HOWTO: document.getElementById('HOGE')  <<<< Obtain DOM element id=HOGE by JavaScript syntax
+DIVE05=JavaScript:TODO: Obtain DOM element id=HOGE by JQuery syntax
+DIVE05=JavaScript:HOWTO: $('#HOGE')    <<<< Obtain DOM element id=HOGE by JQuery syntax
+DIVE05=JavaScript:TODO: Understand relation between JavaScript and CoffeScript
+DIVE05=JavaScript:HOWTO: CoffeeScript is extended lang for JavaScript         <<<< Understand relation between JavaScript and CoffeScript
+DIVE05=JavaScript:HOWTO: Amount of code notation in CS is 1/3 compared to JS  <<<< Understand relation between JavaScript and CoffeScript
+DIVE05=JavaScript:HOWTO: Code in CS will be converted into JS in runtime      <<<< Understand relation between JavaScript and CoffeScript
+DIVE05=JavaScript:TODO: Create Button for scrolling to top (*)
+DIVE05=JavaScript:TODO: Understand jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: turbo linkes is library which acceralates view transition     <<<< Understand jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: by utilizing cache max 10 pages.                              <<<< Understand jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: Major drawback is document.ready event is not invoked         <<<< Understand jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: There is a work around like utilizing TL triger like          <<<< Understand jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: 'page:before-change'                                      <<<< Understand jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: 'page:receive'                                            <<<< Understand jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: 'page:change'                                             <<<< Understand jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: 'page:update'                                             <<<< Understand jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: 'page:load'                                               <<<< Understand jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: 'page:restore'                                            <<<< Understand jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: 'page:expire'                                             <<<< Understand jquery-turbolinks gem
+DIVE05=JavaScript:TODO: Install jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: edit app/Gemfile       <<<< Install jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: add below line          <<<< Install jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: gem 'jquery-turbolinks' <<<< Install jquery-turbolinks gem
+DIVE05=JavaScript:HOWTO: bundle instsall         <<<< Install jquery-turbolinks gem
+DIVE05=JavaScript:TODO: Specify sequence order between jquery and jquery.turbolinks loading 
+DIVE05=JavaScript:HOWTO: edit app/assets/javascript/application.js <<<< Specify sequence order between jquery and jquery.turbolinks loading 
+DIVE05=JavaScript:HOWTO: make sure below 2 lines appear in this order <<<< Specify sequence order between jquery and jquery.turbolinks loading 
+DIVE05=JavaScript:HOWTO: //=require jquery            <<<< Specify sequence order between jquery and jquery.turbolinks loading 
+DIVE05=JavaScript:HOWTO: //=require jquery.turbolinks <<<< Specify sequence order between jquery and jquery.turbolinks loading 
+DIVE05=JavaScript:TODO: Code button by HTML
+DIVE05=JavaScript:HOWTO: edit app/views/top/index.html.erb                           <<<< Code button by HTML
+DIVE05=JavaScript:HOWTO: add below block of code                                     <<<< Code button by HTML
+DIVE05=JavaScript:HOWTO: <div id="page-top-btn" class="page-top-btn">                <<<< Code button by HTML
+DIVE05=JavaScript:HOWTO:   <p><a class="move-page-top" id="move-page-top">▲</a></p>  <<<< Code button by HTML
+DIVE05=JavaScript:HOWTO: </div>                                                      <<<< Code button by HTML
+DIVE05=JavaScript:TODO: Apply CSS design on top button
+DIVE05=JavaScript:HOWTO: edit app/assets/stylesheets/top.scss  <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO: .page-top-btn {                       <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:   display: block;                     <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:   border-radius: 50px;                <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:   background: #335599;                <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:   width: 60px;                        <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:   height: 60px;                       <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:   transition: all 0.3s;               <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:   cursor: pointer;                    <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:   a {                                 <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:      display: block;                  <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:      color: white;                    <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:      line-heith: 60px;                <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:      text-decoration: none;           <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:    }                                  <<<< Apply CSS design on top button
+DIVE05=JavaScript:HOWTO:  }                                    <<<< Apply CSS design on top button
+DIVE05=JavaScript:TODO: Verify button was created (*)
+DIVE05=JavaScript:TODO: Change position for top button to be right bottom
+DIVE05=JavaScript:HOWTO: edit app/assets/stylesheets/top.scss  <<<< Change position for top button to be right bottom
+DIVE05=JavaScript:HOWTO: add below styls on page-top-btn class <<<< Change position for top button to be right bottom
+DIVE05=JavaScript:HOWTO: position: fixed;      <<<< Change position for top button to be right bottom
+DIVE05=JavaScript:HOWTO: right: 30px;         <<<< Change position for top button to be right bottom
+DIVE05=JavaScript:HOWTO: bottom: 30px;        <<<< Change position for top button to be right bottom
+DIVE05=JavaScript:HOWTO: z-index: 20;          <<<< Change position for top button to be right bottom
+DIVE05=JavaScript:TODO: Add effect to fade-out by hover
+DIVE05=JavaScript:HOWTO: edit app/assets/stylesheets/top.scss           <<<< Add effect to fade-out by hover
+DIVE05=JavaScript:HOWTO: add below in page-top-btn class definition     <<<< Add effect to fade-out by hover
+DIVE05=JavaScript:HOWTO: &:hover {                                      <<<< Add effect to fade-out by hover
+DIVE05=JavaScript:HOWTO:   opacity: 0.7;                                <<<< Add effect to fade-out by hover
+DIVE05=JavaScript:HOWTO: }                                              <<<< Add effect to fade-out by hover
+DIVE05=JavaScript:TODO: Prepare CoffeeScript file for effect on scrolltop button
+DIVE05=JavaScript:HOWTO: touch app/assets/javascripts/scrolltop.js.coffee <<<< Prepare CoffeeScript file for effect on scrolltop button
+DIVE05=JavaScript:TODO: Understand basic syntax of CS
+DIVE05=JavaScript:HOWTO: [JS] function(){};      [CS] $ ->        <<<< Understand basic syntax of CS
+DIVE05=JavaScript:HOWTO: [JS] function hoge(){}; [CS] $ hoge->    <<<< Understand basic syntax of CS
+DIVE05=JavaScript:HOWTO: [JS] var hoge :         [CS] hoge        <<<< Understand basic syntax of CS
+DIVE05=JavaScript:HOWTO: [JS] function()         [CS] $ ->        <<<< Understand basic syntax of CS
+DIVE05=JavaScript:HOWTO: [JS]   ----;            [CS]   ----      <<<< Understand basic syntax of CS
+DIVE05=JavaScript:HOWTO: [JS]   ----;            [CS]   ----      <<<< Understand basic syntax of CS
+DIVE05=JavaScript:HOWTO: [JS]   ----;            [CS]   ----      <<<< Understand basic syntax of CS
+DIVE05=JavaScript:HOWTO: [JS] };                                  <<<< Understand basic syntax of CS
+DIVE05=JavaScript:TODO: Understand how to obtain HTML elements by JQuery
+DIVE05=JavaScript:HOWTO: $('elements')  div p li  <<<< Understand how to obtain HTML elements by JQuery
+DIVE05=JavaScript:HOWTO: $('.class')              <<<< Understand how to obtain HTML elements by JQuery
+DIVE05=JavaScript:HOWTO: $('#id')                 <<<< Understand how to obtain HTML elements by JQuery
+DIVE05=JavaScript:TODO: Edit CoffeeScript to be imported on page load
+DIVE05=JavaScript:HOWTO: edit coffee script and add below content  <<<< Edit CoffeeScript to be imported on page load
+DIVE05=JavaScript:HOWTO: ready = ->                                <<<< Edit CoffeeScript to be imported on page load
+DIVE05=JavaScript:HOWTO:                                           <<<< Edit CoffeeScript to be imported on page load
+DIVE05=JavaScript:HOWTO: $(document).ready(ready)                  <<<< Edit CoffeeScript to be imported on page load
+DIVE05=JavaScript:HOWTO: $(document).on('page:load', ready)        <<<< Edit CoffeeScript to be imported on page load
+DIVE05=JavaScript:TODO: Add scroll event to CofffeeScript
+DIVE05=JavaScript:HOWTO: edit coffee script and add below block after ready line = -> <<<< Add scroll event to CofffeeScript
+DIVE05=JavaScript:HOWTO:   $(window).scroll -> <<<< Add scroll event to CofffeeScript
+DIVE05=JavaScript:TODO: Obtain scroll depth from top
+DIVE05=JavaScript:HOWTO: add below line in scroll event   <<<< Obtain scroll depth from top
+DIVE05=JavaScript:HOWTO: height = $(window).scrollTop()   <<<< Obtain scroll depth from top
+DIVE05=JavaScript:TODO: Obtain scroll button which has ID=page-top-btn
+DIVE05=JavaScript:HOWTO: add below line in scroll event in coffee script <<<< Obtain scroll button which has ID=page-top-btn
+DIVE05=JavaScript:HOWTO: element = $('#page-top-btn')                    <<<< Obtain scroll button which has ID=page-top-btn
+DIVE05=JavaScript:TODO: Obtain bool state of visibility of scroll button
+DIVE05=JavaScript:HOWTO: add below line in scroll event after obtained element  <<<< Obtain bool state of visibility of scroll button
+DIVE05=JavaScript:HOWTO: visible = element.is(':visible')                       <<<< Obtain bool state of visibility of scroll button
+DIVE05=JavaScript:TODO: Change the visibilty by fade{in|out} depending on scroll depth
+DIVE05=JavaScript:HOWTO: add below block after element, visible, and height  are obtained. <<<< Change the visibilty by fade{in|out} depending on scroll depth
+DIVE05=JavaScript:HOWTO:  if height > 400                                                  <<<< Change the visibilty by fade{in|out} depending on scroll depth
+DIVE05=JavaScript:HOWTO:    element.fadeIn() if !visible                                   <<<< Change the visibilty by fade{in|out} depending on scroll depth
+DIVE05=JavaScript:HOWTO:  else                                                             <<<< Change the visibilty by fade{in|out} depending on scroll depth
+DIVE05=JavaScript:HOWTO:    element.fadeOut()                                              <<<< Change the visibilty by fade{in|out} depending on scroll depth
+DIVE05=JavaScript:TODO: By spec initial state of page-top-btn has to be invisible. Do it.
+DIVE05=JavaScript:HOWTO: open top.scss file                           <<<< By spec initial state of page-top-btn has to be invisible. Do it.
+DIVE05=JavaScript:HOWTO: find display selector for page-top-btn class <<<< By spec initial state of page-top-btn has to be invisible. Do it.
+DIVE05=JavaScript:HOWTO: change the line to below                     <<<< By spec initial state of page-top-btn has to be invisible. Do it.
+DIVE05=JavaScript:HOWTO:  display: nont;                              <<<< By spec initial state of page-top-btn has to be invisible. Do it.
+DIVE05=JavaScript:TODO: Add scroll to top effect in CS script
+DIVE05=JavaScript:HOWTO: edit app/assets/javascripts/scrolltop.js.coffee <<<< Add scroll to top effect in CS script
+DIVE05=JavaScript:HOWTO: add below description <<<< Add scroll to top effect in CS script
+DIVE05=JavaScript:HOWTO: $(document).on 'click', '#move-page-top', ->       <<<< Add scroll to top effect in CS script
+DIVE05=JavaScript:HOWTO:   $('html, body').animate({ scrollTop: 0 }, 'slow')<<<< Add scroll to top effect in CS script
+DIVE05=JavaScript:TODO: Apply Bootstrap on Header (*)
+DIVE05=JavaScript:TODO: Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO: Go BootStrap official site and find nav bar sesion <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO: http://getbootstrap.com/components/#navbar <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO: Copy and paste to change header.<<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO: edit app/views/layouts/application.html.erb <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO: <nav class="navbar navbar-default"> <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:   <div class="container-fluid">      <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:     <!-- Brand and toggle get grouped for better mobile display -->   <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:     <div class="navbar-header"> <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">  <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:         <span class="sr-only">Toggle navigation</span> <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:         <span class="icon-bar"></span> <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:         <span class="icon-bar"></span> <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:         <span class="icon-bar"></span> <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:       </button>                        <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:       <%= link_to "Achieve", root_path, class: "navbar-brand" %>   <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:     </div>                                                         <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:     <!-- Collect the nav links, froms, and other content for toggling -->    <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:       <ul class="nav navbar-nav navbar-right">                                <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:         <li><%= link_to "お問合わせ", new_contact_path %></li>                  <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:         <li class="dropdown">                 <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:           <a href="#" class="drodown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span calss="caret"></span></a>  <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:           <ul class="dropdown-menu">                         <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:             <li><%= link_to "ブログ", blogs_path %></li>      <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:           </ul>               <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:         </li>                 <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:       </ul>                   <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:     </div>  <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO:   </div>    <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:HOWTO: </nav>       <<<< Find sample code from BootStrap site.
+DIVE05=JavaScript:TODO: Verify(*)
+DIVE05=JavaScript:TODO: Add design on header
+DIVE05=JavaScript:HOWTO: edit app/asets/stylesheets/top.scss                   <<<< Add design on header
+DIVE05=JavaScript:HOWTO: delete blocks below                                   <<<< Add design on header
+DIVE05=JavaScript:HOWTO: header ul/header ul a/header ul:after/header li       <<<< Add design on header
+DIVE05=JavaScript:HOWTO: add below instead                                     <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  .navbar-default {                                    <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    border: 0;                                         <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  }                                                    <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  .navbar {                                            <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    background-color: transparent;                     <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    color: white:                                      <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    margin-bottom: 0px;                                <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  }                                                   <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  .navbar-default {                                    <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    .navbar-brand {                                    <<<< Add design on header
+DIVE05=JavaScript:HOWTO:      color: #ccc;                                     <<<< Add design on header
+DIVE05=JavaScript:HOWTO:      &:hover {                                        <<<< Add design on header
+DIVE05=JavaScript:HOWTO:        color: white;                                  <<<< Add design on header
+DIVE05=JavaScript:HOWTO:      }                                                <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  }                                                    <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  .navbar-nav > li > a {                               <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    color: #ccc;                                       <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    &:hover, %:focus {                                 <<<< Add design on header
+DIVE05=JavaScript:HOWTO:      color: white;                                    <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    }                                                  <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  }                                                    <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  .navbar-nav > .open > a {                            <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    background-color: transparent;                     <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    color: white;                                      <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    &:hover, &:focus {                                 <<<< Add design on header
+DIVE05=JavaScript:HOWTO:      background-color: transparent;                   <<<< Add design on header
+DIVE05=JavaScript:HOWTO:      color: white;                                    <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    }                                                  <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  }                                                    <<<< Add design on header
+DIVE05=JavaScript:HOWTO: }                                                       <<<< Add design on header
+DIVE05=JavaScript:HOWTO: @media (max-width: 767px) {                             <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  .navbar-default .navbar-nav .open .dropdown-menu > li > a { <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    color: #ccc;                                         <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    text-align: center;                                  <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    &:hover, &:focus {                                   <<<< Add design on header
+DIVE05=JavaScript:HOWTO:      color: white;                                      <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    }                                                    <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  }                                                      <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  .navbar-default .navbar-toggle {                       <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    background-color: transparent;                       <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    &:hover, &:focus {                                   <<<< Add design on header
+DIVE05=JavaScript:HOWTO:      background-color: transparent;                     <<<< Add design on header
+DIVE05=JavaScript:HOWTO:    }                                                    <<<< Add design on header
+DIVE05=JavaScript:HOWTO:  }                                                      <<<< Add design on header
+DIVE05=JavaScript:HOWTO: }                                                       <<<< Add design on header
+DIVE05=JavaScript:TODO: Implement scroll top button(*)
+DIVE05=JavaScript:TODO: Show the button only after 200px scrolled down
+DIVE06=GitHub:TODO: Understand Git anad Github (*)
+DIVE06=GitHub:TODO: Understand four merit points by utilizing Git
+DIVE06=GitHub:HOWTO: 1. Can tell change summary at glance.                          <<<< Understand four merit points by utilizing Git
+DIVE06=GitHub:HOWTO: 2. Can tell exactly what modification done .                   <<<< Understand four merit points by utilizing Git
+DIVE06=GitHub:HOWTO: 3. Can rollback the code to past state.                        <<<< Understand four merit points by utilizing Git
+DIVE06=GitHub:HOWTO: 4. No need to worry overwriting changes done by other team members.  <<<< Understand four merit points by utilizing Git
+DIVE06=GitHub:TODO: Understand three elements that composes Git 
+DIVE06=GitHub:HOWTO: 1. Repository                                    <<<< Understand three elements that composes Git 
+DIVE06=GitHub:HOWTO: 2. Commit                                        <<<< Understand three elements that composes Git 
+DIVE06=GitHub:HOWTO: 3. Staging area                                  <<<< Understand three elements that composes Git 
+DIVE06=GitHub:TODO: Explain what is Repository
+DIVE06=GitHub:HOWTO: Final storage for the source codes.              <<<<  Explain what is Repository
+DIVE06=GitHub:TODO: Explain what is commit
+DIVE06=GitHub:HOWTO: To upload set of codes to Repository             <<<< Explain what is commit
+DIVE06=GitHub:TODO: Explain what is staging area 
+DIVE06=GitHub:HOWTO: Select which pieces of code are to be version controlled.      <<<< Explain what is staging area 
+DIVE06=GitHub:HOWTO: Use add command to move code to staging area.                  <<<< Explain what is staging area 
+DIVE06=GitHub:TODO: Maintain achieve in git(*)
+DIVE06=GitHub:TODO: Prepare staging area(SA) and Repository(Repo)
+DIVE06=GitHub:HOWTO: cd ~/workspace/achieve                                         <<<< Prepare staging area(SA) and Repository(Repo)
+DIVE06=GitHub:HOWTO: git init                                                       <<<< Prepare staging area(SA) and Repository(Repo)
+DIVE06=GitHub:HOWTO: confirm the message Initialiized empty repository in ....      <<<< Prepare staging area(SA) and Repository(Repo)
+DIVE06=GitHub:TODO: Execute add command to load requried file set to SA
+DIVE06=GitHub:HOWTO: 1. prepare .gitignore file                                     <<<< Execute add command to load requried file set to SA
+DIVE06=GitHub:HOWTO: 2. describe unwanted file name patterns in the file            <<<< Execute add command to load requried file set to SA
+DIVE06=GitHub:HOWTO:                                                                <<<< Execute add command to load requried file set to SA
+DIVE06=GitHub:HOWTO:                                                                <<<< Execute add command to load requried file set to SA
+DIVE06=GitHub:HOWTO: 3. git add -A                                                  <<<< Execute add command to load requried file set to SA
+DIVE06=GitHub:TODO: Commit to Repo with commit message first commit
+DIVE06=GitHub:HOWTO: git commit -m "first commit"                                   <<<< Commit to Repo with commit message first commit
+DIVE06=GitHub:TODO:  Verify the commit has been completed or not
+DIVE06=GitHub:HOWTO: git log                                                        <<<< Verify the commit has been completed or not
+DIVE06=GitHub:HOWTO: confirm the commit message can be seeen with right time stamp  <<<< Verify the commit has been completed or not
+DIVE06=GitHub:TODO: Verify the dev cycle.(*)
+DIVE06=GitHub:TODO: Create sample.md file and load to SA
+DIVE06=GitHub:HOWTO: touch sample.md                                                <<<< Create sample.md file and load to SA
+DIVE06=GitHub:HOWTO: git add -A                                                     <<<< Create sample.md file and load to SA
+DIVE06=GitHub:TODO: Commit sample.md with message "added sample.md"
+DIVE06=GitHub:HOWTO: git commit -m "added sample.md"                            <<<< Commit sample.md with message "added sample.md"
+DIVE06=GitHub:TODO: Understand branch(*)
+DIVE06=GitHub:TODO: Diaplay branch status
+DIVE06=GitHub:HOWTO: git branch                             <<<< Diaplay branch status
+DIVE06=GitHub:HOWTO: verify master is marked with *         <<<< Diaplay branch status
+DIVE06=GitHub:TODO: Check out with branch name "develop"
+DIVE06=GitHub:HOWTO: git checkout -b develop                <<<< Check out with branch name "develop"
+DIVE06=GitHub:HOWTO: git branch                             <<<< Check out with branch name "develop"
+DIVE06=GitHub:HOWTO: verify now marked in develop branch    <<<< Check out with branch name "develop"
+DIVE06=GitHub:HOWTO: git checkout master                 <<<< Check out with branch name "develop"
+DIVE06=GitHub:HOWTO: verify now markt in master branch      <<<< Check out with branch name "develop"
+DIVE06=GitHub:HOWTO: git checkout develop                <<<< Check out with branch name "develop"
+DIVE06=GitHub:HOWTO: git branch                             <<<< Check out with branch name "develop"
+DIVE06=GitHub:HOWTO: verify now marked in develop branch    <<<< Check out with branch name "develop"
+DIVE06=GitHub:TODO: Add Readme.rdoc
+DIVE06=GitHub:HOWTO: == Achieve README <<<< Add Readme.rdoc
+DIVE06=GitHub:HOWTO: This README would normally document whatever steps are necessary to get the application up and running.  <<<< Add Readme.rdoc
+DIVE06=GitHub:HOWTO: Things you want to cover:  <<<< Add Readme.rdoc
+DIVE06=GitHub:HOWTO: *Ruby version  <<<< Add Readme.rdoc
+DIVE06=GitHub:HOWTO: ------------------------------ <<<< Add Readme.rdoc
+DIVE06=GitHub:TODO: Add the file to SA.
+DIVE06=GitHub:HOWTO: git add -A  <<<< Add the file to SA.
+DIVE06=GitHub:TODO: Add the file to REPO with arbitrary message.
+DIVE06=GitHub:HOWTO: git commit -m "added README file"     <<<< Add the file to REPO with arbitrary message.
+DIVE06=GitHub:TODO: Verify the commit message by command.
+DIVE06=GitHub:HOWTO: git log  <<<< Verify the commit message by command.
+DIVE06=GitHub:TODO: understand git status command. 
+DIVE06=GitHub:HOWTO: displays below information           <<<< understand git status command. 
+DIVE06=GitHub:HOWTO: *files that are loaded into SA       <<<< understand git status command. 
+DIVE06=GitHub:HOWTO: *files that are NOT loaded into SA   <<<< understand git status command. 
+DIVE06=GitHub:HOWTO: *files that are OUT of control       <<<< understand git status command. 
+DIVE06=GitHub:TODO: Check out the master branch
+DIVE06=GitHub:HOWTO: git checkout master                     <<<< Check out the master branch
+DIVE06=GitHub:TODO: Verify the README file isnot affected by the dev on branch
+DIVE06=GitHub:HOWTO: vim README.rdoc                          <<<< Verify the README file isnot affected by the dev on branch
+DIVE06=GitHub:TODO: Reflect the change done on develop branch
+DIVE06=GitHub:HOWTO: git merge develop                          <<<< Reflect the change done on develop branch
+DIVE06=GitHub:TODO: Signup github.com free plan (*)
+DIVE06=GitHub:TODO: create repository on web page
+DIVE06=GitHub:HOWTO: click new repository button              <<<< create repository on web page
+DIVE06=GitHub:HOWTO: set the repository name as "archive"     <<<< create repository on web page
+DIVE06=GitHub:HOWTO: hit the [create repository] button       <<<< create repository on web page
+DIVE06=GitHub:TODO: Connect cloud9 and github via ssh 
+DIVE06=GitHub:HOWTO: locate the public key by below path                       <<<< Connect cloud9 and github via ssh 
+DIVE06=GitHub:HOWTO: cat ~/.ssh/id_rsa.pub                                     <<<< Connect cloud9 and github via ssh 
+DIVE06=GitHub:HOWTO: copy the content into clipboard.                          <<<< Connect cloud9 and github via ssh 
+DIVE06=GitHub:HOWTO: click the icon of yourself in the web page                <<<< Connect cloud9 and github via ssh 
+DIVE06=GitHub:HOWTO: select the menu "SSH and GPG keys"                        <<<< Connect cloud9 and github via ssh 
+DIVE06=GitHub:HOWTO: hit the button [new SSH key]                              <<<< Connect cloud9 and github via ssh 
+DIVE06=GitHub:HOWTO: put cloud9 in title and paste the public key content      <<<< Connect cloud9 and github via ssh 
+DIVE06=GitHub:HOWTO: hit [Add SSH Key] button                                  <<<< Connect cloud9 and github via ssh 
+DIVE06=GitHub:TODO: Upload the set of code into GitHub repository
+DIVE06=GitHub:HOWTO: got to repository page on web.                                      <<<< Upload the set of code into GitHub repository
+DIVE06=GitHub:HOWTO: hit [SSH] button and click the right next icon on URL text box      <<<< Upload the set of code into GitHub repository
+DIVE06=GitHub:HOWTO: git push <paste the URL just copied from page>                      <<<< Upload the set of code into GitHub repository
+DIVE06=GitHub:HOWTO: verify the content from browser interface .                         <<<< Upload the set of code into GitHub repository
+DIVE06=GitHub:TODO: Register the remote repo as default.
+DIVE06=GitHub:HOWTO: [NOT YET] git remote add origin <paste the URL>   <<<< Register the remote repo as default.
+DIVE06=GitHub:HOWTO: veriify the config by below command               <<<< Register the remote repo as default.
+DIVE06=GitHub:HOWTO: git remote -v                                     <<<< Register the remote repo as default.
+DIVE06=GitHub:HOWTO: git push origin master                            <<<< Register the remote repo as default.
+DIVE07=Heroku:TODO: Understand heroku 2 step commands to create web sever environment
+DIVE07=Heroku:HOWTO:1. heroku login                <<<< Understand heroku 2 step commands to create web sever environment
+DIVE07=Heroku:HOWTO:2. heroku create               <<<< Understand heroku 2 step commands to create web sever environment
+DIVE07=Heroku:TODO: Understand the word PaaS
+DIVE07=Heroku:HOWTO: Abbr. for Platform as a Service                                    <<<< Understand the word PaaS
+DIVE07=Heroku:HOWTO: Computer that is equipped with a group of tools that are           <<<< Understand the word PaaS
+DIVE07=Heroku:HOWTO: needed to run a system available in the internet.                  <<<< Understand the word PaaS
+DIVE07=Heroku:HOWTO: With PaaS, users can reduce the overhead work of                    <<<< Understand the word PaaS
+DIVE07=Heroku:HOWTO: installing server, development languages, software, configuraion   <<<< Understand the word PaaS
+DIVE07=Heroku:HOWTO: like ruby, RoR Postgresql git , etc..                              <<<< Understand the word PaaS
+DIVE07=Heroku:TODO: Understand how to start web application in PaaS
+DIVE07=Heroku:HOWTO: No need to do rails s  to start web server            <<<< Understand how to start web application in PaaS
+DIVE07=Heroku:HOWTO: PaaS will pick the application as soon as we upload.  <<<< Understand how to start web application in PaaS
+DIVE07=Heroku:TODO: Understand maintenance service provided by PaaS
+DIVE07=Heroku:HOWTO: Performance scaling is included in Heroku service  <<<< Understand maintenance service provided by PaaS
+DIVE07=Heroku:HOWTO: by configuration <<<< Understand maintenance service provided by PaaS
+DIVE07=Heroku:TODO: Setup Heroku(*)
+DIVE07=Heroku:TODO: Signup and register.
+DIVE07=Heroku:HOWTO: 1. visit official page of heroku                      <<<< Signup and register.
+DIVE07=Heroku:HOWTO: 2. put name and email address                         <<<< Signup and register.
+DIVE07=Heroku:HOWTO: 3. choose Ruby as language and                        <<<< Signup and register.
+DIVE07=Heroku:HOWTO: 4. hit [Create Free Account] button                   <<<< Signup and register.
+DIVE07=Heroku:HOWTO: 5. Open the email you received and hit the url        <<<< Signup and register.
+DIVE07=Heroku:HOWTO: 6. Set the password and login                         <<<< Signup and register.
+DIVE07=Heroku:HOWTO: 7. Hit the link Click here ... and you will see       <<<< Signup and register.
+DIVE07=Heroku:HOWTO: 8. dash board. you are done                           <<<< Signup and register.
+DIVE07=Heroku:TODO: Create application skelton in heroku
+DIVE07=Heroku:HOWTO: login to C9 console and make sure you are in                        <<<< Create application skelton in heroku
+DIVE07=Heroku:HOWTO: ~/workspace/achieve directory                                       <<<< Create application skelton in heroku
+DIVE07=Heroku:HOWTO: heroku login(enter)                                                 <<<< Create application skelton in heroku
+DIVE07=Heroku:HOWTO: prompt will ask fro Email. Type in.                                 <<<< Create application skelton in heroku
+DIVE07=Heroku:HOWTO: prompt will ask for Password. Pasting from editpor is recommendedn  <<<< Create application skelton in heroku
+DIVE07=Heroku:HOWTO: Message will say Logged in as <mail> meaning success.               <<<< Create application skelton in heroku
+DIVE07=Heroku:HOWTO: heroku create(enter)                                                <<<< Create application skelton in heroku
+DIVE07=Heroku:HOWTO: message with url is displayed.                                      <<<< Create application skelton in heroku
+DIVE07=Heroku:HOWTO: !!!IMPORTANT!!!!! this url has to be kept in evernote.              <<<< Create application skelton in heroku
+DIVE07=Heroku:HOWTO: https://<random string>.herokuapp.com is the URL for your web app   <<<< Create application skelton in heroku
+DIVE07=Heroku:TODO: Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: there are 3 merits                                            <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: 1. Combine assets                                             <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: 2. Compress assets                                            <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: 3. Compile high level language into primitives.               <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO:                                                               <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: 1. Combine assets                                             <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: Every single files will take overhead on loading              <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: Combining those assets files into single one makes sense      <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: because we can omit the overhead by n times.                  <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: 2. Compress assets                                            <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: Asset files uses spaces and CRLF a lot for human readability  <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: and we can ommit them in production environment where         <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: basically programmers do not need to read them.               <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: 3. Compile high level language into primitives.               <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: Remember that we have used coffee script and scss             <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: for describing stylesheets. they have to be complied          <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:HOWTO: into CSS native. this task takes charge in that step.         <<<< Understand Asset Precompile for Heroku
+DIVE07=Heroku:TODO: Understand what is done by AssetPreCompile behind the scene
+DIVE07=Heroku:HOWTO: 1. Compiling into .js, .css using engines like ERB CoffeeScript SCSS  <<<< Understand what is done by AssetPreCompile behind the scene
+DIVE07=Heroku:HOWTO: 2. Combining more than one .js and .css into one                      <<<< Understand what is done by AssetPreCompile behind the scene
+DIVE07=Heroku:HOWTO: 3. Compress .js and .css                                              <<<< Understand what is done by AssetPreCompile behind the scene
+DIVE07=Heroku:HOWTO: 4. Add MD5 hash into filename of the asset file created.              <<<< Understand what is done by AssetPreCompile behind the scene
+DIVE07=Heroku:HOWTO: 5. Place the asset file into public/assets/                           <<<< Understand what is done by AssetPreCompile behind the scene
+DIVE07=Heroku:HOWTO:                                                                       <<<< Understand what is done by AssetPreCompile behind the scene
+DIVE07=Heroku:HOWTO: all thoses are done by command below.                                 <<<< Understand what is done by AssetPreCompile behind the scene
+DIVE07=Heroku:HOWTO: rake assets:precompile RAILS_ENV=production                           <<<< Understand what is done by AssetPreCompile behind the scene
+DIVE07=Heroku:TODO: Prepare for AssetPreCompile
+DIVE07=Heroku:HOWTO: open config/environments/production.rb by editor  <<<< Prepare for AssetPreCompile
+DIVE07=Heroku:HOWTO: look for config.assets.compile = false            <<<< Prepare for AssetPreCompile
+DIVE07=Heroku:HOWTO: change from false to true and save.               <<<< Prepare for AssetPreCompile
+DIVE07=Heroku:HOWTO: back in console, execute below command.           <<<< Prepare for AssetPreCompile
+DIVE07=Heroku:HOWTO: rake assets:precompile RAILS_ENV=production       <<<< Prepare for AssetPreCompile
+DIVE07=Heroku:TODO: Understand rails_12factor gem
+DIVE07=Heroku:HOWTO: rails_12factor is a library that  <<<< Understand rails_12factor gem
+DIVE07=Heroku:HOWTO: enables console output of logs.   <<<< Understand rails_12factor gem
+DIVE07=Heroku:TODO: Add rails_12factor in Gemfile
+DIVE07=Heroku:HOWTO: Open achieve/Gemfile by editor and add below line   <<<< Add rails_12factor in Gemfile
+DIVE07=Heroku:HOWTO: gem 'rails_12factor', group: :production            <<<< Add rails_12factor in Gemfile
+DIVE07=Heroku:HOWTO: save and execute below command back in console      <<<< Add rails_12factor in Gemfile
+DIVE07=Heroku:HOWTO: bundle install                                      <<<< Add rails_12factor in Gemfile
+DIVE07=Heroku:TODO: Upload application to Heroku
+DIVE07=Heroku:HOWTO: Make sure there is no pending change before commit.   <<<< Upload application to Heroku
+DIVE07=Heroku:HOWTO: if pending, do this.                                  <<<< Upload application to Heroku
+DIVE07=Heroku:HOWTO: git add -A                                            <<<< Upload application to Heroku
+DIVE07=Heroku:HOWTO: git commit -m <commit message  with dblqot>           <<<< Upload application to Heroku
+DIVE07=Heroku:HOWTO: Push latest git content into heroku like below        <<<< Upload application to Heroku
+DIVE07=Heroku:HOWTO: git push heroku master                                              <<<< Upload application to Heroku
+DIVE07=Heroku:HOWTO: verify the output from git saying below output                      <<<< Upload application to Heroku
+DIVE07=Heroku:HOWTO: remote: Verifying deploy ... done                                   <<<< Upload application to Heroku
+DIVE07=Heroku:HOWTO: no need to db:create command, but execute db:migration like below   <<<< Upload application to Heroku
+DIVE07=Heroku:HOWTO: heroku run rake db:migrate RAILS_ENV=production                     <<<< Upload application to Heroku
+DIVE07=Heroku:HOWTO: Config env var SECRET_TOKEN                                         <<<< Upload application to Heroku
+DIVE07=Heroku:HOWTO: heroku config:add SECRET_TOKEN="$(bundle exec rake secret)"         <<<< Upload application to Heroku
+DIVE07=Heroku:TODO: Verify application on heroku works 
+DIVE07=Heroku:HOWTO: use the URL that we kept in memo in new browser session   <<<< Verify application on heroku works 
+DIVE07=Heroku:HOWTO: (not sure we need or not) add /blogs in the end of URL    <<<< Verify application on heroku works 
+DIVE07=Heroku:HOWTO: Application should be displayed from heroku!!!            <<<< Verify application on heroku works 
+DIVE07=Heroku:TODO: Check log on heroku from c9 environemnt. 
+DIVE07=Heroku:HOWTO: heroku log -t <<<< Check log on heroku from c9 environemnt. 
+DIVE08:Devise:TODO: Understand devise gem
+DIVE08:Devise:HOWTO: go through readme on below URL                  <<<< Understand devise gem
+DIVE08:Devise:HOWTO: https://github.com/plataformatec/devise         <<<< Understand devise gem
+DIVE08:Devise:TODO: Setup devise gem
+DIVE08:Devise:HOWTO: add below line in Gemfile     <<<< Setup devise gem
+DIVE08:Devise:HOWTO: gem 'devise'                  <<<< Setup devise gem
+DIVE08:Devise:HOWTO: execute bundle install        <<<< Setup devise gem
+DIVE08:Devise:HOWTO: execute below rails command   <<<< Setup devise gem
+DIVE08:Devise:HOWTO: rails generate devise:install <<<< Setup devise gem
+DIVE08:Devise:HOWTO: execute below rails comman to generate user model  <<<< Setup devise gem
+DIVE08:Devise:HOWTO: rails generate devise user                         <<<< Setup devise gem
+DIVE08:Devise:HOWTO: previous command has configured routing. verify    <<<< Setup devise gem
+DIVE08:Devise:HOWTO: rake routes                                        <<<< Setup devise gem
+DIVE08:Devise:HOWTO: previous rails g devise user has generated migration file, too. migrate.  <<<< Setup devise gem
+DIVE08:Devise:HOWTO: rake db:migrate                                                           <<<< Setup devise gem
+DIVE08:Devise:HOWTO: verify the table schema in the file                                       <<<< Setup devise gem
+DIVE08:Devise:HOWTO: app/db/schema.rb                                                          <<<< Setup devise gem
+DIVE08:Devise:HOWTO: generate a view for user login                                            <<<< Setup devise gem
+DIVE08:Devise:HOWTO: rails generate devise:views                                               <<<< Setup devise gem
+DIVE08:Devise:TODO: Verify login function
+DIVE08:Devise:HOWTO: recall result of rake routes                                                   <<<< Verify login function
+DIVE08:Devise:HOWTO: Prefix                Verb   URI Pattern              Controller#Action        <<<< Verify login function
+DIVE08:Devise:HOWTO: new_user_registration GET    /users/sign_up(,:format) devise/registrations#new <<<< Verify login function
+DIVE08:Devise:HOWTO: start up web server and access below url                                       <<<< Verify login function
+DIVE08:Devise:HOWTO: /users/sign_up                                                                 <<<< Verify login function
+DIVE08:Devise:HOWTO: login screen should be displayed.                                              <<<< Verify login function
+DIVE08:Devise:TODO: Try actual signup
+DIVE08:Devise:HOWTO: Confirm that we can create account             <<<< Try actual signup
+DIVE08:Devise:HOWTO: Confirm that we can actually login             <<<< Try actual signup
+DIVE08:Devise:TODO: Recognize modification points on login function
+DIVE08:Devise:HOWTO: 1. there is no flash message that tells user that login was success. <<<< Recognize modification points on login function
+DIVE08:Devise:HOWTO: 2. enable screen transition from header to login                     <<<< Recognize modification points on login function
+DIVE08:Devise:HOWTO: 3. localize error message to japanese.                               <<<< Recognize modification points on login function
+DIVE08:Devise:TODO: display flash message in index.html.erb
+DIVE08:Devise:HOWTO: add below section to upper part of index.html.erb     <<<< display flash message in index.html.erb
+DIVE08:Devise:HOWTO: <section class="main-header">                         <<<< display flash message in index.html.erb
+DIVE08:Devise:HOWTO:   <p class="flash"><$= notice %><%= alert %> </p>     <<<< display flash message in index.html.erb
+DIVE08:Devise:HOWTO:   <img src="<%= asset_path "achieve.png" %>">         <<<< display flash message in index.html.erb
+DIVE08:Devise:HOWTO: </section>                                            <<<< display flash message in index.html.erb
+DIVE08:Devise:HOWTO:                                           <<<< display flash message in index.html.erb
+DIVE08:Devise:HOWTO: Add css to design it.                 <<<< display flash message in index.html.erb
+DIVE08:Devise:HOWTO: vim app/assets/stylesheets/top.scss   <<<< display flash message in index.html.erb
+DIVE08:Devise:HOWTO: .flash {                              <<<< display flash message in index.html.erb
+DIVE08:Devise:HOWTO:   color: white;                       <<<< display flash message in index.html.erb
+DIVE08:Devise:HOWTO:   padding-top: 10px;                  <<<< display flash message in index.html.erb
+DIVE08:Devise:HOWTO: }                                     <<<< display flash message in index.html.erb
+DIVE08:Devise:TODO: Implement login and logout link in header
+DIVE08:Devise:HOWTO: requiremnet is 1. display logout link when user login   <<<< Implement login and logout link in header
+DIVE08:Devise:HOWTO:                2. display login  link when user logout  <<<< Implement login and logout link in header
+DIVE08:Devise:HOWTO: vim app/views/layout/application.html.erb               <<<< Implement login and logout link in header
+DIVE08:Devise:HOWTO: add below li element in the header, where appropriate   <<<< Implement login and logout link in header
+DIVE08:Devise:HOWTO: <% if user_signed_in? %>       <<<< Implement login and logout link in header
+DIVE08:Devise:HOWTO:   <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>  <<<< Implement login and logout link in header
+DIVE08:Devise:HOWTO: <% else %>                                                                       <<<< Implement login and logout link in header
+DIVE08:Devise:HOWTO:    <li><%= link_to 'ログイン', new_user_session_path %></li>                       <<<< Implement login and logout link in header
+DIVE08:Devise:HOWTO:    <li><%= link_tp 'サインアップ', new_user_registration_path %></li>               <<<< Implement login and logout link in header
+DIVE08:Devise:HOWTO: <% end %>                                                                        <<<< Implement login and logout link in header
+DIVE08:Devise:TODO: Localize error msg from Devise(*)
+DIVE08:Devise:TODO: locate english version of message file that is used by devise.
+DIVE08:Devise:HOWTO: config/locales/devise.en.yml                    <<<< locate english version of message file that is used by devise.
+DIVE08:Devise:TODO: create japanese version of devise.en.yml file
+DIVE08:Devise:HOWTO: cd config/locales                               <<<< create japanese version of devise.en.yml file
+DIVE08:Devise:HOWTO: touch devise.ja.yml                             <<<< create japanese version of devise.en.yml file
+DIVE08:Devise:TODO: Set the application default lang as japanese
+DIVE08:Devise:HOWTO: edit config/application.rb                         <<<< Set the application default lang as japanese
+DIVE08:Devise:HOWTO: find a line with config.i18n.default_locale = :de  <<<< Set the application default lang as japanese
+DIVE08:Devise:HOWTO: comment out this line                              <<<< Set the application default lang as japanese
+DIVE08:Devise:HOWTO: change :de to :ja                                  <<<< Set the application default lang as japanese
+DIVE08:Devise:TODO: prepare already translated file from git 
+DIVE08:Devise:HOWTO: https://gist.github.com/kaorumori/7276cec9c2d15940a3d03c6fc  <<<< prepare already translated file from git 
+DIVE08:Devise:HOWTO: copy the content into the file we touched earlier            <<<< prepare already translated file from git 
+DIVE08:Devise:TODO: Create link to my page
+DIVE08:Devise:HOWTO: after login, add below address at the end of url  <<<< Create link to my page
+DIVE08:Devise:HOWTO: /users/edit                                       <<<< Create link to my page
+DIVE08:Devise:HOWTO: Account managerment screen will appear. we create a link for this  <<<< Create link to my page
+DIVE08:Devise:HOWTO: edit app/views/layouts/application.html.erb                        <<<< Create link to my page
+DIVE08:Devise:HOWTO: insert below line one line above logout                            <<<< Create link to my page
+DIVE08:Devise:HOWTO: <li><%= link_to 'マイページ', edit_user_registration_path %></li>     <<<< Create link to my page
+DIVE08:Devise:TODO: Localize other functions
+DIVE08:Devise:HOWTO: touch config/locales/ja.yml                                              <<<< Localize other functions
+DIVE08:Devise:HOWTO: https://github.com/svenfuchs/railsi18n/blob/master/rails/locale/ja.yml   <<<< Localize other functions
+DIVE08:Devise:HOWTO: Copy content into ja.yml file that we touched ealier                     <<<< Localize other functions
+DIVE08:Devise:HOWTO: verify the translation result by restarting web server                   <<<< Localize other functions
+DIVE08:Devise:TODO: Model field names are not translated. do it.
+DIVE08:Devise:HOWTO: create model.ja.yml in config/locales        <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO: fill below content                           <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO: ja:                                          <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:   activerecord:                              <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:     modes:                                   <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:       blog: "ブログ”                           <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:       contact: "お問い合わせ”                  <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:       user: "ユーザー”                         <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:     attributes:                               <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:       blog:                                   <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:         title: "タイトル"                     <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:         content: "内容"                       <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:       contact:                                <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:         name: "名前"                          <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:         email: "メールアドレス"                  <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:         content: "内容"                       <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:       user:                                   <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:         name: "名前"                            <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:         email: "メールアドレス"                    <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:         content: "内容"                         <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:         current_password: "現在のパスワード"        <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:         password: "パスワード"                     <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:         password_confirmation: "確認用パスワード"   <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO:         remember_me: "ログインを記憶"              <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO: ############################################### <<<< Model field names are not translated. do it.
+DIVE08:Devise:HOWTO: restart web server and verirfy the result  <<<< Model field names are not translated. do it.
+DIVE08:Devise:TODO: design login form 
+DIVE08:Devise:HOWTO: edit app/views/devise/sessions/new.html.erb  <<<< design login form 
+DIVE08:Devise:HOWTO: <div class="container"> <<<< design login form 
+DIVE08:Devise:HOWTO:   <div class="rapper col-md-4 col-md-offset-4 col-sm-10"> <<<< design login form 
+DIVE08:Devise:HOWTO:     <h2>ログイン</h2>        <<<< design login form 
+DIVE08:Devise:HOWTO:     <%= alert %>           <<<< design login form 
+DIVE08:Devise:HOWTO:                            <<<< design login form 
+DIVE08:Devise:HOWTO:     <%=form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> <<<< design login form 
+DIVE08:Devise:HOWTO:       <%= devise_error_messages! %>        <<<< design login form 
+DIVE08:Devise:HOWTO:       <div class="field">                  <<<< design login form 
+DIVE08:Devise:HOWTO:         <%=f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス" %> <<<< design login form 
+DIVE08:Devise:HOWTO:       </div>          <<<< design login form 
+DIVE08:Devise:HOWTO:                       <<<< design login form 
+DIVE08:Devise:HOWTO:       <div class="field">   <<<< design login form 
+DIVE08:Devise:HOWTO:         <%= f.password_field :password, autocomplete: "off", calss: "form-control", placeholder: "パスワード" %> <<<< design login form 
+DIVE08:Devise:HOWTO:       </div>         <<<< design login form 
+DIVE08:Devise:HOWTO:                       <<<< design login form 
+DIVE08:Devise:HOWTO:       <% if devise_mapping.rememberable? %>     <<<< design login form 
+DIVE08:Devise:HOWTO:         <div class="field">     <<<< design login form 
+DIVE08:Devise:HOWTO:           <%= f.check_box :remember_me %>       <<<< design login form 
+DIVE08:Devise:HOWTO:           <%= f.label :内容を記憶させる %>          <<<< design login form 
+DIVE08:Devise:HOWTO:         </div>                                 <<<< design login form 
+DIVE08:Devise:HOWTO:       <% end %>                                 <<<< design login form 
+DIVE08:Devise:HOWTO:                                                 <<<< design login form 
+DIVE08:Devise:HOWTO:       <div class="actions">                    <<<< design login form 
+DIVE08:Devise:HOWTO:         <%= f.submit "ログイン", class: "btn btn-primary btn-block" %>    <<<< design login form 
+DIVE08:Devise:HOWTO:       </div>                               <<<< design login form 
+DIVE08:Devise:HOWTO:    <% end %>                                <<<< design login form 
+DIVE08:Devise:HOWTO:                                            <<<< design login form 
+DIVE08:Devise:HOWTO:    <%= render "devise/shared/links" %>     <<<< design login form 
+DIVE08:Devise:HOWTO:                                            <<<< design login form 
+DIVE08:Devise:HOWTO:   </div>                                   <<<< design login form 
+DIVE08:Devise:HOWTO: </div>                                     <<<< design login form 
+DIVE08:Devise:TODO: design user registration form 
+DIVE08:Devise:HOWTO: edit app/views/devise/registrations/new.html.erb                               <<<< design user registration form 
+DIVE08:Devise:HOWTO: <div class="container">                                                        <<<< design user registration form 
+DIVE08:Devise:HOWTO:   <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">                     <<<< design user registration form 
+DIVE08:Devise:HOWTO:     <h2>サインアップ</h2>                                                          <<<< design user registration form 
+DIVE08:Devise:HOWTO:                                                                                    <<<< design user registration form 
+DIVE08:Devise:HOWTO:     <%= alert %>                                                                      <<<< design user registration form 
+DIVE08:Devise:HOWTO:                                                                                       <<<< design user registration form 
+DIVE08:Devise:HOWTO:     <%= form_for(resource, as:resource_hame, url: user_registration_path) do |f| %>  <<<< design user registration form 
+DIVE08:Devise:HOWTO:       <%= devise_error_messages! %>                                                 <<<< design user registration form 
+DIVE08:Devise:HOWTO:                                                                                     <<<< design user registration form 
+DIVE08:Devise:HOWTO:        <div class="field">                                                          <<<< design user registration form 
+DIVE08:Devise:HOWTO:         <%= f.email_field :email, autofocus: true, class:"form-control", placeholder: "メールアドレス" %>  <<<< design user registration form 
+DIVE08:Devise:HOWTO:        </div>                                                                       <<<< design user registration form 
+DIVE08:Devise:HOWTO:                                                                                     <<<< design user registration form 
+DIVE08:Devise:HOWTO:        <div class="field">                                                          <<<< design user registration form 
+DIVE08:Devise:HOWTO:         <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder: "パスワード" %>  <<<< design user registration form 
+DIVE08:Devise:HOWTO:        </div>                                                                       <<<< design user registration form 
+DIVE08:Devise:HOWTO:                                                                                     <<<< design user registration form 
+DIVE08:Devise:HOWTO:        <div class="field">                                                          <<<< design user registration form 
+DIVE08:Devise:HOWTO:         <%= f.password_field :password_confirmation,  autocomplete: "off", class:"form-control", placeholder: "パスワード（確認)" %>  <<<< design user registration form 
+DIVE08:Devise:HOWTO:        </div>                                                                       <<<< design user registration form 
+DIVE08:Devise:HOWTO:                                                                                     <<<< design user registration form 
+DIVE08:Devise:HOWTO:        <div class="actions">                                                        <<<< design user registration form 
+DIVE08:Devise:HOWTO:         <%= f.submit  "サインアップ", class:"btn btn-primary btn-block" %>             <<<< design user registration form 
+DIVE08:Devise:HOWTO:        </div>                                                                       <<<< design user registration form 
+DIVE08:Devise:HOWTO:                                                                                     <<<< design user registration form 
+DIVE08:Devise:HOWTO:        <% end %>                                                                    <<<< design user registration form 
+DIVE08:Devise:HOWTO:      </div>                                                                         <<<< design user registration form 
+DIVE08:Devise:HOWTO:  </div>                                                                             <<<< design user registration form 
+DIVE08:Devise:TODO: design password reset window 
+DIVE08:Devise:HOWTO: edit app/views/devise/passwords/new.html.erb   <<<< design password reset window 
+DIVE08:Devise:HOWTO:  <div class="container">  <<<< design password reset window 
+DIVE08:Devise:HOWTO:    <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">  <<<< design password reset window 
+DIVE08:Devise:HOWTO:      <h2>パスワード再設定</h2>   <<<< design password reset window 
+DIVE08:Devise:HOWTO:                              <<<< design password reset window 
+DIVE08:Devise:HOWTO:      <%= alert %>            <<<< design password reset window 
+DIVE08:Devise:HOWTO:                               <<<< design password reset window 
+DIVE08:Devise:HOWTO:      <%=form_for(resource, as: resource_name, url: user_password_path(resource_name), html: {method: :post{) do |f| %>  <<<< design password reset window 
+DIVE08:Devise:HOWTO:        <%= devise_error_messages! %>        <<<< design password reset window 
+DIVE08:Devise:HOWTO:                                             <<<< design password reset window 
+DIVE08:Devise:HOWTO:        <div class="field">  <<<< design password reset window 
+DIVE08:Devise:HOWTO:          <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス" %>  <<<< design password reset window 
+DIVE08:Devise:HOWTO:        </div>               <<<< design password reset window 
+DIVE08:Devise:HOWTO:                             <<<< design password reset window 
+DIVE08:Devise:HOWTO:        <div class="actions">  <<<< design password reset window 
+DIVE08:Devise:HOWTO:          <%= f.submit "再設定メールを送信する", class: "btn btn-primary btn-block" %>  <<<< design password reset window 
+DIVE08:Devise:HOWTO:        </div>               <<<< design password reset window 
+DIVE08:Devise:HOWTO:      <% end %>              <<<< design password reset window 
+DIVE08:Devise:HOWTO:    </div>                    <<<< design password reset window 
+DIVE08:Devise:HOWTO:  </div>                      <<<< design password reset window 
+DIVE08:Devise:TODO: Design user property edit screen 
+DIVE08:Devise:HOWTO:  <div class="container">  <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:    <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">  <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:      <h2>パスワードを変更する</h2>      <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:                                     <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:      <%= alert %>                   <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:                                     <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:      <%= form_for(resource, as: resource_name, url: user_password_path(resource_name), html: {method: :post}) do |f| %>  <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:        <%= defise_error_messages! %>      <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:        <%= f.hidden_field :reset_password_token %>  <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:                                                     <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:        <div class="field">                          <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:          <%=f.password_field: password, autofocus: true, autocomplete: "off", class: "form-control", placeholder: "パスワード"%>   <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:        </div>                                       <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:        <div class="field">                          <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:          <%=f.password_field: password_confirmation, autocomplete: "off", class: "form-control", placeholder: "パスワード（確認用）"%>   <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:        </div>                                       <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:      <% end %>                                      <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:                                                     <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:      <%= render "devise/shared/links" %>            <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:    </div>                                           <<<< Design user property edit screen 
+DIVE08:Devise:HOWTO:  </div>                                             <<<< Design user property edit screen 
+DIVE08:Devise:TODO: understand purpose of having placeholder property in each fields.
+DIVE08:Devise:HOWTO: placeholder property value is watermarked on text field to  <<<< understand purpose of having placeholder property in each fields.
+DIVE08:Devise:HOWTO: induce user input. more indicative way to navigate users    <<<< understand purpose of having placeholder property in each fields.
+DIVE08:Devise:TODO: regulate access to blog function unless login.
+DIVE08:Devise:HOWTO: edit app/controllers/blogs_controller.rb                                       <<<< regulate access to blog function unless login.
+DIVE08:Devise:HOWTO: change the starting lines of class definiion class BlogsController like below  <<<< regulate access to blog function unless login.
+DIVE08:Devise:HOWTO:  class BlogsCOntroller < ApplicationController  <<<< regulate access to blog function unless login.
+DIVE08:Devise:HOWTO:    before_action :authenticate_user!            <<<< regulate access to blog function unless login.
+DIVE08:Devise:HOWTO:    ......                                       <<<< regulate access to blog function unless login.
+DIVE08:Devise:TODO: implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO: rails g migration AddNameToUsers name:string                                        <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO: vefiry migration file created and run migration by below command                    <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:  rake db:migrate                                                                    <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO: Add name into strong paremeter of Devise                                            <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO: edit app/controlers/application_controller.rb                                       <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:  class ApplicationController < ActionController::Base                               <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:  .......                                                                            <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:  # before_actionで下で定義したメソッドを実行                                               <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:  before_action :configure_permitted_parameters, if: :devise_controller?             <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:  .......                                                                            <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:  #変数PERMISSIBLE_ATTRIBUTESに配列[:name]を代入                                        <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:  PERMISSIBLE_ATTRIBUTES = %i(name)                                                  <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:  .......                                                                            <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:    protected                                                                        <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:                                                                                     <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:    def configure_permitted_parameters                                               <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:      devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)      <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:      devise_parameter_sanititer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)   <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO:    end                                                                                  <<<< implement authenticate_user! method on blogs_controller
+DIVE08:Devise:HOWTO: end                                                                                     <<<< implement authenticate_user! method on blogs_controller
+DIVE09:Assoc:TODO: understand 3 types of model a to model b association 
+DIVE09:Assoc:HOWTO: 1. 1:1 one record in model a is bound to one record in b.<<<< understand 3 types of model a to model b association 
+DIVE09:Assoc:HOWTO:     one person and one my-number is this relation        <<<< understand 3 types of model a to model b association 
+DIVE09:Assoc:HOWTO: 2. 1:n one record in model a linked to many in b.        <<<< understand 3 types of model a to model b association 
+DIVE09:Assoc:HOWTO:     one user and blogs is a sample for this relation.    <<<< understand 3 types of model a to model b association 
+DIVE09:Assoc:HOWTO: 3. n:n many records in model a are linked to many in b   <<<< understand 3 types of model a to model b association 
+DIVE09:Assoc:HOWTO:     lesson model between students and mentors are sample <<<< understand 3 types of model a to model b association 
+DIVE09:Assoc:TODO: Answer the type of association between blog and user model
+DIVE09:Assoc:HOWTO: 1:n relation. one blog can belong to one user            <<<< Answer the type of association between blog and user model
+DIVE09:Assoc:HOWTO: one user can have many blog records                      <<<< Answer the type of association between blog and user model
+DIVE09:Assoc:TODO: understand two steps to implement 1 to n association in ror
+DIVE09:Assoc:HOWTO: 1. setup priamry key and foreign key         <<<< understand two steps to implement 1 to n association in ror
+DIVE09:Assoc:HOWTO: 2. based on those keys, define the relations <<<< understand two steps to implement 1 to n association in ror
+DIVE09:Assoc:TODO: add user_id collumn in blogs table
+DIVE09:Assoc:HOWTO: execute below command                                <<<< add user_id collumn in blogs table
+DIVE09:Assoc:HOWTO: rails g migration AddUseridToBlogs user_id:integer   <<<< add user_id collumn in blogs table
+DIVE09:Assoc:HOWTO: execute migration by below command                   <<<< add user_id collumn in blogs table
+DIVE09:Assoc:HOWTO: rake db:migrate                                      <<<< add user_id collumn in blogs table
+DIVE09:Assoc:TODO: define User model has many blogs
+DIVE09:Assoc:HOWTO: we use a method has_many     <<<< define User model has many blogs
+DIVE09:Assoc:HOWTO: define like has_many :blogs  <<<< define User model has many blogs
+DIVE09:Assoc:HOWTO: edit app/models/user.rb      <<<< define User model has many blogs
+DIVE09:Assoc:HOWTO: class User < ActiveRecord::Base  <<<< define User model has many blogs
+DIVE09:Assoc:HOWTO:   .....                          <<<< define User model has many blogs
+DIVE09:Assoc:HOWTO:   has_many :blogs                <<<< define User model has many blogs
+DIVE09:Assoc:HOWTO: end                              <<<< define User model has many blogs
+DIVE09:Assoc:TODO: Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:HOWTO: use rails c and find a valid id of user                 <<<< Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:HOWTO: User.all User.find will help                            <<<< Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:HOWTO: Choose one blog entry to fill the user_id               <<<< Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:HOWTO: substitute to a variable blog like below                <<<< Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:HOWTO: blog=Blog.find(15)                                      <<<< Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:HOWTO: blog.user_id=1                                          <<<< Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:HOWTO: blog.save                                               <<<< Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:HOWTO: Blog.find(15) will display the after state              <<<< Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:HOWTO: by this we cana list blogs by user.blogs                <<<< Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:HOWTO: user=User.find(1)                                       <<<< Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:HOWTO: user.blogs                                              <<<< Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:HOWTO: this will return array of blogs which has 1 in user_id  <<<< Definition is done. But user_id is null. Fill valid value
+DIVE09:Assoc:TODO: Define that Blog model belongs to one user
+DIVE09:Assoc:HOWTO: we use a method belongs_to to define  this  <<<< Define that Blog model belongs to one user
+DIVE09:Assoc:HOWTO: edit app/models/blog.rb                     <<<< Define that Blog model belongs to one user
+DIVE09:Assoc:HOWTO: class Blog < ActiveRecord::Base             <<<< Define that Blog model belongs to one user
+DIVE09:Assoc:HOWTO:   .....                                     <<<< Define that Blog model belongs to one user
+DIVE09:Assoc:HOWTO:   belongs_to :user                          <<<< Define that Blog model belongs to one user
+DIVE09:Assoc:HOWTO: end                                         <<<< Define that Blog model belongs to one user
+DIVE09:Assoc:HOWTO: by this we can refore to user record by blog.user notation  <<<< Define that Blog model belongs to one user
+DIVE09:Assoc:HOWTO: rails c                                                     <<<< Define that Blog model belongs to one user
+DIVE09:Assoc:HOWTO: blog=Blog.find(35)                                          <<<< Define that Blog model belongs to one user
+DIVE09:Assoc:HOWTO: blog.user                                                   <<<< Define that Blog model belongs to one user
+DIVE09:Assoc:HOWTO: this will return an object of user associated  to blog record <<<< Define that Blog model belongs to one user
+DIVE09:Assoc:TODO: implement a function to save userid when saving blog
+DIVE09:Assoc:HOWTO: edit app/controllers/blogs_controller.rb           <<<< implement a function to save userid when saving blog
+DIVE09:Assoc:HOWTO: .......                                            <<<< implement a function to save userid when saving blog
+DIVE09:Assoc:HOWTO:   def create                                       <<<< implement a function to save userid when saving blog
+DIVE09:Assoc:HOWTO:     @blog=Blog.new(blogs_params)                   <<<< implement a function to save userid when saving blog
+DIVE09:Assoc:HOWTO:     @blog.user_id=current_user.id                  <<<< implement a function to save userid when saving blog
+DIVE09:Assoc:HOWTO:     if @blog.save                                  <<<< implement a function to save userid when saving blog
+DIVE09:Assoc:HOWTO:     ....                                           <<<< implement a function to save userid when saving blog
+DIVE09:Assoc:TODO: Verify the behavior (*) 
+DIVE09:Assoc:TODO: prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: seed data is dummy data for testing application     <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: in ror, rake db:seed command will create dummy data <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: based on defined logic in db/seeds.rb               <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: to generate realistic dummy information of mail address <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: use gem faker. start setup like below                   <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: add below line in Gemfile                               <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: gem 'faker'                                             <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: execute bundle install                                  <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: implement logic in db/seeds.rb                          <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: 100.times do |n|                      <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO:   email=Faker::Internet.email         <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO:   pasword="password"                  <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO:   User.create!(email: email,          <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO:     password: password,               <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO:     password_confirmation: password,  <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO:     )                                 <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: end                                   <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: rake db:seed                          <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: verify by rails c                     <<<< prepare seed data in achieve database
+DIVE09:Assoc:HOWTO: User.count                            <<<< prepare seed data in achieve database
+DIVE09:Assoc:TODO: verify created seed data
+DIVE09:Assoc:HOWTO: rails c     <<<< verify created seed data
+DIVE09:Assoc:HOWTO: User.count  <<<< verify created seed data
+DIVE09:Assoc:TODO: understand heroku db related commands 
+DIVE09:Assoc:HOWTO: heroku pg:reset DATABASE              <<<< understand heroku db related commands 
+DIVE09:Assoc:HOWTO:   equiv of rake db:reset              <<<< understand heroku db related commands 
+DIVE09:Assoc:HOWTO: heroku run rake db:migrate            <<<< understand heroku db related commands 
+DIVE09:Assoc:HOWTO:   after resetting db, make sure to do <<<< understand heroku db related commands 
+DIVE09:Assoc:HOWTO:   migration                           <<<< understand heroku db related commands 
+DIVE09:Assoc:TODO: in heroku, create 100 blogs seed data bound to user seed 
+DIVE09:Assoc:HOWTO: seeds.rb content is like below  <<<< in heroku, create 100 blogs seed data bound to user seed 
+DIVE09:Assoc:HOWTO: n=1                 <<<< in heroku, create 100 blogs seed data bound to user seed 
+DIVE09:Assoc:HOWTO: while n<=100        <<<< in heroku, create 100 blogs seed data bound to user seed 
+DIVE09:Assoc:HOWTO:   Blog.create(      <<<< in heroku, create 100 blogs seed data bound to user seed 
+DIVE09:Assoc:HOWTO:     title: "aaa"    <<<< in heroku, create 100 blogs seed data bound to user seed 
+DIVE09:Assoc:HOWTO:     content:"hoge"  <<<< in heroku, create 100 blogs seed data bound to user seed 
+DIVE09:Assoc:HOWTO:     user_id: n      <<<< in heroku, create 100 blogs seed data bound to user seed 
+DIVE09:Assoc:HOWTO:   )                 <<<< in heroku, create 100 blogs seed data bound to user seed 
+DIVE09:Assoc:HOWTO: end                 <<<< in heroku, create 100 blogs seed data bound to user seed 
+DIVE09:Assoc:HOWTO: git push heroku master  <<<< in heroku, create 100 blogs seed data bound to user seed 
+DIVE09:Assoc:HOWTO: heroku run rake db:seed <<<< in heroku, create 100 blogs seed data bound to user seed 
+DIVE09:Assoc:TODO: display user name in list of blog
+DIVE09:Assoc:HOWTO: edit app/views/blog/index.html.erb      <<<< display user name in list of blog
+DIVE09:Assoc:HOWTO: ...                         <<<< display user name in list of blog
+DIVE09:Assoc:HOWTO: <p><%= blog.content %>          <<<< display user name in list of blog
+DIVE09:Assoc:HOWTO: <p> by : <%= blog.user.name %>  <<<< display user name in list of blog
