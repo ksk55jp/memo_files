@@ -1858,3 +1858,66 @@ DIVE11:Mail:HOWTO:    else                                                | user
 DIVE11:Mail:HOWTO:      render 'new'                                      | user of contact form, send email upon submittion of contact.
 DIVE11:Mail:HOWTO:    end                                                 | user of contact form, send email upon submittion of contact.
 DIVE11:Mail:HOWTO:  end                                                   | user of contact form, send email upon submittion of contact.
+DIVE12:Admin:TODO: understand 4 strong points of rails_admin gem
+DIVE12:Admin:HOWTO: 1. without rails c, data can be listed                   | understand 4 strong points of rails_admin gem
+DIVE12:Admin:HOWTO: 2. developer can command model, insert update, or delete | understand 4 strong points of rails_admin gem
+DIVE12:Admin:HOWTO: 3. admin screen has function to invite new user          | understand 4 strong points of rails_admin gem
+DIVE12:Admin:HOWTO: 4. can register data in production environment           | understand 4 strong points of rails_admin gem
+DIVE12:Admin:TODO: install rails_admin
+DIVE12:Admin:HOWTO: edit Gemfile  | install rails_admin
+DIVE12:Admin:HOWTO: gem 'rails_admin' | install rails_admin
+DIVE12:Admin:HOWTO: bundle install    | install rails_admin
+DIVE12:Admin:HOWTO: bundle update     | install rails_admin
+DIVE12:Admin:TODO: execute initial config command
+DIVE12:Admin:HOWTO: rails g rails_admin:install                                                | execute initial config command
+DIVE12:Admin:HOWTO: screen output waits for entering value like below. press enter and proceed | execute initial config command
+DIVE12:Admin:HOWTO: Running via Spring preloader in process xxxx                               | execute initial config command
+DIVE12:Admin:HOWTO:   ? Where do you want to mount rails_admin? Press <enter> for [admin] >    | execute initial config command
+DIVE12:Admin:TODO: use admin screen 
+DIVE12:Admin:HOWTO: start web server | use admin screen
+DIVE12:Admin:HOWTO: access /admin    | use admin screen
+DIVE12:Admin:TODO: Localize admin 
+DIVE12:Admin:HOWTO: create a file rails_admin_ja.yml under                     | Localize admin
+DIVE12:Admin:HOWTO: config/locales, then copy content from below url           | Localize admin
+DIVE12:Admin:HOWTO: https://gist.github.com/mshibuya/1662352                   | Localize admin
+DIVE12:Admin:HOWTO: verify the result by starting web server and access /admin | Localize admin
+DIVE12:Admin:TODO: permit only to admin users(*)
+DIVE12:Admin:TODO: add admin column in users table
+DIVE12:Admin:HOWTO: execute below command  | add admin column in users table
+DIVE12:Admin:HOWTO: rails g migration AddAdminToUser admin | add admin column in users table
+DIVE12:Admin:HOWTO: edit created migration file | add admin column in users table
+DIVE12:Admin:HOWTO: db/migrate/xxxx_add_admin_to_user.rb | add admin column in users table
+DIVE12:Admin:HOWTO: class AddAdminToUser < ActiveRecord::Migration             | add admin column in users table
+DIVE12:Admin:HOWTO:   def change                                               | add admin column in users table
+DIVE12:Admin:HOWTO:     add_column :users, :admin, :boolean, :default => false | add admin column in users table
+DIVE12:Admin:HOWTO:   end                                                      | add admin column in users table
+DIVE12:Admin:HOWTO: end                                                        | add admin column in users table
+DIVE12:Admin:HOWTO: Run migration command like                                 | add admin column in users table
+DIVE12:Admin:HOWTO: rake db:migrate                                            | add admin column in users table
+DIVE12:Admin:TODO: understand cancan gem
+DIVE12:Admin:HOWTO: cancan handles screen permission by nature of table value | understand cancan gem
+DIVE12:Admin:TODO: add this into app/Gemfile
+DIVE12:Admin:HOWTO: gem 'cancan'   | add this into app/Gemfile
+DIVE12:Admin:HOWTO: bundle install | add this into app/Gemfile
+DIVE12:Admin:TODO: Configure cancan
+DIVE12:Admin:HOWTO: rails g cancan:ability                            | Configure cancan
+DIVE12:Admin:HOWTO: edit app/models/ability.rb and insert below codes | Configure cancan
+DIVE12:Admin:HOWTO: 1. insert this code                               | Configure cancan
+DIVE12:Admin:HOWTO: if user && user.admin?                            | Configure cancan
+DIVE12:Admin:HOWTO:   can :access, :rails_admin                       | Configure cancan
+DIVE12:Admin:HOWTO:   can :manage, :all                               | Configure cancan
+DIVE12:Admin:HOWTO: end                                               | Configure cancan
+DIVE12:Admin:HOWTO: 2. edit config/initializers/rails_admin.rb        | Configure cancan
+DIVE12:Admin:HOWTO: # === comment out devise section like ...====     | Configure cancan
+DIVE12:Admin:HOWTO: config.authenticate_with do                       | Configure cancan
+DIVE12:Admin:HOWTO:   warden.authenticate! scope :user                | Configure cancan
+DIVE12:Admin:HOWTO: end                                               | Configure cancan
+DIVE12:Admin:HOWTO: config.current_user_method(&:current_user)        | Configure cancan
+DIVE12:Admin:HOWTO: 3. cancan section part                            | Configure cancan
+DIVE12:Admin:HOWTO: # === Cancan ===                                  | Configure cancan
+DIVE12:Admin:HOWTO: config.authorize_with :cancan                     | Configure cancan
+DIVE12:Admin:TODO: verify that only user with admin=true can access 
+DIVE12:Admin:HOWTO: right after making change, try accessing /admin | verify that only user with admin=true can access
+DIVE12:Admin:HOWTO: it should be failing due to privilege           | verify that only user with admin=true can access
+DIVE12:Admin:HOWTO: get back to terminal and start rails console    | verify that only user with admin=true can access
+DIVE12:Admin:HOWTO: update admin column and try again.              | verify that only user with admin=true can access
