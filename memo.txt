@@ -1921,3 +1921,690 @@ DIVE12:Admin:HOWTO: right after making change, try accessing /admin | verify tha
 DIVE12:Admin:HOWTO: it should be failing due to privilege           | verify that only user with admin=true can access
 DIVE12:Admin:HOWTO: get back to terminal and start rails console    | verify that only user with admin=true can access
 DIVE12:Admin:HOWTO: update admin column and try again.              | verify that only user with admin=true can access
+DIVE13:Exception:TODO: Understand major error code 500, 403, and 404
+DIVE13:Exception:HOWTO: 500 = Internal Server Error | Understand major error code 500, 403, and 404
+DIVE13:Exception:HOWTO: 403 = Forbidden             | Understand major error code 500, 403, and 404
+DIVE13:Exception:HOWTO: 404 = Not Found             | Understand major error code 500, 403, and 404
+DIVE13:Exception:TODO: Design 404 and 500 error page
+DIVE13:Exception:HOWTO: save img from below url and store in public/assets/                      | Design 404 and 500 error page
+DIVE13:Exception:HOWTO: https://github.com/DiveintoCode-corp/v2-achieve/tree/day13/public        | Design 404 and 500 error page
+DIVE13:Exception:HOWTO: edit public/404.html                                                     | Design 404 and 500 error page
+DIVE13:Exception:HOWTO: <!DOCTYPE html>                                                          | Design 404 and 500 error page
+DIVE13:Exception:HOWTO: <html>                                                                   | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:   <head>                                                                 | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:     <title>The page you were looking for doesn't exists(404)</title>     | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:     <meta name="viewport" content="width=device-width, initial-scale=1"> | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:     <style>                                                              | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       .error {                                                           | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:         padding-top: 16%                                                 | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       }                                                                  | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       p {                                                                | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:         text-align: center;                                              | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       }                                                                  | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       img {                                                              | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:         display: block;                                                  | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:         margin: 0 auto;                                                  | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       }                                                                  | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:     </style>                                                             | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:   </head>                                                                | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:   <body>                                                                 | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:     <div class="error">                                                  | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       <img src="/assets/404.png">                                        | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       <p>お探しのページは見つかりません。</p>                            | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:     </div>                                                               | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:   </body>                                                                | Design 404 and 500 error page
+DIVE13:Exception:HOWTO: </html>                                                                  | Design 404 and 500 error page
+DIVE13:Exception:HOWTO: edit public/500.html                                                          | Design 404 and 500 error page
+DIVE13:Exception:HOWTO: <!DOCTYPE html>                                                               | Design 404 and 500 error page
+DIVE13:Exception:HOWTO: <html>                                                                        | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:   <head>                                                                      | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:     <title>The page you were looking for detected internal error(500)</title> | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:     <meta name="viewport" content="width-device-width,initial-scale=1">       | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:     <style>                                                                   | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       .error {                                                                | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:         padding-top: 16%;                                                     | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       }                                                                       | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       p {                                                                     | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:         text-align: center;                                                   | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       }                                                                       | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       img {                                                                   | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:         display: block;                                                       | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:         margin: 0 auto;                                                       | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       }                                                                       | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:     </style>                                                                  | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:   </head>                                                                     | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:   <body>                                                                      | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:     <div class="error">                                                       | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       <img src="/assets/500.png">                                             | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:       <p>一時的なエラーが発生しました</p>                                     | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:     </div>                                                                    | Design 404 and 500 error page
+DIVE13:Exception:HOWTO:   </body>                                                                     | Design 404 and 500 error page
+DIVE13:Exception:HOWTO: </html>                                                                       | Design 404 and 500 error page
+DIVE13:Exception:TODO: Verify error screen
+DIVE13:Exception:HOWTO: in order to display the error in dev environment, change below setting | Verify error screen
+DIVE13:Exception:HOWTO: edit config/environments/development.rb                                | Verify error screen
+DIVE13:Exception:HOWTO: BEFORE -> config.consider_all_requests_local = false                   | Verify error screen
+DIVE13:Exception:HOWTO: AFTER  -> config.consider_all_requests_local = true                    | Verify error screen
+DIVE13:Exception:HOWTO: start web server and access random path under the domain               | Verify error screen
+DIVE13:Exception:HOWTO: set the config back to false because next topic to be hidden in prod   | Verify error screen
+DIVE13:Exception:TODO: Perform Debug(*)
+DIVE13:Exception:TODO: install handy gems for debugging (pry-rails/better_errors)
+DIVE13:Exception:HOWTO: edit Gemfile                 | install handy gems for debugging (pry-rails/better_errors)
+DIVE13:Exception:HOWTO: group :development, :test do | install handy gems for debugging (pry-rails/better_errors)
+DIVE13:Exception:HOWTO:   ....                       | install handy gems for debugging (pry-rails/better_errors)
+DIVE13:Exception:HOWTO:   gem 'pry-rails'            | install handy gems for debugging (pry-rails/better_errors)
+DIVE13:Exception:HOWTO:   gem 'better_errors'        | install handy gems for debugging (pry-rails/better_errors)
+DIVE13:Exception:HOWTO: end                          | install handy gems for debugging (pry-rails/better_errors)
+DIVE13:Exception:HOWTO: bundle install               | install handy gems for debugging (pry-rails/better_errors)
+DIVE13:Exception:TODO: set break point for pry in index method in blog controller 
+DIVE13:Exception:HOWTO: edit app/contorllers/blogs/controller.rb and add line | set break point for pry in index method in blog controller
+DIVE13:Exception:HOWTO: def index                                             | set break point for pry in index method in blog controller
+DIVE13:Exception:HOWTO:   @blogs = Blog.all                                   | set break point for pry in index method in blog controller
+DIVE13:Exception:HOWTO:   binding.pry # Breakpoint line for pry               | set break point for pry in index method in blog controller
+DIVE13:Exception:HOWTO: end                                                   | set break point for pry in index method in blog controller
+DIVE13:Exception:TODO: Execute debugging in console.
+DIVE13:Exception:HOWTO: start web server and invoke blog.index                   | Execute debugging in console.
+DIVE13:Exception:HOWTO: then get back to terminal, to see pry console is started | Execute debugging in console.
+DIVE13:Exception:HOWTO: we can dynamically confirm variable content,             | Execute debugging in console.
+DIVE13:Exception:HOWTO: execute methods and so on.                               | Execute debugging in console.
+DIVE13:Exception:HOWTO: examples)                                                | Execute debugging in console.
+DIVE13:Exception:HOWTO:   Blog.all(enter)                                        | Execute debugging in console.
+DIVE13:Exception:HOWTO:   @blogs(enter)                                          | Execute debugging in console.
+DIVE13:Exception:HOWTO: exit(enter) to stop pry debug                            | Execute debugging in console.
+DIVE13:Exception:TODO: Understand how to put break on view 
+DIVE13:Exception:HOWTO: enclose with % tag like below | Understand how to put break on view 
+DIVE13:Exception:HOWTO: <% binding.pry %>| Understand how to put break on view 
+DIVE13:Exception:TODO: set up better_errors(*)
+DIVE13:Exception:TODO: Cloud9 specific setup 
+DIVE13:Exception:HOWTO: edit config/environments/development.rb          | Cloud9 specific setup
+DIVE13:Exception:HOWTO: Rails.application.configure do                   | Cloud9 specific setup
+DIVE13:Exception:HOWTO:   ....                                           | Cloud9 specific setup
+DIVE13:Exception:HOWTO:   BetterErrors::Middleware.allow_ip! "0.0.0.0/0" | Cloud9 specific setup
+DIVE13:Exception:HOWTO: end                                              | Cloud9 specific setup
+DIVE13:Exception:TODO: Intentionally raise error in index action of blog controller
+DIVE13:Exception:HOWTO: def index         | Intentionally raise error in index action of blog controller
+DIVE13:Exception:HOWTO:   @blogs=Blog.all | Intentionally raise error in index action of blog controller
+DIVE13:Exception:HOWTO:   raise           | Intentionally raise error in index action of blog controller
+DIVE13:Exception:HOWTO: end               | Intentionally raise error in index action of blog controller
+DIVE14:API1:TODO: Understand what is API, and typical flow of API usage
+DIVE14:API1:HOWTO: API is Application Program Interface.                  | Understand what is API, and typical flow of API usage
+DIVE14:API1:HOWTO: Protocol to extract outcome from program.              | Understand what is API, and typical flow of API usage
+DIVE14:API1:HOWTO: Accessing particular URL, a functionality is provided. | Understand what is API, and typical flow of API usage
+DIVE14:API1:TODO: Understand JSON
+DIVE14:API1:HOWTO: JavaScriptObjectNotation. Unlike HTML, JSON has no information about look and feel | Understand JSON
+DIVE14:API1:HOWTO: JSON contains only Information.                                                    | Understand JSON
+DIVE14:API1:TODO: Create API (*)
+DIVE14:API1:TODO: create a new project for API 'ApiSample', PostgreSQL
+DIVE14:API1:HOWTO: rails _4.2.3_ new ApiSample -d postgresql | create a new project for API 'ApiSample', PostgreSQL
+DIVE14:API1:TODO: Understand diff between conventional MVC and API program
+DIVE14:API1:HOWTO: Conventional MVC returns View as a result of processing on serverside,    | Understand diff between conventional MVC and API program
+DIVE14:API1:HOWTO: however, API based communication returns JSON without going through view. | Understand diff between conventional MVC and API program
+DIVE14:API1:TODO: Configure routing for index action of Blogs controller
+DIVE14:API1:HOWTO: edit config/routes.rb and add below line | Configure routing for index action of Blogs controller
+DIVE14:API1:HOWTO: Rails.application.routes.draw do         | Configure routing for index action of Blogs controller
+DIVE14:API1:HOWTO:    ....                                  | Configure routing for index action of Blogs controller
+DIVE14:API1:HOWTO:    resources :blogs, only: [:index]      | Configure routing for index action of Blogs controller
+DIVE14:API1:HOWTO:    ....                                  | Configure routing for index action of Blogs controller
+DIVE14:API1:HOWTO: end                                      | Configure routing for index action of Blogs controller
+DIVE14:API1:TODO: Generate Controller Blogs
+DIVE14:API1:HOWTO: rails g controller blogs | Generate Controller Blogs
+DIVE14:API1:TODO: Modify index action to return JSON with blogs content
+DIVE14:API1:HOWTO: edit app/controllers/blogs_controller         | Modify index action to return JSON with blogs content
+DIVE14:API1:HOWTO: add a line in the last line of index method   | Modify index action to return JSON with blogs content
+DIVE14:API1:HOWTO: class BlogsController < ApplicationController | Modify index action to return JSON with blogs content
+DIVE14:API1:HOWTO:    def index                                  | Modify index action to return JSON with blogs content
+DIVE14:API1:HOWTO:        @blogs=Blog.all                        | Modify index action to return JSON with blogs content
+DIVE14:API1:HOWTO:        render json: @blogs                    | Modify index action to return JSON with blogs content
+DIVE14:API1:HOWTO:    end                                        | Modify index action to return JSON with blogs content
+DIVE14:API1:HOWTO: end                                           | Modify index action to return JSON with blogs content
+DIVE14:API1:TODO: Generate model for Blog with title(string), content(text)
+DIVE14:API1:HOWTO: rake db:create                               | Generate model for Blog with title(string), content(text)
+DIVE14:API1:HOWTO: rails g model blog title:string content:text | Generate model for Blog with title(string), content(text)
+DIVE14:API1:HOWTO: rake db:migrate                              | Generate model for Blog with title(string), content(text)
+DIVE14:API1:TODO: Open rails console and add record with create method of Blog
+DIVE14:API1:HOWTO: rails c                                       | Open rails console and add record with create method of Blog
+DIVE14:API1:HOWTO: Blog.create(title: "Hello", content: "World") | Open rails console and add record with create method of Blog
+DIVE14:API1:TODO: Use API
+DIVE14:API1:HOWTO: rails s                            | Use API
+DIVE14:API1:HOWTO: if Cloud9, rails s -b $IP -p $PORT | Use API
+DIVE14:API1:HOWTO: if Vagrant rails s -b 0.0.0.0      | Use API
+DIVE14:API1:HOWTO: curl localhost:3000/blogs          | Use API
+DIVE14:API1:TODO: Install curl command.
+DIVE14:API1:HOWTO: curl --version                                                  | Install curl command.
+DIVE14:API1:HOWTO: if no reaction on this command, we need to install curl command | Install curl command.
+DIVE14:API1:HOWTO: if in ubuntu,  sudo apt-get install curl                        | Install curl command.
+DIVE14:API1:HOWTO: if in mac, brew install curl                                    | Install curl command.
+DIVE14:API1:TODO: understand basic behavior of curl command
+DIVE14:API1:HOWTO: curl takes destination address. curl sends HTTP request in GET verb. | understand basic behavior of curl command
+DIVE14:API2:TODO: understand how to populate API data into RoR presentation form
+DIVE14:API2:HOWTO: in previous section curl command was used to pull data                    | understand how to populate API data into RoR presentation form
+DIVE14:API2:HOWTO: in this method there is another additional step to format the curl result | understand how to populate API data into RoR presentation form
+DIVE14:API2:HOWTO: if we use ActiveResource, we do not need that extra step                  | understand how to populate API data into RoR presentation form
+DIVE14:API2:HOWTO: using ActiveResource, Poem.all command will execute                       | understand how to populate API data into RoR presentation form
+DIVE14:API2:HOWTO: GET http://api.people.com:3000/people.json behind the scene               | understand how to populate API data into RoR presentation form
+DIVE14:API2:HOWTO: we will implement Api based Poem get function on Achieve                  | understand how to populate API data into RoR presentation form
+DIVE14:API2:TODO: Install ActiveResource
+DIVE14:API2:HOWTO: edit Gemfile         | Install ActiveResource
+DIVE14:API2:HOWTO: gem 'activeresource' | Install ActiveResource
+DIVE14:API2:HOWTO: bundle install       | Install ActiveResource
+DIVE14:API2:TODO: Generate poem model WITHOUT migration
+DIVE14:API2:HOWTO: rails g model poem --migration=false | Generate poem model WITHOUT migration
+DIVE14:API2:TODO: Complete poem model by inheriting right ancestor
+DIVE14:API2:HOWTO: class Poem < ActiveResource::Base | Complete poem model by inheriting right ancestor
+DIVE14:API2:HOWTO: end                               | Complete poem model by inheriting right ancestor
+DIVE14:API2:TODO: understand basic methods of ActiveResource 
+DIVE14:API2:HOWTO: find    => GET     http://api.people.com:3000/people/1.json          | understand basic methods of ActiveResource
+DIVE14:API2:HOWTO: all     => GET     http://api.people.com:3000/people.json            | understand basic methods of ActiveResource
+DIVE14:API2:HOWTO: save    => POST    http://api.people.com:3000/people.json            | understand basic methods of ActiveResource
+DIVE14:API2:HOWTO: destroy => DELETE  http://api.people.com:3000/people/1.json          | understand basic methods of ActiveResource
+DIVE14:API2:HOWTO: As long as API is designed in RESTful way, ActiveResource can handle | understand basic methods of ActiveResource
+DIVE14:API2:TODO: configure ActiveResource to use the API that we created earlier
+DIVE14:API2:HOWTO: edit models/Poem.rb                                | configure ActiveResource to use the API that we created earlier
+DIVE14:API2:HOWTO: class Poem < ActiveResource::Base                  | configure ActiveResource to use the API that we created earlier
+DIVE14:API2:HOWTO:    self.site="URL we created earlier"              | configure ActiveResource to use the API that we created earlier
+DIVE14:API2:HOWTO: end                                                | configure ActiveResource to use the API that we created earlier
+DIVE14:API2:HOWTO: verify by rails console                            | configure ActiveResource to use the API that we created earlier
+DIVE14:API2:HOWTO: rails c                                            | configure ActiveResource to use the API that we created earlier
+DIVE14:API2:HOWTO: > Poem.all                                         | configure ActiveResource to use the API that we created earlier
+DIVE14:API2:HOWTO: confirm data is listed on console.                 | configure ActiveResource to use the API that we created earlier
+DIVE14:API2:HOWTO: heroku logs will have that log as well. verify it. | configure ActiveResource to use the API that we created earlier
+DIVE14:API2:TODO: Call ActiveResource method from Controller(*)
+DIVE14:API2:TODO: Generate controller
+DIVE14:API2:HOWTO: cd Achieve                                    | Generate controller
+DIVE14:API2:HOWTO: rails g controller poems                      | Generate controller
+DIVE14:API2:HOWTO: edit controllers/poems_controller.rb          | Generate controller
+DIVE14:API2:HOWTO: class PoemsController < ApplicationController | Generate controller
+DIVE14:API2:HOWTO:    def index                                  | Generate controller
+DIVE14:API2:HOWTO:      @Poems=Poem.all                          | Generate controller
+DIVE14:API2:HOWTO:    end                                        | Generate controller
+DIVE14:API2:HOWTO: end                                           | Generate controller
+DIVE14:API2:TODO: Configure route
+DIVE14:API2:HOWTO: edit config/routes.rb             | Configure route
+DIVE14:API2:HOWTO:  resources :poems, only: [:index] | Configure route
+DIVE14:API2:HOWTO: verify by rake routes             | Configure route
+DIVE14:API2:TODO: create view and edit
+DIVE14:API2:HOWTO: edit views/poems/index.html.erb | create view and edit
+DIVE14:API2:HOWTO: <% @poems.each do | poem | %>   | create view and edit
+DIVE14:API2:HOWTO:    <%= poem.title %>            | create view and edit
+DIVE14:API2:HOWTO:    <%= poem.content %>          | create view and edit
+DIVE14:API2:HOWTO: <% end %>                       | create view and edit
+DIVE14:API2:TODO: Verify the implementation
+DIVE14:API2:HOWTO: start web server under achieve directory structure | Verify the implementation
+DIVE14:API2:HOWTO:  access /poems and see if poem is displayed. | Verify the implementation
+DIVE14:API2:TODO: Implement Show action in Apisample 
+DIVE14:API2:HOWTO: edit config/routes.rb                                               | Implement Show action in Apisample
+DIVE14:API2:HOWTO: change below line                                                   | Implement Show action in Apisample
+DIVE14:API2:HOWTO: BEFORE  --->   resources :poems, only: [:index]                     | Implement Show action in Apisample
+DIVE14:API2:HOWTO: AFTER   --->   resources :poems, only: [:index, :show]              | Implement Show action in Apisample
+DIVE14:API2:HOWTO: edit controllers/poems_controller.rb                                | Implement Show action in Apisample
+DIVE14:API2:HOWTO: def show                                                            | Implement Show action in Apisample
+DIVE14:API2:HOWTO:    @poem=Poem.find(params[:id])                                     | Implement Show action in Apisample
+DIVE14:API2:HOWTO:    render json: @poem                                               | Implement Show action in Apisample
+DIVE14:API2:HOWTO: end                                                                 | Implement Show action in Apisample
+DIVE14:API2:HOWTO: under ApiSample directory structure start web server                | Implement Show action in Apisample
+DIVE14:API2:HOWTO: another session as client, request returned json using show method. | Implement Show action in Apisample
+DIVE14:API2:HOWTO: curl localhost:3000/poems/3                                         | Implement Show action in Apisample
+DIVE14:API2:HOWTO: this url is from rake routes command result                         | Implement Show action in Apisample
+DIVE14:API2:HOWTO: Prefix Verb URI Pattern          Controller#Action                  | Implement Show action in Apisample
+DIVE14:API2:HOWTO:  blogs GET  /blogs(.:format)     blogs#index                        | Implement Show action in Apisample
+DIVE14:API2:HOWTO:  poems GET  /poems(.:format)     poems#index                        | Implement Show action in Apisample
+DIVE14:API2:HOWTO:   poem GET  /poems/:id(.:format) poems#show   <<<<THIS!!!!!         | Implement Show action in Apisample
+DIVE14:API2:TODO: Implement Show action in achieve through API
+DIVE14:API2:TODO: Implement link in Achieve's poem Index to Show 
+DIVE14:API2:TODO: Display the detail of poem from API, not from Database
+DIVE14:OAUTH:TODO: understand three players in omniauth
+DIVE14:OAUTH:HOWTO: 1. ServiceProvider: Facebook/Twitter/Google/Github | understand three players in omniauth
+DIVE14:OAUTH:HOWTO: 2. Consumer : Achieve                              | understand three players in omniauth
+DIVE14:OAUTH:HOWTO: 3. User : end-user                                 | understand three players in omniauth
+DIVE14:OAUTH:HOWTO: OAuth is happening with below 7 steps                      | understand three players in omniauth
+DIVE14:OAUTH:HOWTO: 0. Consumer(Cer) gets approved by ServiceProvider(SPer)    | understand three players in omniauth
+DIVE14:OAUTH:HOWTO:    Obtaining Cer Key and Cer Secret value                  | understand three players in omniauth
+DIVE14:OAUTH:HOWTO: 1. User commands Cer to get access right from SPer         | understand three players in omniauth
+DIVE14:OAUTH:HOWTO: 2. Cer accesses Sper and obtain Request Token              | understand three players in omniauth
+DIVE14:OAUTH:HOWTO:    which is not approved at this point                     | understand three players in omniauth
+DIVE14:OAUTH:HOWTO: 3. Cer redirects User to SPer, adding                      | understand three players in omniauth
+DIVE14:OAUTH:HOWTO:    unappvoed Request Token into URL parameter              | understand three players in omniauth
+DIVE14:OAUTH:HOWTO: 4. User officially delegates Cer on SPer for accessibility | understand three players in omniauth
+DIVE14:OAUTH:HOWTO:    This makes Request Token valid                          | understand three players in omniauth
+DIVE14:OAUTH:HOWTO: 5. SPer redirects user to Cer. SPer includes               | understand three players in omniauth
+DIVE14:OAUTH:HOWTO:    approved Request Token in URL                           | understand three players in omniauth
+DIVE14:OAUTH:HOWTO: 6. Cer obtains AccessToken in return of approved           | understand three players in omniauth
+DIVE14:OAUTH:HOWTO:    Request Token, and this AccessToken represents          | understand three players in omniauth
+DIVE14:OAUTH:HOWTO:    actual accessibility in the SPer's info                 | understand three players in omniauth
+DIVE14:OAUTH:HOWTO: 7. Cer utilizes AccessToken in order to access             | understand three players in omniauth
+DIVE14:OAUTH:HOWTO:    obtian access user info from SPer                       | understand three players in omniauth
+DIVE14:OAUTH:HOWTO: Ruby on Rails utilizes omniauth gem for Oauth              | understand three players in omniauth
+DIVE14:OAUTH:TODO: Implement SNS Login(*)
+DIVE14:OAUTH:TODO: Add omniauthable definition configuration on Devise module 
+DIVE14:OAUTH:HOWTO: edit app/models/user.rb                                       | Add omniauthable definition configuration on Devise module
+DIVE14:OAUTH:HOWTO: class User < ActiveRecord::Base                               | Add omniauthable definition configuration on Devise module
+DIVE14:OAUTH:HOWTO:     devise :database_authenticatable, :registerable,          | Add omniauthable definition configuration on Devise module
+DIVE14:OAUTH:HOWTO:         :recoverable, :rememberable, :trackable, validatable, | Add omniauthable definition configuration on Devise module
+DIVE14:OAUTH:HOWTO:         :confirmable, :omniauthable,                          | Add omniauthable definition configuration on Devise module
+DIVE14:OAUTH:HOWTO:     ....                                                      | Add omniauthable definition configuration on Devise module
+DIVE14:OAUTH:HOWTO: end                                                           | Add omniauthable definition configuration on Devise module
+DIVE14:OAUTH:TODO: Add routing definition 
+DIVE14:OAUTH:HOWTO: edit /config/routes.rb                             | Add routing definition
+DIVE14:OAUTH:HOWTO: Rails.application.routes.draw do                   | Add routing definition
+DIVE14:OAUTH:HOWTO:   ...                                              | Add routing definition
+DIVE14:OAUTH:HOWTO:   devise_for :users, controllers: {                | Add routing definition
+DIVE14:OAUTH:HOWTO:     omniauth_callbacks: "users/omniauth_callbacks" | Add routing definition
+DIVE14:OAUTH:HOWTO:   }                                                | Add routing definition
+DIVE14:OAUTH:HOWTO:   ...                                              | Add routing definition
+DIVE14:OAUTH:HOWTO: end                                                | Add routing definition
+DIVE14:OAUTH:TODO: Register application in Facebook
+DIVE14:OAUTH:HOWTO: access below URL                                             | Register application in Facebook
+DIVE14:OAUTH:HOWTO: https://developers.facebook.com/                             | Register application in Facebook
+DIVE14:OAUTH:HOWTO: dropdown menu MyApp->Add new App, then popup Add a New App   | Register application in Facebook
+DIVE14:OAUTH:HOWTO: click www (web site)                                         | Register application in Facebook
+DIVE14:OAUTH:HOWTO: configure development application name to be achieve-develop | Register application in Facebook
+DIVE14:OAUTH:HOWTO: input contact info and category of website as educational.   | Register application in Facebook
+DIVE14:OAUTH:HOWTO: then click create appli ID                                   | Register application in Facebook
+DIVE14:OAUTH:HOWTO: input SiteURL as http://localhost:3000/                      | Register application in Facebook
+DIVE14:OAUTH:HOWTO: Similarly, create production as achieve-production           | Register application in Facebook
+DIVE14:OAUTH:TODO: Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: still in the same facebook developer site                      | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: dropdown menu MyApp->achieve-develope                          | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: there ID and app secret is displayed. keep notes for           | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: both production and develop and make it available for yourself | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: on left panel of page, config->basic                           | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: input Appli domain                                             | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: http://localhost:3000/                                         | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: click save button                                              | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: in the same basic config, press "+ Add Platform" button        | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: choose [web site] and input http://localhost:3000/             | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: and URL for heroku for production                              | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: Similarly setup proudction, but only difference is             | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:HOWTO: AppliReview menu -> make achieve-produciton public=True        | Configure for achieve-develop on dashboard
+DIVE14:OAUTH:TODO: Register application in Twitter(*)
+DIVE14:OAUTH:TODO: preparation for Twitter registration 
+DIVE14:OAUTH:HOWTO: login https://twitter.com/ or if you do not have id, | preparation for Twitter registration 
+DIVE14:OAUTH:HOWTO: make one, without missing telephone number that is MUST | preparation for Twitter registration 
+DIVE14:OAUTH:HOWTO: then access https://dev.twitter.com/ | preparation for Twitter registration 
+DIVE14:OAUTH:HOWTO: scroll to the bottom of window and click Manage Your Apps menu| preparation for Twitter registration 
+DIVE14:OAUTH:TODO: Configure API for dev env
+DIVE14:OAUTH:HOWTO: Click @Create New App] menu                               | Configure API for dev env
+DIVE14:OAUTH:HOWTO: input below fields                                        | Configure API for dev env
+DIVE14:OAUTH:HOWTO: Application Details : <Arbitraty name>_development        | Configure API for dev env
+DIVE14:OAUTH:HOWTO: Description: For development of Achieve appli             | Configure API for dev env
+DIVE14:OAUTH:HOWTO: Website : URL for development env                         | Configure API for dev env
+DIVE14:OAUTH:HOWTO:   those who user local env, put http://127.0.0.1/callback | Configure API for dev env
+DIVE14:OAUTH:HOWTO: Callback URL: http://127.0.0.1/callback                   | Configure API for dev env
+DIVE14:OAUTH:HOWTO: scroll down to bottom and tick Yes, I agree check box and | Configure API for dev env
+DIVE14:OAUTH:HOWTO: click [Create your Twitter applicaiton] menu              | Configure API for dev env
+DIVE14:OAUTH:HOWTO: Msg "Your application has been created." is displayed     | Configure API for dev env
+DIVE14:OAUTH:HOWTO: click [Keys and Access Tokens] link                       | Configure API for dev env
+DIVE14:OAUTH:HOWTO: remember the value of Consumer key(APIKey) and            | Configure API for dev env
+DIVE14:OAUTH:HOWTO: consumer Secret (API Secret) value  and                   | Configure API for dev env
+DIVE14:OAUTH:HOWTO: make it available only for you.....                       | Configure API for dev env
+DIVE14:OAUTH:TODO: Configure API for production environment 
+DIVE14:OAUTH:HOWTO: Click [Create New App] button                            | Configure API for production environment
+DIVE14:OAUTH:HOWTO: input below values                                       | Configure API for production environment
+DIVE14:OAUTH:HOWTO: Application Details: <ArbitraryName>_production          | Configure API for production environment
+DIVE14:OAUTH:HOWTO: Description: For Production version of Achieve           | Configure API for production environment
+DIVE14:OAUTH:HOWTO: Website: heroku URL ending with /                        | Configure API for production environment
+DIVE14:OAUTH:HOWTO: Callback URL : same heroku url ending with /             | Configure API for production environment
+DIVE14:OAUTH:HOWTO: agree and click [create your app button]                 | Configure API for production environment
+DIVE14:OAUTH:HOWTO: similarly, take note of Consumer key and Consumer Secret | Configure API for production environment
+DIVE14:OAUTH:TODO: Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO: edit config/initilaizers/devise.rb                             | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO: Devise.setup do |config|                                       | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:   ...                                                          | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:   if Rails.env.production?                                     | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:     config.omniauth :facebook, ENV["FACEBOOK_ID_PRODUCITON"],  | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:         ENV["FACEBOOK_SECRET_PRODUTION"], scope: 'email',      | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:         display: 'popup', info_fields: 'name, email'           | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:     config.omniauth :twitter,  ENV["TWITTER_ID_PRODUCTION"],   | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:         ENV["TWITTER_SECRET_PRODUCTION"],  scope: 'email',     | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:         display: 'popup', info_fields: 'name, email'           | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:   else                                                         | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:     config.omniauth :facebook, ENV["FACEBOOK_ID_DEVELOPMENT"], | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:         ENV["FACEBOOK_SECRET_DEVELOPMENT"], scope: 'email',    | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:         display: 'popup', info_fields: 'name, email'           | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:     config.omniauth :twitter,  ENV["TWITTER_ID_DEVELOPMENT"], | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:         ENV["TWITTER_SECRET_DEVELOPMENT"],  scope: 'email',   | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:         display: 'popup', info_fields: 'name, email'          | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:   end                                                         | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO:   ...                                                         | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO: end                                                           | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO: ONE IMPORTANT NOTICE !!!!                                          | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO: NEVER input the ID and SECRET Directly in this configuration file  | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO: As soon as you push this file to github, you publish this value to | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO: everyone else who can access github, DANGEROUS !!!                 | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:HOWTO: We use dotenv gem to hold this type of sensitive information       | Transcribe IDs and AppSecrets into Achieve
+DIVE14:OAUTH:TODO: install dotenv
+DIVE14:OAUTH:HOWTO: edit Gemfile            | install dotenv
+DIVE14:OAUTH:HOWTO:   ....                  | install dotenv
+DIVE14:OAUTH:HOWTO:   group :development do | install dotenv
+DIVE14:OAUTH:HOWTO:     ...                 | install dotenv
+DIVE14:OAUTH:HOWTO:     gem 'dotenv-rails'  | install dotenv
+DIVE14:OAUTH:HOWTO:   end                   | install dotenv
+DIVE14:OAUTH:HOWTO:   ....                  | install dotenv
+DIVE14:OAUTH:HOWTO: create a new file .env under achieve directory and describe below values | install dotenv
+DIVE14:OAUTH:HOWTO: FACEBOOK_ID_DEVELOPMENT=<Value from Memo>                                | install dotenv
+DIVE14:OAUTH:HOWTO: FACEBOOK_SECRET_DEVELOPMENT=<Value from Memo>                            | install dotenv
+DIVE14:OAUTH:HOWTO: TWITTER_ID_DEVELOPMENT=<Value from Memo>                                 | install dotenv
+DIVE14:OAUTH:HOWTO: TWITTER_SECRET_DEVELOPMENT=<Value from Memo>                             | install dotenv
+DIVE14:OAUTH:TODO: !IMPORTANT! exclude .env from git management 
+DIVE14:OAUTH:HOWTO: edit /.gitignore | !IMPORTANT! exclude .env from git management
+DIVE14:OAUTH:HOWTO: .....            | !IMPORTANT! exclude .env from git management
+DIVE14:OAUTH:HOWTO: # dotenv-rails   | !IMPORTANT! exclude .env from git management
+DIVE14:OAUTH:HOWTO: .env             | !IMPORTANT! exclude .env from git management
+DIVE14:OAUTH:TODO: set proudtion values 
+DIVE14:OAUTH:HOWTO: heroku config:add FACEBOOK_ID_PROUDTION=<Value from Memo>     | set proudtion values
+DIVE14:OAUTH:HOWTO: heroku config:add FACEBOOK_SECRET_PROUDTION=<Value from Memo> | set proudtion values
+DIVE14:OAUTH:HOWTO: heroku config:add TWITTER_ID_PROUDTION=<Value from Memo>      | set proudtion values
+DIVE14:OAUTH:HOWTO: heroku config:add TWITTER_SECRET_PROUDTION=<Value from Memo>  | set proudtion values
+DIVE14:OAUTH:HOWTO: verify the configured value by below command                  | set proudtion values
+DIVE14:OAUTH:HOWTO: heroku config                                                 | set proudtion values
+DIVE14:OAUTH:TODO: install Omniauth
+DIVE14:OAUTH:HOWTO: edit /Gemfile           | install Omniauth
+DIVE14:OAUTH:HOWTO: ...                     | install Omniauth
+DIVE14:OAUTH:HOWTO: gem 'omniauth'          | install Omniauth
+DIVE14:OAUTH:HOWTO: gem 'omniauth-twitter'  | install Omniauth
+DIVE14:OAUTH:HOWTO: gem 'omniauth-facebook' | install Omniauth
+DIVE14:OAUTH:HOWTO: back in the terminal    | install Omniauth
+DIVE14:OAUTH:HOWTO: bundle install          | install Omniauth
+DIVE14:OAUTH:HOWTO: bundle update           | install Omniauth
+DIVE14:OAUTH:TODO: Add required columns in User table for SNS login
+DIVE14:OAUTH:HOWTO: rails g migration AddOmniauthColumnsToUsers uid provider image_url    | Add required columns in User table for SNS login
+DIVE14:OAUTH:HOWTO: class AddOmniauthColumnsTOUsers < ActiveRecord::Migration             | Add required columns in User table for SNS login
+DIVE14:OAUTH:HOWTO:   def change                                                          | Add required columns in User table for SNS login
+DIVE14:OAUTH:HOWTO:       add_column :users, :uid, :string, null: false, default: ""      | Add required columns in User table for SNS login
+DIVE14:OAUTH:HOWTO:       add_column :users, :provider, :string, null: false, default: "" | Add required columns in User table for SNS login
+DIVE14:OAUTH:HOWTO:       add_column :users, :image_url, :string                          | Add required columns in User table for SNS login
+DIVE14:OAUTH:HOWTO:                                                                       | Add required columns in User table for SNS login
+DIVE14:OAUTH:HOWTO:       add_index :users, [:uid, :provider], unique: true               | Add required columns in User table for SNS login
+DIVE14:OAUTH:HOWTO:   end                                                                 | Add required columns in User table for SNS login
+DIVE14:OAUTH:HOWTO: end                                                                   | Add required columns in User table for SNS login
+DIVE14:OAUTH:TODO: understand index and its merit 
+DIVE14:OAUTH:HOWTO: when index is created, index table is created behind the scene. | understand index and its merit
+DIVE14:OAUTH:HOWTO: that index table holds actual value and physical address of the | understand index and its merit
+DIVE14:OAUTH:HOWTO: record. moreover, if unique: true is set, it is guaranteed that | understand index and its merit
+DIVE14:OAUTH:HOWTO: specified value is uniquely inserted.                           | understand index and its merit
+DIVE14:OAUTH:TODO: perform migration 
+DIVE14:OAUTH:HOWTO: because we have set the option null: false,             | perform migration
+DIVE14:OAUTH:HOWTO: we cannot use simply rake db:migrate. use below instead | perform migration
+DIVE14:OAUTH:HOWTO: rake db:migrate:reset                                   | perform migration
+DIVE14:OAUTH:TODO: Create Facebook and Twitter action and controller 
+DIVE14:OAUTH:HOWTO: create directory users under app/controllers                                  | Create Facebook and Twitter action and controller
+DIVE14:OAUTH:HOWTO: this is because we want to group both facebook                                | Create Facebook and Twitter action and controller
+DIVE14:OAUTH:HOWTO: and twitter omniauth controller as one group                                  | Create Facebook and Twitter action and controller
+DIVE14:OAUTH:HOWTO: rails g controller users::OmniauthCallbacks                                   | Create Facebook and Twitter action and controller
+DIVE14:OAUTH:HOWTO: edit app/controllers/users/omniauth_callbacks_controller.rb                   | Create Facebook and Twitter action and controller
+DIVE14:OAUTH:HOWTO: class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController | Create Facebook and Twitter action and controller
+DIVE14:OAUTH:HOWTO: end                                                                           | Create Facebook and Twitter action and controller
+DIVE14:OAUTH:TODO: Create method for Facebook login 
+DIVE14:OAUTH:HOWTO: edit app/controllers/users/omniauth_callbacks_controller.rb                    | Create method for Facebook login
+DIVE14:OAUTH:HOWTO: class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController | Create method for Facebook login
+DIVE14:OAUTH:HOWTO:   def facebook                                                                 | Create method for Facebook login
+DIVE14:OAUTH:HOWTO:   end                                                                          | Create method for Facebook login
+DIVE14:OAUTH:HOWTO: end                                                                            | Create method for Facebook login
+DIVE14:OAUTH:TODO: Implement facebook method content 
+DIVE14:OAUTH:HOWTO: class Users::OmniauthCallbacksController < Devise::OmniauthCallbackController           | Implement facebook method content
+DIVE14:OAUTH:HOWTO:   def facebook                                                                          | Implement facebook method content
+DIVE14:OAUTH:HOWTO:     @user = User.find_for_facebook_oauth(request.env["omniauth.auth"].current_user)     | Implement facebook method content
+DIVE14:OAUTH:HOWTO:                                                                                         | Implement facebook method content
+DIVE14:OAUTH:HOWTO:     if @user.persisted?                                                                 | Implement facebook method content
+DIVE14:OAUTH:HOWTO:       set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format? | Implement facebook method content
+DIVE14:OAUTH:HOWTO:       sign_in_and_redirect @user, event: :authentication                                | Implement facebook method content
+DIVE14:OAUTH:HOWTO:     else                                                                                | Implement facebook method content
+DIVE14:OAUTH:HOWTO:       session["devise.facebook_data"] = request.env["omniauth.auth"]                    | Implement facebook method content
+DIVE14:OAUTH:HOWTO:       redirect_to new_user_registration_url                                             | Implement facebook method content
+DIVE14:OAUTH:HOWTO:     end                                                                                 | Implement facebook method content
+DIVE14:OAUTH:HOWTO:   end                                                                                   | Implement facebook method content
+DIVE14:OAUTH:HOWTO: end                                                                                     | Implement facebook method content
+DIVE14:OAUTH:TODO: define find_for_facebook_oauth metod in user.rb 
+DIVE14:OAUTH:HOWTO: edit app/models/user.rb                                                           | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO: class User < activeRecord::Base                                                   | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:   ...                                                                             | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)                  | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:     user = User.find_by(provider: auth.provider, uid: auth.uid)                   | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:                                                                                   | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:     unless user                                                                   | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:       user = User.new(                                                            | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:         name:     auth.extra.raw_info.name,                                       | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:         provider: auth.provider,                                                  | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:         uid:      auth.uid,                                                       | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:         email:    auth.info.email ||= "#{auto.uid}-#{auth.provider}@example.com", | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:         image_url:  auth.info.image,                                              | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:         password:   Devise.friendly_token[0,20]                                   | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:       )                                                                           | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:       user.skip_confirmation!                                                     | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:       user.save(validate: false)                                                  | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:     end                                                                           | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:     user                                                                          | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO:   end                                                                             | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:HOWTO: end                                                                               | define find_for_facebook_oauth metod in user.rb
+DIVE14:OAUTH:TODO: Devise automatically creates link for facebook try it (*)
+DIVE14:OAUTH:TODO: Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: edit app/controllers/users/omniauth_callback_controller.rb                             | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: class Users::OmniauthCallbacksController < Devise::OmniauthCallbackController          | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   def facebook                                                                         | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     ....                                                                               | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   end                                                                                  | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:                                                                                        | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   def twitter                                                                          | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     # You need to implement the metod below in your model                              | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     @user = User.find_for_twitter_oauth(request.env["omniauth.auth"], current_user)    | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:                                                                                        | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     if @user.persisted?                                                                | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       set_flash_message(:notice, :success, kind: "Twitter") if is_navigational_format? | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       sign_in_and_redirect @user, event: :authentication                               | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     else                                                                               | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       sessino["devise.twitter_data"] = request.env["omniauth.auth"].except("extra")    | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       redirect_to new_user_registration_url                                            | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     end                                                                                | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   end                                                                                  | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: end                                                                                    | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: edit app/model/user.rb | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: .... | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: def self.find_for_twitter_oauth(auto, signed_in_resource=nil) | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   user = User.find_by(provider: auto.provider, uid: auth.uid)  | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   unless user| Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     user = User.new( | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       name:       auth.info.nickname, | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       image_url:  auth.info.image,   | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       proivder:   auth.provider,| Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       uid:        auth.uid,| Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       email:      auth.info.email ||= "#{auth.uid}-#{auth.provider}@example.com", | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       password:   Devise.friendly_token[0,20] | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     )| Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     user.skip_confirmation! | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     user.save | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   end | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   user | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: end | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: ....| Implement Twitter authentication similarly
+DIVE14:OAUTH:TODO: Try the twitter based login(*) 
+DIVE14:OAUTH:TODO: Make sure normal login is still active 
+DIVE14:OAUTH:HOWTO: current state of codes and database denies 2nd normal registration | Make sure normal login is still active
+DIVE14:OAUTH:HOWTO: this is because of unique index of uid and provider                | Make sure normal login is still active
+DIVE14:OAUTH:HOWTO: however, this misrecognizes unique another users by normal auth    | Make sure normal login is still active
+DIVE14:OAUTH:HOWTO: as the same "" "" on uid and provider value.                       | Make sure normal login is still active
+DIVE14:OAUTH:HOWTO: to avoid it , we put random value on uid when normal registration  | Make sure normal login is still active
+DIVE14:OAUTH:HOWTO: to input random value, we need to change devise's registration     | Make sure normal login is still active
+DIVE14:OAUTH:HOWTO: controller. Inherit and make a change accordingly                  | Make sure normal login is still active
+DIVE14:OAUTH:TODO: inherit devise's controller into users/registration_controller
+DIVE14:OAUTH:HOWTO: rails g controller users::registrations                                | inherit devise's controller into users/registration_controller
+DIVE14:OAUTH:HOWTO: edit app/controllers/users/registration_controller                     | inherit devise's controller into users/registration_controller
+DIVE14:OAUTH:HOWTO: class Users::RegistrationsController < Devise::RegistrationsController | inherit devise's controller into users/registration_controller
+DIVE14:OAUTH:HOWTO:   def build_resource(hash=nil)                                         | inherit devise's controller into users/registration_controller
+DIVE14:OAUTH:HOWTO:     hash[:uid] = User.create_unique_string                             | inherit devise's controller into users/registration_controller
+DIVE14:OAUTH:HOWTO:     super                                                              | inherit devise's controller into users/registration_controller
+DIVE14:OAUTH:HOWTO:   end                                                                  | inherit devise's controller into users/registration_controller
+DIVE14:OAUTH:HOWTO: end                                                                    | inherit devise's controller into users/registration_controller
+DIVE14:OAUTH:TODO: implement create_unique_string method 
+DIVE14:OAUTH:HOWTO: edit app/models/user.rb                                             | implement create_unique_string method
+DIVE14:OAUTH:HOWTO: def self.create_unique_string                                       | implement create_unique_string method
+DIVE14:OAUTH:HOWTO:   SecureRandom.uuid                                                 | implement create_unique_string method
+DIVE14:OAUTH:HOWTO: end                                                                 | implement create_unique_string method
+DIVE14:OAUTH:HOWTO: SecureRandom class provides class method, uuid                      | implement create_unique_string method
+DIVE14:OAUTH:HOWTO: https://docs.ruby-lang.org/ja/latest/class/SecureRandom.html#S_UUID | implement create_unique_string method
+DIVE14:OAUTH:TODO: make registration_controller action is invoked when required
+DIVE14:OAUTH:HOWTO: edit config/routes.rb                              | make registration_controller action is invoked when required
+DIVE14:OAUTH:HOWTO:   ....                                             | make registration_controller action is invoked when required
+DIVE14:OAUTH:HOWTO:   devise_fur :users, controllers: {                | make registration_controller action is invoked when required
+DIVE14:OAUTH:HOWTO:     registrations: "users/registrations",          | make registration_controller action is invoked when required
+DIVE14:OAUTH:HOWTO:     omniauth_callbacks: "users/omniauth_callbacks" | make registration_controller action is invoked when required
+DIVE14:OAUTH:HOWTO:   }                                                | make registration_controller action is invoked when required
+DIVE14:OAUTH:HOWTO:   ...                                              | make registration_controller action is invoked when required
+DIVE14:OAUTH:HOWTO: now normal login works no problem.                 | make registration_controller action is invoked when required
+DIVE14:OAUTH:TODO: Display profile picture from SNS
+DIVE14:OAUTH:HOWTO: create helper method which displays picture from SNS | Display profile picture from SNS
+DIVE14:OAUTH:HOWTO: edit app/helpers/application_helper.rb               | Display profile picture from SNS
+DIVE14:OAUTH:HOWTO: module ApplicationHelper                             | Display profile picture from SNS
+DIVE14:OAUTH:HOWTO:   ...                                                | Display profile picture from SNS
+DIVE14:OAUTH:HOWTO:   def profile_img(user)                              | Display profile picture from SNS
+DIVE14:OAUTH:HOWTO:     unless user.provider.blank?                      | Display profile picture from SNS
+DIVE14:OAUTH:HOWTO:       img_url = user.image_url                       | Display profile picture from SNS
+DIVE14:OAUTH:HOWTO:     else                                             | Display profile picture from SNS
+DIVE14:OAUTH:HOWTO:       img_url = 'no_img.png'                         | Display profile picture from SNS
+DIVE14:OAUTH:HOWTO:     end                                              | Display profile picture from SNS
+DIVE14:OAUTH:HOWTO:     image_tag(img_url, alt: user.name)               | Display profile picture from SNS
+DIVE14:OAUTH:HOWTO:   end                                                | Display profile picture from SNS
+DIVE14:OAUTH:TODO: save no_image.png into asets/images
+DIVE14:OAUTH:HOWTO: download picture from below URL and save it as filename following | save no_image.png into asets/images
+DIVE14:OAUTH:HOWTO: http://design-ec.com/?p=55                                        | save no_image.png into asets/images
+DIVE14:OAUTH:HOWTO: filename is assets/images/no_image.png                            | save no_image.png into asets/images
+DIVE14:CARRIERWAVE:TODO: Understand CarrierWave
+DIVE14:CARRIERWAVE:HOWTO: CarrierWave is a plugin gem which enables to | Understand CarrierWave
+DIVE14:CARRIERWAVE:HOWTO: upload picture-image file, and store it in   | Understand CarrierWave
+DIVE14:CARRIERWAVE:HOWTO: web application                              | Understand CarrierWave
+DIVE14:CARRIERWAVE:TODO: install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: edit /Gemfile                  | install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: ....                           | install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: gem 'carrierwave'              | install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: gem 'mini_magick'              | install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: [MAC] brew update              | install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: [MAC] brew install imagemagick | install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: configure carrierwave | install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: rails generate uploader Avatar| install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: rails g migration add_avatar_to_users avatar:string | install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: rake db:migrate | install carrierwave
+DIVE14:CARRIERWAVE:TODO: change model to use carrierwave 
+DIVE14:CARRIERWAVE:HOWTO: edit app/models/user.rb                                                 | change model to use carrierwave
+DIVE14:CARRIERWAVE:HOWTO: class User < <ActiveRecord::Base                                        | change model to use carrierwave
+DIVE14:CARRIERWAVE:HOWTO:   devise :database_authenticatable, :registerable,                      | change model to use carrierwave
+DIVE14:CARRIERWAVE:HOWTO:       :recoverable, :rememberable, :trackable, :validatable,            | change model to use carrierwave
+DIVE14:CARRIERWAVE:HOWTO:       :confirmable, :omniauthable                                       | change model to use carrierwave
+DIVE14:CARRIERWAVE:HOWTO:                                                                         | change model to use carrierwave
+DIVE14:CARRIERWAVE:HOWTO:   mount_uploader :avatar, AvatarUploader # Describe after devise config | change model to use carrierwave
+DIVE14:CARRIERWAVE:HOWTO:   ....                                                                  | change model to use carrierwave
+DIVE14:CARRIERWAVE:HOWTO: end                                                                     | change model to use carrierwave
+DIVE14:CARRIERWAVE:TODO: provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO: edit app/controllers/application_controller.rb | provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO: class ApplicationController < ActionCOntroller::Base | provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:   # Prevent CSRF attacks by raising an exception | provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:   # For APIs, you may want to use :null_session instead | provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:   protect_from_forgery with: :exception | provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:   before_action :configure_permitted_parameters, if: :devise_controller? | provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:   ...| provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:   PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache) | provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:   .... | provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:   protected  | provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:   ....| provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:   def configure_permitted_parameters | provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:     devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)| provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:     devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)| provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO:   end  provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:TODO: edit view screen 
+DIVE14:CARRIERWAVE:HOWTO: edit app/views/devise/registrations/edit.html.erb | edit view screen
+DIVE14:CARRIERWAVE:HOWTO: ....                                              | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:   <div class="field">                             | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:     <%= f.label :現在のパスワード %> <br/>        | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:     <%= f.password_field :current_password, autocomplete: "off", class:"form-control" %> <br/> | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:   </div>                                                       | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:                                                                | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:   <div class="field">                                          | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:     <%= profile_img(@user) if profile_img(@user) %>            | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:     <%= f.file_field :avatar %>                                | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:     <%= f.hidden_field :avatar_cache %>                        | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:   </div>                                                       | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:                                                                | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:   <div class="actions">                                        | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:     <%= f.submit "更新", class: "btn btn-primary btn-block" %> | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:   </div>                                                       | edit view screen
+DIVE14:CARRIERWAVE:HOWTO:   ......                                                       | edit view screen
+DIVE14:CARRIERWAVE:TODO: add logic to display picture uploaded by carrierwave 
+DIVE14:CARRIERWAVE:HOWTO: edit app/helpers/application_helper.rb                            | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO: module ApplicationHelper                                          | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO:   def profile_img(user)                                           | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO:     return image_tag(user.avatar, alt: user.name) if user.avatar? | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO:                                                                   | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO:     unless user.provider.blank?                                   | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO:       img_url = user.image_url                                    | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO:     else                                                          | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO:       img_rl = 'no_image.png'                                     | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO:     end                                                           | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO:     image_tag(img_url, alt: user.name)                            | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO:   end                                                             | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO: end                                                               | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:TODO: prevent picture to be displayed too big 
+DIVE14:CARRIERWAVE:HOWTO: edit app/assets/stylesheetes/normalize.css | prevent picture to be displayed too big
+DIVE14:CARRIERWAVE:HOWTO: img {                                      | prevent picture to be displayed too big
+DIVE14:CARRIERWAVE:HOWTO:   max-width: 100%;                         | prevent picture to be displayed too big
+DIVE14:CARRIERWAVE:HOWTO: }                                          | prevent picture to be displayed too big
+DIVE14:CARRIERWAVE:TODO: Enable changing user account signed up via oauth
+DIVE14:CARRIERWAVE:HOWTO: edit app/models/user.rb                        | Enable changing user account signed up via oauth
+DIVE14:CARRIERWAVE:HOWTO: def update_with_password(params, *options)     | Enable changing user account signed up via oauth
+DIVE14:CARRIERWAVE:HOWTO:   if provider.blank?                           | Enable changing user account signed up via oauth
+DIVE14:CARRIERWAVE:HOWTO:     super                                      | Enable changing user account signed up via oauth
+DIVE14:CARRIERWAVE:HOWTO:   else                                         | Enable changing user account signed up via oauth
+DIVE14:CARRIERWAVE:HOWTO:     params.delete :current_password            | Enable changing user account signed up via oauth
+DIVE14:CARRIERWAVE:HOWTO:     update_without_password(params, *opetions) | Enable changing user account signed up via oauth
+DIVE14:CARRIERWAVE:HOWTO:   end                                          | Enable changing user account signed up via oauth
+DIVE14:CARRIERWAVE:HOWTO: end                                            | Enable changing user account signed up via oauth
+DIVE14:CARRIERWAVE:TODO: edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO: edit app/views/devise/registrations/edit.html.erb                                                  | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO: ....                                                                                               | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO: <% if @user.provider.blank? %>                                                                     | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>                         | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>               | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:   <% end %>                                                                                        | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:                                                                                                    | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:   <div class="field">                                                                              | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br/>              | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:     <%= f.password_field:password, autocomplete: "off", class: "form-control"%>                    | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:   </div>                                                                                           | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:                                                                                                    | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:   <div class="field">                                                                              | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:     <%= f.label :password_confirmation %> <i>(leave blank if you don't want to change it)</i><br/> | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:     <%= f.password_field:password_confirmation, autocomplete: "off", class: "form-control"%>       | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:   </div>                                                                                           | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:                                                                                                    | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:   <div class="field">                                                                              | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:     <%= f.label :current_password %> <i>(leave blank if you don't want to change it)</i><br/>      | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:     <%= f.password_field:current_password, autocomplete: "off", class: "form-control"%>            | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:   </div>                                                                                           | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO:                                                                                                    | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO: <% end %>                                                                                           | edit form and control input field of password
+DIVE14:CARRIERWAVE:HOWTO: .....                                                                                               | edit form and control input field of password
+DIVE14:CARRIERWAVE:TODO: push heroku and delte data
+DIVE14:CARRIERWAVE:HOWTO: git add -A                                          | push heroku and delte data
+DIVE14:CARRIERWAVE:HOWTO: git commit -m "commit after update"                 | push heroku and delte data
+DIVE14:CARRIERWAVE:HOWTO: git push heroku master                              | push heroku and delte data
+DIVE14:CARRIERWAVE:HOWTO: then as it is, application will raise error because | push heroku and delte data
+DIVE14:CARRIERWAVE:HOWTO: we have set the unique index constraint             | push heroku and delte data
+DIVE14:CARRIERWAVE:TODO: data deletion 
+DIVE14:CARRIERWAVE:HOWTO: heroku run rails c | data deletion 
+DIVE14:CARRIERWAVE:HOWTO: Blog.destroy_all | data deletion 
+DIVE14:CARRIERWAVE:HOWTO: User.destroy_all | data deletion 
+DIVE14:CARRIERWAVE:HOWTO: or reset the database by below command | data deletion 
+DIVE14:CARRIERWAVE:HOWTO: heroku pg:reset DATABASE | data deletion 
+DIVE14:CARRIERWAVE:HOWTO: read the screen prompt carefully, type the required string to proceed | data deletion 
+DIVE14:CARRIERWAVE:HOWTO: then, | data deletion 
+DIVE14:CARRIERWAVE:HOWTO: heroku run rake db:migrate | data deletion 
+DIVE14:CARRIERWAVE:TODO: display author's profile in index.html.erb 
+DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
+DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
+DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
+DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
+DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
+DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
+DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
+DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
+DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
+DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
+DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
