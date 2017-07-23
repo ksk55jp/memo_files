@@ -1864,7 +1864,7 @@ DIVE12:Admin:HOWTO: 2. developer can command model, insert update, or delete | u
 DIVE12:Admin:HOWTO: 3. admin screen has function to invite new user          | understand 4 strong points of rails_admin gem
 DIVE12:Admin:HOWTO: 4. can register data in production environment           | understand 4 strong points of rails_admin gem
 DIVE12:Admin:TODO: install rails_admin
-DIVE12:Admin:HOWTO: edit Gemfile  | install rails_admin
+DIVE12:Admin:HOWTO: edit Gemfile      | install rails_admin
 DIVE12:Admin:HOWTO: gem 'rails_admin' | install rails_admin
 DIVE12:Admin:HOWTO: bundle install    | install rails_admin
 DIVE12:Admin:HOWTO: bundle update     | install rails_admin
@@ -2012,8 +2012,8 @@ DIVE13:Exception:HOWTO:   Blog.all(enter)                                       
 DIVE13:Exception:HOWTO:   @blogs(enter)                                          | Execute debugging in console.
 DIVE13:Exception:HOWTO: exit(enter) to stop pry debug                            | Execute debugging in console.
 DIVE13:Exception:TODO: Understand how to put break on view 
-DIVE13:Exception:HOWTO: enclose with % tag like below | Understand how to put break on view 
-DIVE13:Exception:HOWTO: <% binding.pry %>| Understand how to put break on view 
+DIVE13:Exception:HOWTO: enclose with % tag like below | Understand how to put break on view
+DIVE13:Exception:HOWTO: <% binding.pry %>             | Understand how to put break on view
 DIVE13:Exception:TODO: set up better_errors(*)
 DIVE13:Exception:TODO: Cloud9 specific setup 
 DIVE13:Exception:HOWTO: edit config/environments/development.rb          | Cloud9 specific setup
@@ -2218,10 +2218,10 @@ DIVE14:OAUTH:HOWTO: Similarly setup proudction, but only difference is          
 DIVE14:OAUTH:HOWTO: AppliReview menu -> make achieve-produciton public=True        | Configure for achieve-develop on dashboard
 DIVE14:OAUTH:TODO: Register application in Twitter(*)
 DIVE14:OAUTH:TODO: preparation for Twitter registration 
-DIVE14:OAUTH:HOWTO: login https://twitter.com/ or if you do not have id, | preparation for Twitter registration 
-DIVE14:OAUTH:HOWTO: make one, without missing telephone number that is MUST | preparation for Twitter registration 
-DIVE14:OAUTH:HOWTO: then access https://dev.twitter.com/ | preparation for Twitter registration 
-DIVE14:OAUTH:HOWTO: scroll to the bottom of window and click Manage Your Apps menu| preparation for Twitter registration 
+DIVE14:OAUTH:HOWTO: login https://twitter.com/ or if you do not have id,           | preparation for Twitter registration
+DIVE14:OAUTH:HOWTO: make one, without missing telephone number that is MUST        | preparation for Twitter registration
+DIVE14:OAUTH:HOWTO: then access https://dev.twitter.com/                           | preparation for Twitter registration
+DIVE14:OAUTH:HOWTO: scroll to the bottom of window and click Manage Your Apps menu | preparation for Twitter registration
 DIVE14:OAUTH:TODO: Configure API for dev env
 DIVE14:OAUTH:HOWTO: Click @Create New App] menu                               | Configure API for dev env
 DIVE14:OAUTH:HOWTO: input below fields                                        | Configure API for dev env
@@ -2394,29 +2394,29 @@ DIVE14:OAUTH:HOWTO:       sign_in_and_redirect @user, event: :authentication    
 DIVE14:OAUTH:HOWTO:     else                                                                               | Implement Twitter authentication similarly
 DIVE14:OAUTH:HOWTO:       sessino["devise.twitter_data"] = request.env["omniauth.auth"].except("extra")    | Implement Twitter authentication similarly
 DIVE14:OAUTH:HOWTO:       redirect_to new_user_registration_url                                            | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:     end                                                                                | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:   end                                                                                  | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO: end                                                                                    | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO: edit app/model/user.rb | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO: .... | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO: def self.find_for_twitter_oauth(auto, signed_in_resource=nil) | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:   user = User.find_by(provider: auto.provider, uid: auth.uid)  | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:   | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:   unless user| Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:     user = User.new( | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:       name:       auth.info.nickname, | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:       image_url:  auth.info.image,   | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:       proivder:   auth.provider,| Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:       uid:        auth.uid,| Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     end                                                                           | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   end                                                                             | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: end                                                                               | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: edit app/model/user.rb                                                            | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: ....                                                                              | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: def self.find_for_twitter_oauth(auto, signed_in_resource=nil)                     | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   user = User.find_by(provider: auto.provider, uid: auth.uid)                     | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:                                                                                   | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   unless user                                                                     | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     user = User.new(                                                              | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       name:       auth.info.nickname,                                             | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       image_url:  auth.info.image,                                                | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       proivder:   auth.provider,                                                  | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       uid:        auth.uid,                                                       | Implement Twitter authentication similarly
 DIVE14:OAUTH:HOWTO:       email:      auth.info.email ||= "#{auth.uid}-#{auth.provider}@example.com", | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:       password:   Devise.friendly_token[0,20] | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:     )| Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:     user.skip_confirmation! | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:     user.save | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:   end | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO:   user | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO: end | Implement Twitter authentication similarly
-DIVE14:OAUTH:HOWTO: ....| Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:       password:   Devise.friendly_token[0,20]                                     | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     )                                                                             | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     user.skip_confirmation!                                                       | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:     user.save                                                                     | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   end                                                                             | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO:   user                                                                            | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: end                                                                               | Implement Twitter authentication similarly
+DIVE14:OAUTH:HOWTO: ....                                                                              | Implement Twitter authentication similarly
 DIVE14:OAUTH:TODO: Try the twitter based login(*) 
 DIVE14:OAUTH:TODO: Make sure normal login is still active 
 DIVE14:OAUTH:HOWTO: current state of codes and database denies 2nd normal registration | Make sure normal login is still active
@@ -2478,11 +2478,11 @@ DIVE14:CARRIERWAVE:HOWTO: ....                           | install carrierwave
 DIVE14:CARRIERWAVE:HOWTO: gem 'carrierwave'              | install carrierwave
 DIVE14:CARRIERWAVE:HOWTO: gem 'mini_magick'              | install carrierwave
 DIVE14:CARRIERWAVE:HOWTO: [MAC] brew update              | install carrierwave
-DIVE14:CARRIERWAVE:HOWTO: [MAC] brew install imagemagick | install carrierwave
-DIVE14:CARRIERWAVE:HOWTO: configure carrierwave | install carrierwave
-DIVE14:CARRIERWAVE:HOWTO: rails generate uploader Avatar| install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: [MAC] brew install imagemagick                      | install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: configure carrierwave                               | install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: rails generate uploader Avatar                      | install carrierwave
 DIVE14:CARRIERWAVE:HOWTO: rails g migration add_avatar_to_users avatar:string | install carrierwave
-DIVE14:CARRIERWAVE:HOWTO: rake db:migrate | install carrierwave
+DIVE14:CARRIERWAVE:HOWTO: rake db:migrate                                     | install carrierwave
 DIVE14:CARRIERWAVE:TODO: change model to use carrierwave 
 DIVE14:CARRIERWAVE:HOWTO: edit app/models/user.rb                                                 | change model to use carrierwave
 DIVE14:CARRIERWAVE:HOWTO: class User < <ActiveRecord::Base                                        | change model to use carrierwave
@@ -2494,20 +2494,20 @@ DIVE14:CARRIERWAVE:HOWTO:   mount_uploader :avatar, AvatarUploader # Describe af
 DIVE14:CARRIERWAVE:HOWTO:   ....                                                                  | change model to use carrierwave
 DIVE14:CARRIERWAVE:HOWTO: end                                                                     | change model to use carrierwave
 DIVE14:CARRIERWAVE:TODO: provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO: edit app/controllers/application_controller.rb | provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO: class ApplicationController < ActionCOntroller::Base | provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO:   # Prevent CSRF attacks by raising an exception | provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO:   # For APIs, you may want to use :null_session instead | provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO:   protect_from_forgery with: :exception | provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO:   before_action :configure_permitted_parameters, if: :devise_controller? | provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO:   ...| provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO:   PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache) | provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO:   .... | provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO:   protected  | provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO:   ....| provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO:   def configure_permitted_parameters | provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO:     devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)| provide user upload function on user information edit page 
-DIVE14:CARRIERWAVE:HOWTO:     devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)| provide user upload function on user information edit page 
+DIVE14:CARRIERWAVE:HOWTO: edit app/controllers/application_controller.rb                                       | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO: class ApplicationController < ActionCOntroller::Base                                 | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO:   # Prevent CSRF attacks by raising an exception                                     | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO:   # For APIs, you may want to use :null_session instead                              | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO:   protect_from_forgery with: :exception                                              | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO:   before_action :configure_permitted_parameters, if: :devise_controller?             | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO:   ...                                                                                | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO:   PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache)                              | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO:   ....                                                                               | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO:   protected                                                                          | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO:   ....                                                                               | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO:   def configure_permitted_parameters                                                 | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO:     devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)        | provide user upload function on user information edit page
+DIVE14:CARRIERWAVE:HOWTO:     devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES) | provide user upload function on user information edit page
 DIVE14:CARRIERWAVE:HOWTO:   end  provide user upload function on user information edit page 
 DIVE14:CARRIERWAVE:TODO: edit view screen 
 DIVE14:CARRIERWAVE:HOWTO: edit app/views/devise/registrations/edit.html.erb | edit view screen
@@ -2588,14 +2588,14 @@ DIVE14:CARRIERWAVE:HOWTO: git push heroku master                              | 
 DIVE14:CARRIERWAVE:HOWTO: then as it is, application will raise error because | push heroku and delte data
 DIVE14:CARRIERWAVE:HOWTO: we have set the unique index constraint             | push heroku and delte data
 DIVE14:CARRIERWAVE:TODO: data deletion 
-DIVE14:CARRIERWAVE:HOWTO: heroku run rails c | data deletion 
-DIVE14:CARRIERWAVE:HOWTO: Blog.destroy_all | data deletion 
-DIVE14:CARRIERWAVE:HOWTO: User.destroy_all | data deletion 
-DIVE14:CARRIERWAVE:HOWTO: or reset the database by below command | data deletion 
-DIVE14:CARRIERWAVE:HOWTO: heroku pg:reset DATABASE | data deletion 
-DIVE14:CARRIERWAVE:HOWTO: read the screen prompt carefully, type the required string to proceed | data deletion 
-DIVE14:CARRIERWAVE:HOWTO: then, | data deletion 
-DIVE14:CARRIERWAVE:HOWTO: heroku run rake db:migrate | data deletion 
+DIVE14:CARRIERWAVE:HOWTO: heroku run rails c                                                    | data deletion
+DIVE14:CARRIERWAVE:HOWTO: Blog.destroy_all                                                      | data deletion
+DIVE14:CARRIERWAVE:HOWTO: User.destroy_all                                                      | data deletion
+DIVE14:CARRIERWAVE:HOWTO: or reset the database by below command                                | data deletion
+DIVE14:CARRIERWAVE:HOWTO: heroku pg:reset DATABASE                                              | data deletion
+DIVE14:CARRIERWAVE:HOWTO: read the screen prompt carefully, type the required string to proceed | data deletion
+DIVE14:CARRIERWAVE:HOWTO: then,                                                                 | data deletion
+DIVE14:CARRIERWAVE:HOWTO: heroku run rake db:migrate                                            | data deletion
 DIVE14:CARRIERWAVE:TODO: display author's profile in index.html.erb 
 DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
 DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
