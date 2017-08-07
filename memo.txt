@@ -6,7 +6,7 @@ VIMSETUP:HOWTO: $ echo 'execute pathogen#infect()' >> ~/.vimrc                  
 VIMSETUP:TODO:Understand how to install plugins from git
 VIMSETUP:HOWTO: cd ~/.vim/bundle                                           | Understand how to install plugins from git
 VIMSETUP:HOWTO: go to github an foind plugin page                          | Understand how to install plugins from git
-VIMSETUP:HOWTO: expand download buttone and click small button next to url | Understand how to install plugins from git
+VIMSETUP:HOWTO: expand download buttone and click small button next to url | Understand how to install plugins from git   
 VIMSETUP:HOWTO: then clipboard has it                                      | Understand how to install plugins from git
 VIMSETUP:HOWTO: git clone cmd-v                                            | Understand how to install plugins from git
 VIMSETUP:HOWTO: folder download will start                                 | Understand how to install plugins from git
@@ -202,11 +202,11 @@ DIVE01=Rails1:HOWTO:   <br>                            | create form using form_
 DIVE01=Rails1:HOWTO:   <%= f.submit %>                 | create form using form_for, for new action of contact
 DIVE01=Rails1:HOWTO: <% end %>                         | create form using form_for, for new action of contact
 DIVE01=Rails1:TODO:==========================================================
-DIVE02=Rails2:TODO: add edit & update action
-DIVE02=Rails2:HOWTO: edit routes.rb and add actions               | add edit & update action
-DIVE02=Rails2:HOWTO: vim config/routes.rb                         | add edit & update action
-DIVE02=Rails2:HOWTO: resources :blogs only: [..., :edit, :update] | add edit & update action
-DIVE02=Rails2:HOWTO: verify by rake routes command                | add edit & update action
+DIVE02=Rails2:TODO: add edit and update actions in route
+DIVE02=Rails2:HOWTO: edit routes.rb and add actions               | add edit and update actions in route
+DIVE02=Rails2:HOWTO: vim config/routes.rb                         | add edit and update actions in route
+DIVE02=Rails2:HOWTO: resources :blogs only: [..., :edit, :update] | add edit and update actions in route
+DIVE02=Rails2:HOWTO: verify by rake routes command                | add edit and update actions in route
 DIVE02=Rails2:TODO: define edit method on blogs controller
 DIVE02=Rails2:HOWTO: edit app/controllers/blogs_controller.rb | define edit method on blogs controller
 DIVE02=Rails2:HOWTO: def edit                                 | define edit method on blogs controller
@@ -266,7 +266,7 @@ DIVE02=Rails2:HOWTO: 2. make sure there is notice placeholder of next screen    
 DIVE02=Rails2:TODO: Add validateion Blog.title not null
 DIVE02=Rails2:HOWTO: 1. open models/blog.rb | Add validateion Blog.title not null
 DIVE02=Rails2:HOWTO: 2. add below line in class definition    | Add validateion Blog.title not null
-DIVE02=Rails2:HOWTO: 2. validates :title, precence: true      | Add validateion Blog.title not null
+DIVE02=Rails2:HOWTO: 2. validates :title, presence: true      | Add validateion Blog.title not null
 DIVE02=Rails2:TODO: Add logic display result based on validation result
 DIVE02=Rails2:HOWTO: 1. validation logic runs when save method is executed. Take this bool result | Add logic display result based on validation result
 DIVE02=Rails2:HOWTO: 1. if true,  redirect_to ....                                                | Add logic display result based on validation result
@@ -556,7 +556,7 @@ DIVE04=BootStrap:HOWTO:  add root path to invoke top controller index action    
 DIVE04=BootStrap:HOWTO:  edit routes.rb and add below line                      | Make index.html as top page of Achieve
 DIVE04=BootStrap:HOWTO:  root 'top#index'                                       | Make index.html as top page of Achieve
 DIVE04=BootStrap:HOWTO: 2. generate top controller with index action            | Make index.html as top page of Achieve
-DIVE04=BootStrap:HOWTO:  rails g controller Tap index                           | Make index.html as top page of Achieve
+DIVE04=BootStrap:HOWTO:  rails g controller Top index                           | Make index.html as top page of Achieve
 DIVE04=BootStrap:HOWTO:  remove unnecessary entry in routes.rb                  | Make index.html as top page of Achieve
 DIVE04=BootStrap:HOWTO: 3. copy index.html to proper place with new name        | Make index.html as top page of Achieve
 DIVE04=BootStrap:HOWTO:  cp index.html achieve/app/views/top/index.html.erb      | Make index.html as top page of Achieve
@@ -933,7 +933,7 @@ DIVE05=JavaScript:HOWTO:   </div>                                               
 DIVE05=JavaScript:HOWTO: </nav>                                                   | Find sample code from BootStrap site.
 DIVE05=JavaScript:TODO: Verify(*)
 DIVE05=JavaScript:TODO: Add design on header
-DIVE05=JavaScript:HOWTO: edit app/asets/stylesheets/top.scss                   | Add design on header
+DIVE05=JavaScript:HOWTO: edit app/assets/stylesheets/top.scss                   | Add design on header
 DIVE05=JavaScript:HOWTO: delete blocks below                                   | Add design on header
 DIVE05=JavaScript:HOWTO: header ul/header ul a/header ul:after/header li       | Add design on header
 DIVE05=JavaScript:HOWTO: add below instead                                     | Add design on header
@@ -1076,7 +1076,7 @@ DIVE06=GitHub:HOWTO: hit [Add SSH Key] button                                  |
 DIVE06=GitHub:TODO: Upload the set of code into GitHub repository
 DIVE06=GitHub:HOWTO: got to repository page on web.                                      | Upload the set of code into GitHub repository
 DIVE06=GitHub:HOWTO: hit [SSH] button and click the right next icon on URL text box      | Upload the set of code into GitHub repository
-DIVE06=GitHub:HOWTO: git push <paste the URL just copied from page>                      | Upload the set of code into GitHub repository
+DIVE06=GitHub:HOWTO: git push <paste the URL just copied from page> master               | Upload the set of code into GitHub repository
 DIVE06=GitHub:HOWTO: verify the content from browser interface .                         | Upload the set of code into GitHub repository
 DIVE06=GitHub:TODO: Register the remote repo as default.
 DIVE06=GitHub:HOWTO: [NOT YET] git remote add origin <paste the URL>   | Register the remote repo as default.
@@ -1260,7 +1260,7 @@ DIVE08:Devise:HOWTO: insert below line one line above logout                    
 DIVE08:Devise:HOWTO: <li><%= link_to 'マイページ', edit_user_registration_path %></li>     | Create link to my page
 DIVE08:Devise:TODO: Localize other functions
 DIVE08:Devise:HOWTO: touch config/locales/ja.yml                                              | Localize other functions
-DIVE08:Devise:HOWTO: https://github.com/svenfuchs/railsi18n/blob/master/rails/locale/ja.yml   | Localize other functions
+DIVE08:Devise:HOWTO: https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ja.yml   | Localize other functions
 DIVE08:Devise:HOWTO: Copy content into ja.yml file that we touched ealier                     | Localize other functions
 DIVE08:Devise:HOWTO: verify the translation result by restarting web server                   | Localize other functions
 DIVE08:Devise:TODO: Model field names are not translated. do it.
@@ -2464,10 +2464,10 @@ DIVE14:OAUTH:HOWTO:       img_url = 'no_img.png'                         | Displ
 DIVE14:OAUTH:HOWTO:     end                                              | Display profile picture from SNS
 DIVE14:OAUTH:HOWTO:     image_tag(img_url, alt: user.name)               | Display profile picture from SNS
 DIVE14:OAUTH:HOWTO:   end                                                | Display profile picture from SNS
-DIVE14:OAUTH:TODO: save no_image.png into asets/images
-DIVE14:OAUTH:HOWTO: download picture from below URL and save it as filename following | save no_image.png into asets/images
-DIVE14:OAUTH:HOWTO: http://design-ec.com/?p=55                                        | save no_image.png into asets/images
-DIVE14:OAUTH:HOWTO: filename is assets/images/no_image.png                            | save no_image.png into asets/images
+DIVE14:OAUTH:TODO: save no_image.png into assets/images
+DIVE14:OAUTH:HOWTO: download picture from below URL and save it as filename following | save no_image.png into assets/images
+DIVE14:OAUTH:HOWTO: http://design-ec.com/?p=55                                        | save no_image.png into assets/images
+DIVE14:OAUTH:HOWTO: filename is assets/images/no_image.png                            | save no_image.png into assets/images
 DIVE14:CARRIERWAVE:TODO: Understand CarrierWave
 DIVE14:CARRIERWAVE:HOWTO: CarrierWave is a plugin gem which enables to | Understand CarrierWave
 DIVE14:CARRIERWAVE:HOWTO: upload picture-image file, and store it in   | Understand CarrierWave
@@ -2536,7 +2536,7 @@ DIVE14:CARRIERWAVE:HOWTO:                                                       
 DIVE14:CARRIERWAVE:HOWTO:     unless user.provider.blank?                                   | add logic to display picture uploaded by carrierwave
 DIVE14:CARRIERWAVE:HOWTO:       img_url = user.image_url                                    | add logic to display picture uploaded by carrierwave
 DIVE14:CARRIERWAVE:HOWTO:     else                                                          | add logic to display picture uploaded by carrierwave
-DIVE14:CARRIERWAVE:HOWTO:       img_rl = 'no_image.png'                                     | add logic to display picture uploaded by carrierwave
+DIVE14:CARRIERWAVE:HOWTO:       img_url = 'no_image.png'                                    | add logic to display picture uploaded by carrierwave
 DIVE14:CARRIERWAVE:HOWTO:     end                                                           | add logic to display picture uploaded by carrierwave
 DIVE14:CARRIERWAVE:HOWTO:     image_tag(img_url, alt: user.name)                            | add logic to display picture uploaded by carrierwave
 DIVE14:CARRIERWAVE:HOWTO:   end                                                             | add logic to display picture uploaded by carrierwave
@@ -2598,13 +2598,259 @@ DIVE14:CARRIERWAVE:HOWTO: then,                                                 
 DIVE14:CARRIERWAVE:HOWTO: heroku run rake db:migrate                                            | data deletion
 DIVE14:CARRIERWAVE:TODO: display author's profile in index.html.erb 
 DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
-DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
-DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
-DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
-DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
-DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
-DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
-DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
-DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
-DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
-DIVE14:CARRIERWAVE:HOWTO: | display author's profile in index.html.erb 
+DIVE15:Ajax:TODO: Understand Ajax
+DIVE15:Ajax:HOWTO: Ajax is abbrebiation of Asynchronous   | Understand Ajax
+DIVE15:Ajax:HOWTO: JAvascript plus XML                    | Understand Ajax
+DIVE15:Ajax:HOWTO:                                        | Understand Ajax
+DIVE15:Ajax:HOWTO: Ajax enables updating window partially | Understand Ajax
+DIVE15:Ajax:HOWTO: without communicating with web server  | Understand Ajax
+DIVE15:Ajax:TODO: Implement Ajax comment function(*)
+DIVE15:Ajax:TODO: Understand 3 requirements for Ajax comment
+DIVE15:Ajax:HOWTO: 1. update the screen with comment input by user   | Understand 3 requirements for Ajax comment
+DIVE15:Ajax:HOWTO: 2. update without moving to other screen          | Understand 3 requirements for Ajax comment
+DIVE15:Ajax:HOWTO: 3. No change on URL happens with updating content | Understand 3 requirements for Ajax comment
+DIVE15:Ajax:TODO: Define routing on routes.rb
+DIVE15:Ajax:HOWTO: edit /config/routes.rb                                   | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: 1. add below block                                       | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: .....                                                    | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: resources :blog do                                       | Define routing on routes.rb
+DIVE15:Ajax:HOWTO:   resources :comments                                    | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: end                                                      | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: ....                                                     | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: This is nest definition of routing                       | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: This expresses relationship as comment belongs to a blog | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: 2. delete only notation because we will use blogs#show   | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: 3. because we have post :confirm, write it in one place  | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: 4. edit like below                                       | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: ....                                                     | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: resources :blogs do                                      | Define routing on routes.rb
+DIVE15:Ajax:HOWTO:   resources :comments                                    | Define routing on routes.rb
+DIVE15:Ajax:HOWTO:   post :confirm, on: :collection                         | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: end                                                      | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: ....                                                     | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: verify the created rotues to have result                 | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: ....                                                     | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: comments#index                                           | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: comments#create                                          | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: comments#new                                             | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: comments#edit                                            | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: comments#show                                            | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: comments#update                                          | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: comments#update                                          | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: comments#destroy                                         | Define routing on routes.rb
+DIVE15:Ajax:HOWTO: ....                                                     | Define routing on routes.rb
+DIVE15:Ajax:TODO: Generate Commment model
+DIVE15:Ajax:HOWTO: when generating foreign key can be                                 | Generate Commment model
+DIVE15:Ajax:HOWTO: defined at oneshot. do like below                                  | Generate Commment model
+DIVE15:Ajax:HOWTO: rails g model Comment user:references blog:references content:text | Generate Commment model
+DIVE15:Ajax:TODO: Setup association between Commment and User+Blog
+DIVE15:Ajax:HOWTO: 1. verify the auto-set reference on commment model    | Setup association between Commment and User+Blog
+DIVE15:Ajax:HOWTO: read app/models/comment.rb, has 2 lines of belongs_to | Setup association between Commment and User+Blog
+DIVE15:Ajax:HOWTO: 2. edit app/models/user.rb                            | Setup association between Commment and User+Blog
+DIVE15:Ajax:HOWTO: ....                                                  | Setup association between Commment and User+Blog
+DIVE15:Ajax:HOWTO: has_many :comments, dependent: :destroy               | Setup association between Commment and User+Blog
+DIVE15:Ajax:HOWTO: ....                                                  | Setup association between Commment and User+Blog
+DIVE15:Ajax:HOWTO: 3. edit app/models/blogs.rb                           | Setup association between Commment and User+Blog
+DIVE15:Ajax:HOWTO: ....                                                  | Setup association between Commment and User+Blog
+DIVE15:Ajax:HOWTO: has_many :comments, dependent: :destroy               | Setup association between Commment and User+Blog
+DIVE15:Ajax:HOWTO: ....                                                  | Setup association between Commment and User+Blog
+DIVE15:Ajax:TODO: try build syntax
+DIVE15:Ajax:HOWTO: build syntax creates record on     | try build syntax
+DIVE15:Ajax:HOWTO: both side of association with pkey | try build syntax
+DIVE15:Ajax:HOWTO: rails c              | try build syntax
+DIVE15:Ajax:HOWTO: blog = Blog.first    | try build syntax
+DIVE15:Ajax:HOWTO: blog.commments.build | try build syntax
+DIVE15:Ajax:TODO: implement logics on comments_controller.rb(*)
+DIVE15:Ajax:TODO: understand respond_to method
+DIVE15:Ajax:HOWTO: respond_to method routes the required | understand respond_to method
+DIVE15:Ajax:HOWTO: format by request message             | understand respond_to method
+DIVE15:Ajax:HOWTO: HTML--> format.html                   | understand respond_to method
+DIVE15:Ajax:HOWTO: JavaScript-->format.js                | understand respond_to method
+DIVE15:Ajax:TODO: complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO: edit app/controllers/comments_controller.rb                                            | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO: ...                                                                                    | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:   def create                                                                           | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:      # Blogをパラメータの値がら探し出しBlogに紐付くcommentsとしてbuildします           | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:      @comment = current_user.comments.build(comment_params)                            | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:      @blog = @comment.blog                                                             | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:      #クライアント要求に応じてフォーマットを変更                                       | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:      respond_to do |format|                                                            | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:        if @comment.save                                                                | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:          format.html { redirect_to blog_path(@blog), notice: 'コメントを投稿しました'} | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:        else                                                                            | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:          format.html { render :new }                                                   | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:        end                                                                             | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:      end                                                                               | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:    end                                                                                 | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:                                                                                        | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO: private                                                                                | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:  def comment_params                                                                    | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:    params.require(:commment).permit(:blog_id, :content)                                | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO:  end                                                                                   | complete create method in comments_controller.rb
+DIVE15:Ajax:HOWTO: end                                                                                    | complete create method in comments_controller.rb
+DIVE15:Ajax:TODO: delete unnecessary view
+DIVE15:Ajax:HOWTO: delete create.html.erb is not necessary. delete it.| delete unnecessary view
+DIVE15:Ajax:TODO: create show.html.erb for comment
+DIVE15:Ajax:HOWTO: app/views/blogs/show.html.erb     | create show.html.erb for comment
+DIVE15:Ajax:HOWTO: <p id="notice"> <%= notice %></p> | create show.html.erb for comment
+DIVE15:Ajax:HOWTO: <div class="child row">           | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:   <div class="class wrapper col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1"> | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:     <div class="blog-text">                                   | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:       <p class="left"><strong>タイトル</strong></p>           | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:       <p class="left"><%= @blog.title %></p>                  | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:       <p class="left"><strong>内容</strong></p>               | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:       <p class="left"><%= @blog.content %></p>                | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:       <p class="right">                                       | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:         <strong>作成時間：</strong>                           | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:         <%= @blog.created_at.strftime("%y/%m/%d %p %l:%M") %> | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:       </p>                                                    | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:     </div>                                                    | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:     <p>コメント一覧</p>                                       | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:     <div id="comment_area">                                   | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:       <%= render partial: 'comments/index', locals: {comments: @comments, blog: @blog} %> | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:     </div> | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:   </div>   | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:   <%= render partial: 'comments/form', locals: { comment:@comment, blog: @blog} %>        | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:   <% if current_user.id == @blog.user_id %>       | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:     <%= link_to '編集', edit_blog_path(@blog) %>| | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:   <% end %>                                       | create show.html.erb for comment
+DIVE15:Ajax:HOWTO:   <%= link_to '戻る', blogs_path %>               | create show.html.erb for comment
+DIVE15:Ajax:HOWTO: </div>                                            | create show.html.erb for comment
+DIVE15:Ajax:TODO: create comment input form
+DIVE15:Ajax:HOWTO: edit app/views/comments/_form.html.erb                         | create comment input form
+DIVE15:Ajax:HOWTO: <%= form_for([blog, comment]) do |form| %>                     | create comment input form
+DIVE15:Ajax:HOWTO:  <% if comment.errors.any? %>                                  | create comment input form
+DIVE15:Ajax:HOWTO:    <div id="error_explanation">                                | create comment input form
+DIVE15:Ajax:HOWTO:      <h2><%= comment.errors.count件のエラーがあります。%></h2> | create comment input form
+DIVE15:Ajax:HOWTO:      <ul>                                                      | create comment input form
+DIVE15:Ajax:HOWTO:        <% comment.errors.full_messages.each do |msg| %>        | create comment input form
+DIVE15:Ajax:HOWTO:          <li><%= msg %></li>                                   | create comment input form
+DIVE15:Ajax:HOWTO:        <% end %>                                               | create comment input form
+DIVE15:Ajax:HOWTO:      </ul>                                                     | create comment input form
+DIVE15:Ajax:HOWTO:    </div>                                                      | create comment input form
+DIVE15:Ajax:HOWTO:  <% end %>                      | create comment input form
+DIVE15:Ajax:HOWTO:  <%= f.hidden_field :blog_id %> | create comment input form
+DIVE15:Ajax:HOWTO:  <div class="actions">          | create comment input form
+DIVE15:Ajax:HOWTO:    <%= f.submit %>              | create comment input form
+DIVE15:Ajax:HOWTO:  </div>                         | create comment input form
+DIVE15:Ajax:HOWTO: <% end %>                       | create comment input form
+DIVE15:Ajax:TODO: create comment list form
+DIVE15:Ajax:HOWTO: edit app/views/comments/_index.html.erb                                     | create comment list form
+DIVE15:Ajax:HOWTO:·<ul> <% comments.each do |comment| %>                                       | create comment list form
+DIVE15:Ajax:HOWTO:·    <% unless comment.id.nil? %>                                            | create comment list form
+DIVE15:Ajax:HOWTO:·      <li>                                                                  | create comment list form
+DIVE15:Ajax:HOWTO:·        <p class="left"><%= comment.user.name%>さんがコメントしました。</p> | create comment list form
+DIVE15:Ajax:HOWTO:·        <p class="left"><%= comment.content %></p>                          | create comment list form
+DIVE15:Ajax:HOWTO:·        <% if current_user.id == comment.user.id %>                         | create comment list form
+DIVE15:Ajax:HOWTO:·          <p class="right">                                                 | create comment list form
+DIVE15:Ajax:HOWTO:·            <%= link_to '',edit_blog_comment_path(blog, comment), class: "fa fa-pencil-squeare-o fa-lg" %>                                                                  | create comment list form
+DIVE15:Ajax:HOWTO:·            <%= link_to '',blog_comment_path(blog, comment), class:"fa fa-trash-o fa-lg", method: :delete, remote: true, data: {confirm: '本当に削除してもいいですか？'} %> | create comment list form
+DIVE15:Ajax:HOWTO:·          </p> | create comment list form
+DIVE15:Ajax:HOWTO:·      </li>    | create comment list form
+DIVE15:Ajax:HOWTO:·    <% end %>  | create comment list form
+DIVE15:Ajax:HOWTO:·  <% end %>    | create comment list form
+DIVE15:Ajax:HOWTO:·</ul>          | create comment list form
+DIVE15:Ajax:TODO: generate controller blogs#show
+DIVE15:Ajax:HOWTO: edit app/controllers/blogs_controller.rb      | generate controller blogs#show
+DIVE15:Ajax:HOWTO:  ...                                          | generate controller blogs#show
+DIVE15:Ajax:HOWTO:  before_action :set_blog, only:[:show, ...... | generate controller blogs#show
+DIVE15:Ajax:HOWTO:  ...                                          | generate controller blogs#show
+DIVE15:Ajax:HOWTO:  def show                                     | generate controller blogs#show
+DIVE15:Ajax:HOWTO:    @comment = @blog.comments.build            | generate controller blogs#show
+DIVE15:Ajax:HOWTO:    @comments = @blog.comments                 | generate controller blogs#show
+DIVE15:Ajax:HOWTO:  end                                          | generate controller blogs#show
+DIVE15:Ajax:HOWTO:  ....                                         | generate controller blogs#show
+DIVE15:Ajax:TODO: implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO: <div class="container">                                    | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10"> | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:     <p><%= notice %></p>                                   | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:     <h1>ブログ一覧</h1>                                    | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:     <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %> | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:     <% @blogs.each do |blog| %>                      | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:       <div class="row"></div>                        | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:       #ブログのタイトルにlink_toでリンクを設定します | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:       <%= link_to blog_path(blog) to %>              | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:         <h4><strong><%= blog.title %></strong></h4>  | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:       <% end %>                                      | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:       <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-success' %>| implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:       <%= link_to "削除", blog_path(blog.id), method: :delete, data: {confirm: '本当に削除してもいいですか？'}, class: 'btn btn-default btn-danger' %>| implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:     <% end %> | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO:   </div>      | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:HOWTO: </div>        | implement a link to blogs/index.html.erb in comment
+DIVE15:Ajax:TODO: try posting comment. still screen loading(*)
+DIVE15:Ajax:TODO: configure remote: true
+DIVE15:Ajax:HOWTO: edit app/views/comments/_form.html.erb     | configure remote: true
+DIVE15:Ajax:HOWTO: <%= form_for([blog, comment], remote:true) | configure remote: true
+DIVE15:Ajax:HOWTO: ....                                       | configure remote: true
+DIVE15:Ajax:TODO: add process the required format from client
+DIVE15:Ajax:HOWTO: edit app/controllers/comments_controller.rb                                       | add process the required format from client
+DIVE15:Ajax:HOWTO: ...                                                                               | add process the required format from client
+DIVE15:Ajax:HOWTO: repond_to do |format|                                                             | add process the required format from client
+DIVE15:Ajax:HOWTO:  if @comment.save                                                                 | add process the required format from client
+DIVE15:Ajax:HOWTO:    format.html { redirect_to blog:_path(@blog), notice: 'コメントを投稿しました'} | add process the required format from client
+DIVE15:Ajax:HOWTO:    #JS形式でレスポンスを返します。                                                | add process the required format from client
+DIVE15:Ajax:HOWTO:    format.js {render :index }                                                     | add process the required format from client
+DIVE15:Ajax:HOWTO:    ....                                                                           | add process the required format from client
+DIVE15:Ajax:TODO: create a js file to render html
+DIVE15:Ajax:HOWTO: edit app/views/comments/index.js.erb                                                                                   | create a js file to render html
+DIVE15:Ajax:HOWTO: $("#comments_area").html("<%=j(render 'comments/index', { comments: @comment.blog.comments, blog:@comment.blog }) %>") | create a js file to render html
+DIVE15:Ajax:HOWTO: $(':text').val('')                                                                                                     | create a js file to render html
+DIVE15:Ajax:TODO: verify comment is added without screen load(*)
+DIVE15:Ajax:TODO: design comment post screen
+DIVE15:Ajax:HOWTO: edit assets/stylesheets/comments.scss | design comment post screen
+DIVE15:Ajax:HOWTO: ul {                                  | design comment post screen
+DIVE15:Ajax:HOWTO:   padding: 0;                         | design comment post screen
+DIVE15:Ajax:HOWTO: }                                     | design comment post screen
+DIVE15:Ajax:HOWTO: .child li {                           | design comment post screen
+DIVE15:Ajax:HOWTO:   padding-top: 13px;                  | design comment post screen
+DIVE15:Ajax:HOWTO:   border-bottom: 1px dotted #ccc;     | design comment post screen
+DIVE15:Ajax:HOWTO:   list-style-type: none;              | design comment post screen
+DIVE15:Ajax:HOWTO: }                                     | design comment post screen
+DIVE15:Ajax:HOWTO: .right {                              | design comment post screen
+DIVE15:Ajax:HOWTO:  text-align: right;                   | design comment post screen
+DIVE15:Ajax:HOWTO: }                                     | design comment post screen
+DIVE15:Ajax:HOWTO: .left {                               | design comment post screen
+DIVE15:Ajax:HOWTO:  text-align: left;                    | design comment post screen
+DIVE15:Ajax:HOWTO: }                                     | design comment post screen
+DIVE15:Ajax:TODO: HW. dynamically delete comment.
+DIVE15:Ajax:HOWTO: 1. delete the record like usual           | HW. dynamically delete comment.
+DIVE15:Ajax:HOWTO: 2. render index by js                     | HW. dynamically delete comment.
+DIVE15:Ajax:HOWTO: edit app/controlls/comments_controller.rb | HW. dynamically delete comment.
+DIVE15:Ajax:HOWTO: def destroy                               | HW. dynamically delete comment.
+DIVE15:Ajax:HOWTO:  @comment = Comment.find(params[:id])     | HW. dynamically delete comment.
+DIVE15:Ajax:HOWTO:  @comment.destroy                         | HW. dynamically delete comment.
+DIVE15:Ajax:HOWTO:  respond_to |format|                      | HW. dynamically delete comment.
+DIVE15:Ajax:HOWTO:    format.js{ render: index }             | HW. dynamically delete comment.
+DIVE15:Ajax:HOWTO:  end                                      | HW. dynamically delete comment.
+DIVE15:Ajax:HOWTO: end                                       | HW. dynamically delete comment.
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
+DIVE16:Following:TODO:
