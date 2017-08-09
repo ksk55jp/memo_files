@@ -2823,34 +2823,389 @@ DIVE15:Ajax:HOWTO:  respond_to |format|                      | HW. dynamically d
 DIVE15:Ajax:HOWTO:    format.js{ render: index }             | HW. dynamically delete comment.
 DIVE15:Ajax:HOWTO:  end                                      | HW. dynamically delete comment.
 DIVE15:Ajax:HOWTO: end                                       | HW. dynamically delete comment.
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
-DIVE16:Following:TODO:
+DIVE16:Following:TODO:understand requirement of follow function
+DIVE16:Following:HOWTO:1. display buttons for follow and un-follow                            | understand requirement of follow function
+DIVE16:Following:HOWTO:2. for users that current user is not following, display follow button | understand requirement of follow function
+DIVE16:Following:HOWTO:3. for users that current user is following, display unfollow button   | understand requirement of follow function
+DIVE16:Following:HOWTO:4. clicking the follow button, complete the following the user.        | understand requirement of follow function
+DIVE16:Following:HOWTO:5. clicking the un-follow button, complete the un-following the user.  | understand requirement of follow function
+DIVE16:Following:HOWTO:6. understand requirement of follow function                           | understand requirement of follow function
+DIVE16:Following:HOWTO:7. display list of users that current user is                          | understand requirement of follow function
+DIVE16:Following:HOWTO:   following and followers of user that is displayed                   | understand requirement of follow function
+DIVE16:Following:HOWTO:8. blog list can display entries only when mutually followed.          | understand requirement of follow function
+DIVE16:Following:TODO: understand how to implement many to many relations
+DIVE16:Following:HOWTO: setup intermediary table                                   | understand how to implement many to many relations
+DIVE16:Following:HOWTO: from each side of models, define has_many associations x 2 | understand how to implement many to many relations
+DIVE16:Following:HOWTO: from intermediary model, define to belongs_to relations.   | understand how to implement many to many relations
+DIVE16:Following:TODO: create intermediary table 
+DIVE16:Following:HOWTO: rails g model Relationship follower_id:integer:index followed_id:integer:index | create intermediary table
+DIVE16:Following:HOWTO: edit the created migration file                                                | create intermediary table
+DIVE16:Following:HOWTO: add unique index on combination of :follower_id and :followed_id               | create intermediary table
+DIVE16:Following:HOWTO: ...                                                                            | create intermediary table
+DIVE16:Following:HOWTO: def change                                                                     | create intermediary table
+DIVE16:Following:HOWTO:   create_table :relationships do |t|                                           | create intermediary table
+DIVE16:Following:HOWTO:     t.integer :follower_id                                                     | create intermediary table
+DIVE16:Following:HOWTO:     t.integer :followed_id                                                     | create intermediary table
+DIVE16:Following:HOWTO:                                                                                | create intermediary table
+DIVE16:Following:HOWTO:     t.timestamps null: false                                                   | create intermediary table
+DIVE16:Following:HOWTO:   end                                                                          | create intermediary table
+DIVE16:Following:HOWTO:   add_index :relationships, :follower_id                                       | create intermediary table
+DIVE16:Following:HOWTO:   add_index :relationships, :followed_id                                       | create intermediary table
+DIVE16:Following:HOWTO:   add_index :relationships, [:follower_id, :followed_id], unique: true         | create intermediary table
+DIVE16:Following:HOWTO:   end                                                                          | create intermediary table
+DIVE16:Following:HOWTO: end                                                                            | create intermediary table
+DIVE16:Following:HOWTO: ------                                                                         | create intermediary table
+DIVE16:Following:HOWTO: rake db:migrate                                                                | create intermediary table
+DIVE16:Following:TODO: define associations between models(*) 
+DIVE16:Following:TODO: define association that user has many relationships 
+DIVE16:Following:HOWTO: edit app/models/user.rb                                                                                        | define association that user has many relationships
+DIVE16:Following:HOWTO: class User < ActiveRecord::Base                                                                                | define association that user has many relationships
+DIVE16:Following:HOWTO:   ...                                                                                                          | define association that user has many relationships
+DIVE16:Following:HOWTO:   has_many :relationships, foreign_key: "follower_id", dependent: :destroy                                     | define association that user has many relationships
+DIVE16:Following:HOWTO:   has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy | define association that user has many relationships
+DIVE16:Following:HOWTO:   ...                                                                                                          | define association that user has many relationships
+DIVE16:Following:HOWTO: end                                                                                                            | define association that user has many relationships
+DIVE16:Following:TODO: define association that relationship belongs to user
+DIVE16:Following:HOWTO: edit app/models/relationship.rb            | define association that relationship belongs to user
+DIVE16:Following:HOWTO: class Relationship<ActiveRecord::Base      | define association that relationship belongs to user
+DIVE16:Following:HOWTO:   belongs_to :follower, class_name: "User" | define association that relationship belongs to user
+DIVE16:Following:HOWTO:   belongs_to :followed, class_name: "User" | define association that relationship belongs to user
+DIVE16:Following:HOWTO: end                                        | define association that relationship belongs to user
+DIVE16:Following:TODO: define association that user has plural users through relationship
+DIVE16:Following:HOWTO: edit app/models/user.rb again                                             | define association that user has plural users through relationship
+DIVE16:Following:HOWTO: class User < ActiveRecord::Base                                           | define association that user has plural users through relationship
+DIVE16:Following:HOWTO:   ...                                                                     | define association that user has plural users through relationship
+DIVE16:Following:HOWTO:   has_many :followed_users, through: :relationships, source: :followed    | define association that user has plural users through relationship
+DIVE16:Following:HOWTO:   has_many :followers, through: :reverse_relationships, source: :follower | define association that user has plural users through relationship
+DIVE16:Following:HOWTO:   ...                                                                     | define association that user has plural users through relationship
+DIVE16:Following:HOWTO: end                                                                       | define association that user has plural users through relationship
+DIVE16:Following:TODO: Now association is done. Implement functionality  (*)
+DIVE16:Following:TODO: Create user list screen
+DIVE16:Following:HOWTO: 1. create controller and view                                      | Create user list screen
+DIVE16:Following:HOWTO: rails g controller users index                                     | Create user list screen
+DIVE16:Following:HOWTO: edit config/routes.rb                                              | Create user list screen
+DIVE16:Following:HOWTO: delete below line                                                  | Create user list screen
+DIVE16:Following:HOWTO: get 'users/index'                                                  | Create user list screen
+DIVE16:Following:HOWTO: rewrite the routing using resources                                | Create user list screen
+DIVE16:Following:HOWTO: edit config/routes.rb                                              | Create user list screen
+DIVE16:Following:HOWTO: resources :users, only: [:index]                                   | Create user list screen
+DIVE16:Following:HOWTO: edit app/controllers/user_controlle.rb                             | Create user list screen
+DIVE16:Following:HOWTO: add below index method below devise_for                            | Create user list screen
+DIVE16:Following:HOWTO: class UsersController < ApplicationController                      | Create user list screen
+DIVE16:Following:HOWTO:   def index                                                        | Create user list screen
+DIVE16:Following:HOWTO:     @users = User.all                                              | Create user list screen
+DIVE16:Following:HOWTO:   end                                                              | Create user list screen
+DIVE16:Following:HOWTO: end                                                                | Create user list screen
+DIVE16:Following:HOWTO: create user list page                                              | Create user list screen
+DIVE16:Following:HOWTO: edit app/views/users/index.html.erb                                | Create user list screen
+DIVE16:Following:HOWTO: <div class="container">                                            | Create user list screen
+DIVE16:Following:HOWTO:   <h2>ユーザー</h2>                                                | Create user list screen
+DIVE16:Following:HOWTO:   <% @users.each do |user| %>                                      | Create user list screen
+DIVE16:Following:HOWTO:     <div class="container-child col-md-2 col-sm-4 col-xs-6"></div> | Create user list screen
+DIVE16:Following:HOWTO:     <%= profile_img(user) %>                                       | Create user list screen
+DIVE16:Following:HOWTO:     <%= user.email %>                                              | Create user list screen
+DIVE16:Following:HOWTO:     <%= render 'follow_form', user:user %>                         | Create user list screen
+DIVE16:Following:HOWTO:   <% end %>                                                        | Create user list screen
+DIVE16:Following:HOWTO: </div>                                                             | Create user list screen
+DIVE16:Following:TODO: enable move from header to user list page 
+DIVE16:Following:HOWTO: edit app/views/layouts/application.html.erb                        | enable move from header to user list page
+DIVE16:Following:HOWTO: add below in dropdown                                              | enable move from header to user list page
+DIVE16:Following:HOWTO: <li><%= link_'ユーザー一覧', users_path if user_signed_in? %></li> | enable move from header to user list page
+DIVE16:Following:TODO: create follow function(*) 
+DIVE16:Following:TODO: create routing for following function 
+DIVE16:Following:HOWTO: edit config/routes.rb                               | create routing for following function
+DIVE16:Following:HOWTO: resources :relationships, only: [:create, :destroy] | create routing for following function
+DIVE16:Following:TODO: generate controller for following function
+DIVE16:Following:HOWTO: rails g controller Relationships create destroy | generate controller for following function
+DIVE16:Following:TODO: create button for following function 
+DIVE16:Following:HOWTO: create a partial template includes button to kick create action                                | create button for following function
+DIVE16:Following:HOWTO: edit app/views/users/_follow_form.html.erb                                                     | create button for following function
+DIVE16:Following:HOWTO: <div id="follow_form_<%= user.id %>">                                                          | create button for following function·
+DIVE16:Following:HOWTO:   <% unless current_user.following?(user) %>                                                   | create button for following function·
+DIVE16:Following:HOWTO:     <%= form_for(current_user.relashipships.build(followed_id: user.id), remote: true) do|f|%> | create button for following function·
+DIVE16:Following:HOWTO:       <%= f.hidden_field :followed_id %>                                                       | create button for following function·
+DIVE16:Following:HOWTO:       <%= f.submit "フォロー", class:"btn btn-large btn-primary" %>                            | create button for following function·
+DIVE16:Following:HOWTO:     <% end %>                                                                                  | create button for following function·
+DIVE16:Following:HOWTO:   <% end %>                                                                                    | create button for following function·
+DIVE16:Following:HOWTO: </div>                                                                                         | create button for following function
+DIVE16:Following:TODO: invoke follow form from user list page
+DIVE16:Following:HOWTO: edit app/views/users/index.html.erb         | invoke follow form from user list page
+DIVE16:Following:HOWTO: ...                                         | invoke follow form from user list page
+DIVE16:Following:HOWTO: <% @users.each do |user| %>                 | invoke follow form from user list page
+DIVE16:Following:HOWTO:   ...                                       | invoke follow form from user list page
+DIVE16:Following:HOWTO:     <%= render 'follow_form', user: user %> | invoke follow form from user list page
+DIVE16:Following:HOWTO: <% end %>                                   | invoke follow form from user list page
+DIVE16:Following:HOWTO: ...                                         | invoke follow form from user list page
+DIVE16:Following:TODO: create method implementation 
+DIVE16:Following:HOWTO: edit app/controllers/relationships_controller.rb         | create method implementation
+DIVE16:Following:HOWTO: class RelationshipsController<ApplicatioinController     | create method implementation
+DIVE16:Following:HOWTO:   before_action :authenticate_user!                      | create method implementation
+DIVE16:Following:HOWTO:   respond_to :js                                         | create method implementation
+DIVE16:Following:HOWTO:                                                          | create method implementation
+DIVE16:Following:HOWTO:   def create                                             | create method implementation
+DIVE16:Following:HOWTO:     @user=User.find(params[:relationship][:followed_id]) | create method implementation
+DIVE16:Following:HOWTO:     current_user.follow!(@user)                          | create method implementation
+DIVE16:Following:HOWTO:     respond_with @user                                   | create method implementation
+DIVE16:Following:HOWTO:   end                                                    | create method implementation
+DIVE16:Following:HOWTO: end                                                      | create method implementation
+DIVE16:Following:TODO: implement follow! method in model
+DIVE16:Following:HOWTO: edit app/models/user.rb                             | implement follow! method in model
+DIVE16:Following:HOWTO: ....                                                | implement follow! method in model
+DIVE16:Following:HOWTO: def follow!(other_user)                             | implement follow! method in model
+DIVE16:Following:HOWTO:   relationships.create!(followed_id: other_user.id) | implement follow! method in model
+DIVE16:Following:HOWTO: end                                                 | implement follow! method in model
+DIVE16:Following:HOWTO:                                                     | implement follow! method in model
+DIVE16:Following:HOWTO: def following?(other_user)                          | implement follow! method in model
+DIVE16:Following:HOWTO:   relationships.find_by(followed_id: other_user.id) | implement follow! method in model
+DIVE16:Following:HOWTO: end                                                 | implement follow! method in model
+DIVE16:Following:HOWTO: ....                                                | implement follow! method in model
+DIVE16:Following:TODO: implement Ajax part of following function 
+DIVE16:Following:HOWTO: create below js file as app/views/relationship/create.js.erb | implement Ajax part of following function 
+DIVE16:Following:HOWTO: $("#follow_form_"+"<%= @user.id %>").html("<%= escape_javascript(render partial:'users/follow_form', locals: {user: @user} ) %> ")| implement Ajax part of following function 
+DIVE16:Following:TODO: create unfollow function (*) 
+DIVE16:Following:TODO: implement unfollow button 
+DIVE16:Following:HOWTO: edit app/views/users/_follow_form.html.erb   | implement unfollow button
+DIVE16:Following:HOWTO: <div id="follow_form_<%= user.id %>">        | implement unfollow button·
+DIVE16:Following:HOWTO:   <% unless current_user.following?(user) %> | implement unfollow button·
+DIVE16:Following:HOWTO:     <%= form_for(current_user.relationships.build(followed_id: user.id), remote: true) do |f| %>                  | implement unfollow button·
+DIVE16:Following:HOWTO:       <%= f.hidden_field :followed_id %>                            | implement unfollow button·
+DIVE16:Following:HOWTO:       <%= f.submit "フォロー", class: "btn btn-large btn-primary"%> | implement unfollow button·
+DIVE16:Following:HOWTO:     <% end %>                                                       | implement unfollow button·
+DIVE16:Following:HOWTO:   <% else %>                                                        | implement unfollow button·
+DIVE16:Following:HOWTO:     <%= form_for(current_user.relationships.find_by(followed_id: user.id), html: {method: :delete}, remote: true) | implement unfollow button·
+DIVE16:Following:HOWTO:       <%= f.submit "つながりを解除", class: "btn btn-large" %> | implement unfollow button·
+DIVE16:Following:HOWTO:     <% end %>                                                  | implement unfollow button·
+DIVE16:Following:HOWTO:   <% end %>                                                    | implement unfollow button·
+DIVE16:Following:HOWTO: </div>                                                         | implement unfollow button
+DIVE16:Following:TODO: implement destroy method in relationships controller
+DIVE16:Following:HOWTO: edit app/controllers/relationships/controller.rb  | implement destroy method in relationships controller
+DIVE16:Following:HOWTO: ....                                              | implement destroy method in relationships controller
+DIVE16:Following:HOWTO: def destroy                                       | implement destroy method in relationships controller
+DIVE16:Following:HOWTO:   @user = Relationship.find(parmas[:id]).followed | implement destroy method in relationships controller
+DIVE16:Following:HOWTO:   current_user.unfollow!(@user)                   | implement destroy method in relationships controller
+DIVE16:Following:HOWTO:   respond_with @user                              | implement destroy method in relationships controller
+DIVE16:Following:HOWTO: end                                               | implement destroy method in relationships controller
+DIVE16:Following:HOWTO: ....                                              | implement destroy method in relationships controller
+DIVE16:Following:TODO: implement unfollow! method in user model
+DIVE16:Following:HOWTO: edit app/models/user.rb                                     | implement unfollow! method in user model
+DIVE16:Following:HOWTO: ....                                                        | implement unfollow! method in user model
+DIVE16:Following:HOWTO: def unfollow!(other_user)                                   | implement unfollow! method in user model
+DIVE16:Following:HOWTO:   relationships.find_by(followed_id: other_user.id).destroy | implement unfollow! method in user model
+DIVE16:Following:HOWTO: end                                                         | implement unfollow! method in user model
+DIVE16:Following:HOWTO: ....                                                        | implement unfollow! method in user model
+DIVE16:Following:TODO: implement Ajax on unfollow function
+DIVE16:Following:HOWTO: edit app/views/relationships/destroy.js.erb                                                                                        | implement Ajax on unfollow function
+DIVE16:Following:HOWTO: $("#follow_form_"+"<%= @user.id%>").html("<%= escape_javascript(render partial: 'users/follow_form', locals: {user: @user } ) %>") | implement Ajax on unfollow function
+DIVE16:Following:TODO: HW implment user detail page
+DIVE16:Following:TODO: HW display list of follow users
+DIVE16:Following:TODO: HW display list of follower users
+DIVE19_1:Message:TODO: understand messaging function requirement
+DIVE19_1:Message:HOWTO: 1. text based conversation| understand messaging function requirement
+DIVE19_1:Message:HOWTO: 2. disclose the conversation only to the peers. | understand messaging function requirement
+DIVE19_1:Message:HOWTO: 3. one dialogue instance to be defined between peer per speaker | understand messaging function requirement
+DIVE19_1:Message:HOWTO: (not one message per pair or smth like that) | understand messaging function requirement
+DIVE19_1:Message:HOWTO: to summarize, below points | understand messaging function requirement
+DIVE19_1:Message:HOWTO: * Be able to display message page from user list or user detail page.| understand messaging function requirement
+DIVE19_1:Message:HOWTO: * Display current user and the other peer name on the conversation page. | understand messaging function requirement
+DIVE19_1:Message:HOWTO: * Display peer conversation on conversation page, chronological order  | understand messaging function requirement
+DIVE19_1:Message:HOWTO: * Be able to view all the messages that current user has exhanged in the past from | understand messaging function requirement
+DIVE19_1:Message:HOWTO:   Message list window . | understand messaging function requirement
+DIVE19_1:Message:HOWTO: therefore, application tables will be like below ... | understand messaging function requirement
+DIVE19_1:Message:HOWTO: users: (exists) holds information of users | understand messaging function requirement
+DIVE19_1:Message:HOWTO: conversations: (new) holds peer conversation exchange information | understand messaging function requirement
+DIVE19_1:Message:HOWTO: messages: (new) holds each pieces of message that is exchanged during the conversation. | understand messaging function requirement
+DIVE19_1:Message:TODO: configure routing for messaging 
+DIVE19_1:Message:HOWTO: define routing, by nesting messages within conversations | configure routing for messaging
+DIVE19_1:Message:HOWTO: edit config/routes.rb to add below code .                | configure routing for messaging
+DIVE19_1:Message:HOWTO: ....                                                     | configure routing for messaging
+DIVE19_1:Message:HOWTO: resources :conversations do                              | configure routing for messaging
+DIVE19_1:Message:HOWTO:   resources :messages                                    | configure routing for messaging
+DIVE19_1:Message:HOWTO: do                                                       | configure routing for messaging
+DIVE19_1:Message:HOWTO: ....                                                     | configure routing for messaging
+DIVE19_1:Message:HOWTO: verify by rake routes command.                           | configure routing for messaging
+DIVE19_1:Message:TODO: configure controller 
+DIVE19_1:Message:HOWTO: create 2 controllers, namely conversations, and messages controller | configure controller
+DIVE19_1:Message:HOWTO: for conversations, we need to implement 2 requirements here.        | configure controller
+DIVE19_1:Message:HOWTO: 1. list all the conversations (index action)                        | configure controller
+DIVE19_1:Message:HOWTO: 2. generate new conversations (create action )                      | configure controller
+DIVE19_1:Message:HOWTO: therefore, command will be like below,                              | configure controller
+DIVE19_1:Message:HOWTO: rails g controller Conversations index create                       | configure controller
+DIVE19_1:Message:HOWTO: as usual, delete unnecessary definitions frou routes.rb             | configure controller
+DIVE19_1:Message:TODO: implement each actions within conversations_controllers.rb 
+DIVE19_1:Message:HOWTO: before_action :authenticate_user!                                                         | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO: def index                                                                                 | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO:   @users = User.all                                                                       | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO:   @conversations = Conversation.all                                                       | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO: end                                                                                       | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO: def create                                                                                | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO:   if Conversation.between(params[:sender_id], params[:recipient_id]).present?             | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO:     @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO:   else                                                                                    | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO:     @conversation = Conversation.create!(conversation_params)                             | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO:   end                                                                                     | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO:   redirect_to conversation_messages_path(@conversation)                                   | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO: end                                                                                       | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO:                                                                                           | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO: private                                                                                   | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO:   def conversation_params                                                                 | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO:     params.permit(:sender_id, :recipient_id)                                              | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO:   end                                                                                     | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:HOWTO: end                                                                                       | implement each actions within conversations_controllers.rb
+DIVE19_1:Message:TODO: define messages controller wiht index and create action 
+DIVE19_1:Message:HOWTO: rails g controller Messages index create                      | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO: delete unneccessary definitions from routes.rb                | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO: edit app/controllers/messages_controller.rb                   | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO: before_action do                                              | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:   @conversation = Conversation.find(params[:conversation_id]) | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO: end                                                           | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO: def index                                                     | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:   @messages = @conversions.messages                           | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:   if @messages.length > 10                                    | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:     @over_ten = true                                          | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:     @messages = @messages[-10..-1]                            | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:   end                                                         | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:                                                               | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:   if params[:m]                                               | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:     @over_ten = false                                         | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:     @messages = @conversation.messages                        | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:   end                                                         | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:                                                               | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:   if @messages.last                                           | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:     if @messages.last.user_id != current_user.id              | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:       @messages.last.read = true                              | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:     end                                                       | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:   end                                                         | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:   @message = @conversation.message.build                      | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO: end                                                           | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO: def create                                                | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:   @message = @conversation.messages.build(message_params) | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:   if @message.save                                        | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:     redirect_to conversation_messages_path(@conversation) | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO:   end                                                     | define messages controller wiht index and create action
+DIVE19_1:Message:HOWTO: end                                                       | define messages controller wiht index and create action
+DIVE19_1:Message:TODO: implement strong parameter in messages controller 
+DIVE19_1:Message:HOWTO: private                                              | implement strong parameter in messages controller
+DIVE19_1:Message:HOWTO:   def message_params                                 | implement strong parameter in messages controller
+DIVE19_1:Message:HOWTO:     params.require(:message).permit(:body, :user_id) | implement strong parameter in messages controller
+DIVE19_1:Message:HOWTO:   end                                                | implement strong parameter in messages controller
+DIVE19_1:Message:HOWTO: end                                                  | implement strong parameter in messages controller
+DIVE19_1:Message:TODO: define models for conversation and message 
+DIVE19_1:Message:HOWTO: 1. Conversation model                                                   | define models for conversation and message
+DIVE19_1:Message:HOWTO: add below 2 columns on top of the set of columns auto generated.        | define models for conversation and message
+DIVE19_1:Message:HOWTO: integer "sender_id"                                                     | define models for conversation and message
+DIVE19_1:Message:HOWTO: integer "recipient_id"                                                  | define models for conversation and message
+DIVE19_1:Message:HOWTO: this will be done by below rails command with parameters.               | define models for conversation and message
+DIVE19_1:Message:HOWTO: rails g model Conversation sender_id:integer recipient_id:integer       | define models for conversation and message
+DIVE19_1:Message:HOWTO: define the association as well                                          | define models for conversation and message
+DIVE19_1:Message:HOWTO: edit app/models/conversation.rb                                         | define models for conversation and message
+DIVE19_1:Message:HOWTO: ....                                                                    | define models for conversation and message
+DIVE19_1:Message:HOWTO: belongs_to :sender, foreign_key: :sender_id, class_name: 'User'         | define models for conversation and message
+DIVE19_1:Message:HOWTO: belongs_to :recipient, foreign_key: :recipient_id, class_name: 'User'   | define models for conversation and message
+DIVE19_1:Message:HOWTO: has_many :messages, dependent: :destroy                                 | define models for conversation and message
+DIVE19_1:Message:HOWTO: validates_uniquenes_of :sender_id, scope: :recipient_id                 | define models for conversation and message
+DIVE19_1:Message:HOWTO: scope :between, -> (sender_id, recipient_id) do                         | define models for conversation and message
+DIVE19_1:Message:HOWTO:   where("(conversations.sender_id= ? AND conversations.recipient_id =?) | define models for conversation and message
+DIVE19_1:Message:HOWTO:     OR (conversations.sender_id = ? AND conversations.recipient_id = ?)"| define models for conversation and message
+DIVE19_1:Message:HOWTO:     , sender_id, recipient_id, recipient_id, sender_id )                | define models for conversation and message
+DIVE19_1:Message:HOWTO: end                                                                     | define models for conversation and message
+DIVE19_1:Message:HOWTO:                                                                         | define models for conversation and message
+DIVE19_1:Message:HOWTO: def target_user(current_user)                                           | define models for conversation and message
+DIVE19_1:Message:HOWTO:   if sender_id == current_user.id                                       | define models for conversation and message
+DIVE19_1:Message:HOWTO:     User.find(recipient_id)                                             | define models for conversation and message
+DIVE19_1:Message:HOWTO:   elsif recipient_id == currrent_user.id                                | define models for conversation and message
+DIVE19_1:Message:HOWTO:     User.find(sender_id)                                                | define models for conversation and message
+DIVE19_1:Message:HOWTO:   end                                                                   | define models for conversation and message
+DIVE19_1:Message:HOWTO: end                                                                     | define models for conversation and message
+DIVE19_1:Message:HOWTO: end                                                                     | define models for conversation and message
+DIVE19_1:Message:TODO: create table for Conversation model
+DIVE19_1:Message:HOWTO: rake db:migrate  | create table for Conversation model
+DIVE19_1:Message:HOWTO: rails dbconsole  | create table for Conversation model
+DIVE19_1:Message:HOWTO: \d conversations | create table for Conversation model
+DIVE19_1:Message:HOWTO: \q               | create table for Conversation model
+DIVE19_1:Message:TODO: Create Message model and configure 
+DIVE19_1:Message:HOWTO: this model will need below list of columns | Create Message model and configure
+DIVE19_1:Message:HOWTO: * text body                                | Create Message model and configure
+DIVE19_1:Message:HOWTO: * integer conversation_id                  | Create Message model and configure
+DIVE19_1:Message:HOWTO: * integer user_id                          | Create Message model and configure
+DIVE19_1:Message:HOWTO: * boolean read, default: false             | Create Message model and configure
+DIVE19_1:Message:HOWTO: command will be like below                 | Create Message model and configure
+DIVE19_1:Message:HOWTO: rails g model Mesage body:text conversation:referneces user:references read: boolean | Create Message model and configure 
+DIVE19_1:Message:HOWTO: verify generate model file                                | Create Message model and configure
+DIVE19_1:Message:HOWTO: open app/models/message.rb                                | Create Message model and configure
+DIVE19_1:Message:HOWTO: class Message < ActiveRecord::Base                        | Create Message model and configure
+DIVE19_1:Message:HOWTO:   belongs_to :conversation                                | Create Message model and configure
+DIVE19_1:Message:HOWTO:   belongs_to :user                                        | Create Message model and configure
+DIVE19_1:Message:HOWTO:                                                           | Create Message model and configure
+DIVE19_1:Message:HOWTO:   validates_presence_of :body, :conversation_id, :user_id | Create Message model and configure
+DIVE19_1:Message:HOWTO:   def message_time                                        | Create Message model and configure
+DIVE19_1:Message:HOWTO:     created_at.strftime("%m/%d/%y at %I:%M %p")           | Create Message model and configure
+DIVE19_1:Message:HOWTO:   end                                                     | Create Message model and configure
+DIVE19_1:Message:HOWTO: end                        | Create Message model and configure
+DIVE19_1:Message:HOWTO: rake db:migrate            | Create Message model and configure
+DIVE19_1:Message:HOWTO: rails db -> \d messages \q | Create Message model and configure
+DIVE19_1:Message:TODO: setup views for conversation and messages. 
+DIVE19_1:Message:HOWTO: edit app/views/converstaions/index.html.erb                          | setup views for conversation and messages.
+DIVE19_1:Message:HOWTO:   <div class="wrapper col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1"> | setup views for conversation and messages.·
+DIVE19_1:Message:HOWTO:     <table class="table table-hover">                                | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:       <thead>                                                        | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:         <h2>メッセージ一覧</h2>                                      | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:       </thead>                                                       | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:       <tbody>                                                        | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:         <% @conversations.each do |conversation| %>                  | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:           <td>                                                       | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:             <% if conversation.target_user(current_user).present? %> | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:               <%= link_to conversation.target_user(current_user).name, conversations_messages_path(conversation) %>| setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:             <% end %> | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:           </td>       | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:         <% end %>     | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:       </tbody>        | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:     </table>          | setup views for conversation and messages.·1
+DIVE19_1:Message:HOWTO:   </div>              | setup views for conversation and messages.
+DIVE19_1:Message:TODO: Edit users view page
+DIVE19_1:Message:HOWTO: edit app/views/users/index.html.erb  | Edit users view page
+DIVE19_1:Message:HOWTO: <% if user.id != current_user.id %>  | Edit users view page
+DIVE19_1:Message:HOWTO:   <li>                               | Edit users view page
+DIVE19_1:Message:HOWTO:     <div class="item">               | Edit users view page
+DIVE19_1:Message:HOWTO:       <%= link_to user.name, user %> | Edit users view page
+DIVE19_1:Message:HOWTO:       <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post' %> | Edit users view page
+DIVE19_1:Message:HOWTO:     </div>                                                                    | Edit users view page
+DIVE19_1:Message:HOWTO:     <%= render partial: 'follow_form', locals: { user: user} if signed_in? %> | Edit users view page
+DIVE19_1:Message:HOWTO:   </li>                                                                       | Edit users view page
+DIVE19_1:Message:HOWTO: <% end %>                                                                     | Edit users view page
+DIVE19_1:Message:TODO: Edit Messages related views 
+DIVE19_1:Message:HOWTO: edit app/views/messages/index.html.erb| Edit Messages related views 
+DIVE19_1:Message:HOWTO: <% if @over_ten %> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:   <%= link_to '以前のメッセージ', '?m=all' %> | Edit Messages related views 
+DIVE19_1:Message:HOWTO: <% end %> | Edit Messages related views 
+DIVE19_1:Message:HOWTO: | Edit Messages related views 
+DIVE19_1:Message:HOWTO: <div class="ui segment"> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:   <% @messages.each do | message | %> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:     <% if message.body %> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:       <% user = User.find(message.user_id) %> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:       <div class="item"> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:         <div class="content">| Edit Messages related views 
+DIVE19_1:Message:HOWTO:           <div class="header"><strong><%= user.name %></strong><%= message.message_time %></div> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:             <div class="list">| Edit Messages related views 
+DIVE19_1:Message:HOWTO:               <div class="item">| Edit Messages related views 
+DIVE19_1:Message:HOWTO:                 <i class="right triangle icon"></i> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:               </div> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:             </div> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:           </div> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:         </div> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:       <% end %>| Edit Messages related views 
+DIVE19_1:Message:HOWTO:     <% end %> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:   </div> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:   | Edit Messages related views 
+DIVE19_1:Message:HOWTO:   <%= form_for [ @conversation, @message ], html: { class: "ui reply form"} do |f| %> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:     <div class="field">| Edit Messages related views 
+DIVE19_1:Message:HOWTO:       <%= f.text_area :body, class: "form-control" %> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:     </div> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:     <%= f.text_field :user_id, value:current_user.id, type: "hidden" %> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:     <div> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:       <%= f.submit 'メッセージを送る' %> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:     </div> | Edit Messages related views 
+DIVE19_1:Message:HOWTO:   <% end %> | Edit Messages related views 
+DIVE19_1:Message:TODO: Header menu registration 
+DIVE19_1:Message:HOWTO: edit app/views/layouts/application.html.erb | Header menu registration 
+DIVE19_1:Message:HOWTO: <li><%= link_to "メッセージ", conversations_path %></li> | Header menu registration 
+DIVE19_1:Message:HOWTO: add this to where appropriate ... | Header menu registration 
